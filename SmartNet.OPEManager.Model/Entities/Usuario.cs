@@ -1,0 +1,17 @@
+﻿using System;
+
+namespace SmartNet.OPEManager.Model.Entities
+{
+    public class Usuario
+    {
+        public enum Perfil:int {Administrador = 1, Usuario = 2};
+
+        public int RA { get; set; }
+        public string nome { get; set; }
+        public string email { get; set; }
+        public string senha { get; set; }
+        public DateTime dataCadastro { get; set; }
+        public Perfil perfil { get; set; }
+        public bool ativo { get; set; }
+    }
+}
