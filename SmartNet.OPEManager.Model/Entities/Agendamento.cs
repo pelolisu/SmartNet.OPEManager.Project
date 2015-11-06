@@ -7,6 +7,8 @@ namespace SmartNet.OPEManager.Model.Entities
         public DateTime data { get; set; }
         public TimeSpan horario { get; set; }
         public string assunto { get; set; }
+        public int? faseId { get; set; }
+        public virtual Fase fase { get; set; }
 
     }
 }

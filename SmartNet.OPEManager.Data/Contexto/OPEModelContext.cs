@@ -22,6 +22,7 @@ namespace SmartNet.OPEManager.Data.Contexto
         public virtual DbSet<Grupo> Grupos { get; set; }
         public virtual DbSet<Projeto> Projetos { get; set; }
         public virtual DbSet<Curso> Cursos { get; set; }
+        public virtual DbSet<Fase> Fases { get; set; }
         //public virtual DbSet<Agendamento> Agendamentos { get; set; }
 
         //public virtual DbSet<Curso> Cursos { get; set; }
@@ -53,6 +54,8 @@ namespace SmartNet.OPEManager.Data.Contexto
             modelBuilder.Configurations.Add(new GrupoConfig());
             modelBuilder.Configurations.Add(new ProjetoConfig());
             modelBuilder.Configurations.Add(new CursoConfig());
+            modelBuilder.Configurations.Add(new FaseConfig());
+            modelBuilder.Configurations.Add(new AgendamentoConfig());
 
         }
 

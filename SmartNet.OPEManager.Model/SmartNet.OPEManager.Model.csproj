@@ -52,6 +52,7 @@
     <Compile Include="Entities\Agendamento.cs" />
     <Compile Include="Entities\Aluno.cs" />
     <Compile Include="Entities\Curso.cs" />
+    <Compile Include="Entities\Fase.cs" />
     <Compile Include="Entities\Grupo.cs" />
     <Compile Include="Entities\Professor.cs" />
     <Compile Include="Entities\Projeto.cs" />

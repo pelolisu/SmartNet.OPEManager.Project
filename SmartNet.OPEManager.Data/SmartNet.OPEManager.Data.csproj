@@ -52,8 +52,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contexto\OPEModelContext.cs" />
+    <Compile Include="EntityConfig\AgendamentoConfig.cs" />
     <Compile Include="EntityConfig\AlunoConfig.cs" />
     <Compile Include="EntityConfig\CursoConfig.cs" />
+    <Compile Include="EntityConfig\FaseConfig.cs" />
     <Compile Include="EntityConfig\GrupoConfig.cs" />
     <Compile Include="EntityConfig\ProfessorConfig.cs" />
     <Compile Include="EntityConfig\ProjetoConfig.cs" />
