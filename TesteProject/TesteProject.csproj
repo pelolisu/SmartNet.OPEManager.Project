@@ -63,9 +63,9 @@
       <Project>{34d48c2c-d2d3-457d-a3e9-ce65d8faff3a}</Project>
       <Name>SmartNet.OPEManager.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SmartNet.OPEManager.Model\SmartNet.OPEManager.Model.csproj">
+    <ProjectReference Include="..\SmartNet.OPEManager.Model\SmartNet.OPEManager.Domain.csproj">
       <Project>{1c6489f4-fa6f-4791-933a-f16cacf5da16}</Project>
-      <Name>SmartNet.OPEManager.Model</Name>
+      <Name>SmartNet.OPEManager.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

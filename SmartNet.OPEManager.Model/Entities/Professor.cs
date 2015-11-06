@@ -1,4 +1,4 @@
-﻿namespace SmartNet.OPEManager.Model.Entities
+﻿namespace SmartNet.OPEManager.Domain.Entities
 {
     public class Professor : Usuario
     {

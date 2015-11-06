@@ -1,6 +1,4 @@
-﻿using SmartNet.OPEManager.Model;
-
-namespace SmartNet.OPEManager.Model.Entities
+﻿namespace SmartNet.OPEManager.Domain.Entities
 {
     public class Aluno : Usuario
     {

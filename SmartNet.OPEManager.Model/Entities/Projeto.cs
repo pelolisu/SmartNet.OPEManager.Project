@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace SmartNet.OPEManager.Model.Entities
+namespace SmartNet.OPEManager.Domain.Entities
 {
     public class Projeto
     {
@@ -13,7 +13,7 @@ namespace SmartNet.OPEManager.Model.Entities
         public int grupoId { get; set; }
         public virtual Grupo grupo { get; set; }
         public virtual Curso curso { get; set; }
-        public virtual IEnumerable<Fase> fases { get; set; }
+        public virtual ICollection<Fase> fases { get; set; }
         public bool ativo { get; set; }
 
     }

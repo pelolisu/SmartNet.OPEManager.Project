@@ -54,11 +54,15 @@
     <Compile Include="Contexto\OPEModelContext.cs" />
     <Compile Include="EntityConfig\AgendamentoConfig.cs" />
     <Compile Include="EntityConfig\AlunoConfig.cs" />
+    <Compile Include="EntityConfig\ComentarioConfig.cs" />
+    <Compile Include="EntityConfig\ConvidadoConfig.cs" />
     <Compile Include="EntityConfig\CursoConfig.cs" />
     <Compile Include="EntityConfig\FaseConfig.cs" />
     <Compile Include="EntityConfig\GrupoConfig.cs" />
     <Compile Include="EntityConfig\ProfessorConfig.cs" />
     <Compile Include="EntityConfig\ProjetoConfig.cs" />
+    <Compile Include="EntityConfig\SemestreConfig.cs" />
+    <Compile Include="EntityConfig\TurmaConfig.cs" />
     <Compile Include="EntityConfig\UsuarioConfig.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -68,10 +72,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SmartNet.OPEManager.Model\SmartNet.OPEManager.Model.csproj">
+    <ProjectReference Include="..\SmartNet.OPEManager.Model\SmartNet.OPEManager.Domain.csproj">
       <Project>{1c6489f4-fa6f-4791-933a-f16cacf5da16}</Project>
-      <Name>SmartNet.OPEManager.Model</Name>
+      <Name>SmartNet.OPEManager.Domain</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Repositories\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

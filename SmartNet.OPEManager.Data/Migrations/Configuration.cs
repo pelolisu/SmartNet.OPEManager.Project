@@ -1,18 +1,16 @@
+using System.Data.Entity.Migrations;
+using SmartNet.OPEManager.Data.Contexto;
+
 namespace SmartNet.OPEManager.Data.Migrations
 {
-    using System;
-    using System.Data.Entity;
-    using System.Data.Entity.Migrations;
-    using System.Linq;
-
-    internal sealed class Configuration : DbMigrationsConfiguration<SmartNet.OPEManager.Data.Contexto.OPEModelContext>
+   internal sealed class Configuration : DbMigrationsConfiguration<OPEModelContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(SmartNet.OPEManager.Data.Contexto.OPEModelContext context)
+        protected override void Seed(OPEModelContext context)
         {
             //  This method will be called after migrating to the latest version.
 

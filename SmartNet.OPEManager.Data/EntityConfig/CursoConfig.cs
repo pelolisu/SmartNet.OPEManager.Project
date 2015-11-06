@@ -1,5 +1,5 @@
 ﻿using System.Data.Entity.ModelConfiguration;
-using SmartNet.OPEManager.Model.Entities;
+using SmartNet.OPEManager.Domain.Entities;
 
 namespace SmartNet.OPEManager.Data.EntityConfig
 {

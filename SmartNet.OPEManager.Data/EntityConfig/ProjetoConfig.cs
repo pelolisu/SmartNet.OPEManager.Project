@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.Infrastructure.Annotations;
 using System.Data.Entity.ModelConfiguration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SmartNet.OPEManager.Model.Entities;
+using SmartNet.OPEManager.Domain.Entities;
 
 namespace SmartNet.OPEManager.Data.EntityConfig
 {
@@ -32,7 +27,7 @@ namespace SmartNet.OPEManager.Data.EntityConfig
 
             //Foreign Key Many-To-One
             HasRequired(o => o.curso)
-                .WithMany()
+                .WithMany(o => o.projetos)
                 .HasForeignKey(o => o.cursoId);
 
         }

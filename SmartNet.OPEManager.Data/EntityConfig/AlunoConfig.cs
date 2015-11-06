@@ -1,5 +1,5 @@
 ﻿using System.Data.Entity.ModelConfiguration;
-using SmartNet.OPEManager.Model.Entities;
+using SmartNet.OPEManager.Domain.Entities;
 
 namespace SmartNet.OPEManager.Data.EntityConfig
 {
@@ -7,11 +7,10 @@ namespace SmartNet.OPEManager.Data.EntityConfig
     {
         public AlunoConfig()
         {
-            ToTable("Alunos");
-            HasKey(o => o.RA)
+            ToTable("Alunos")
             //Foreign Key Many - To - One
             .HasRequired(o => o.grupo)
-                .WithMany()
+                .WithMany(o => o.alunos)
                 .HasForeignKey(o => o.grupoId);
         }
          

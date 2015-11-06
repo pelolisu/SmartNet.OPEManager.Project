@@ -3,7 +3,7 @@ using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using SmartNet.OPEManager.Data.EntityConfig;
-using SmartNet.OPEManager.Model.Entities;
+using SmartNet.OPEManager.Domain.Entities;
 
 namespace SmartNet.OPEManager.Data.Contexto
 {
@@ -16,20 +16,21 @@ namespace SmartNet.OPEManager.Data.Contexto
 
         }
 
-        public virtual DbSet<Usuario> Usuarios { get; set; }
+        //Mapeia Entidades para tabelas em banco de dados
+        public virtual DbSet<Agendamento> Agendamentos { get; set; }
         public virtual DbSet<Aluno> Alunos { get; set; }
-        public virtual DbSet<Professor> Professores { get; set; }
-        public virtual DbSet<Grupo> Grupos { get; set; }
-        public virtual DbSet<Projeto> Projetos { get; set; }
+        public virtual DbSet<Comentario> Comentarios { get; set; }
+        public virtual DbSet<Convidado> Convidados { get; set; }
         public virtual DbSet<Curso> Cursos { get; set; }
         public virtual DbSet<Fase> Fases { get; set; }
-        //public virtual DbSet<Agendamento> Agendamentos { get; set; }
+        public virtual DbSet<Grupo> Grupos { get; set; }
+        public virtual DbSet<Professor> Professores { get; set; }
+        public virtual DbSet<Projeto> Projetos { get; set; }
+        public virtual DbSet<Semestre> Semestre { get; set; }
+        public virtual DbSet<Turma> Turmas { get; set; }
+        public virtual DbSet<Usuario> Usuarios { get; set; }
 
-        //public virtual DbSet<Curso> Cursos { get; set; }
-        //public virtual DbSet<Turma> Turmas { get; set; }
-        //public virtual DbSet<Semestre> Semestre { get; set; }
-
-
+        
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
@@ -56,6 +57,10 @@ namespace SmartNet.OPEManager.Data.Contexto
             modelBuilder.Configurations.Add(new CursoConfig());
             modelBuilder.Configurations.Add(new FaseConfig());
             modelBuilder.Configurations.Add(new AgendamentoConfig());
+            modelBuilder.Configurations.Add(new TurmaConfig());
+            modelBuilder.Configurations.Add(new SemestreConfig());
+            modelBuilder.Configurations.Add(new ComentarioConfig());
+            modelBuilder.Configurations.Add(new ConvidadoConfig());
 
         }
 

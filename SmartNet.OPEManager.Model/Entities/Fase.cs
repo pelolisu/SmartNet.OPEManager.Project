@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
-namespace SmartNet.OPEManager.Model.Entities
+namespace SmartNet.OPEManager.Domain.Entities
 {
     public class Fase
     {
@@ -15,5 +11,6 @@ namespace SmartNet.OPEManager.Model.Entities
         public virtual Turma turma { get; set; }
         public int projetoId { get; set; }
         public virtual Projeto projeto { get; set; }
+        public virtual ICollection<Agendamento> agendamentos {get;set;}
     }
 }

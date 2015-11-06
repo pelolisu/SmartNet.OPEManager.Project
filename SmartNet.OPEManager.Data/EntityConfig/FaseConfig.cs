@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Data.Entity.ModelConfiguration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SmartNet.OPEManager.Model.Entities;
+﻿using System.Data.Entity.ModelConfiguration;
+using SmartNet.OPEManager.Domain.Entities;
 
 namespace SmartNet.OPEManager.Data.EntityConfig
 {
@@ -14,9 +8,9 @@ namespace SmartNet.OPEManager.Data.EntityConfig
         public FaseConfig()
         {
             ToTable("Fases")
-             .HasKey(o => new { o.semestreId, o.turmaId, o.projetoId });
+             .HasKey(o => o.faseId);
             HasRequired(o => o.projeto)
-                .WithMany()
+                .WithMany(o => o.fases)
                 .HasForeignKey(o => o.projetoId);
             HasRequired(o => o.semestre)
                .WithMany()

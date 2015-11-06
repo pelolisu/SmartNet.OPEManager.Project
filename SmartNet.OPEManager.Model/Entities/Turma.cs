@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SmartNet.OPEManager.Model.Entities
+namespace SmartNet.OPEManager.Domain.Entities
 {
     public class Turma
     {

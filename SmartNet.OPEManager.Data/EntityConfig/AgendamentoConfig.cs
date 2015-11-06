@@ -1,5 +1,5 @@
 ﻿using System.Data.Entity.ModelConfiguration;
-using SmartNet.OPEManager.Model.Entities;
+using SmartNet.OPEManager.Domain.Entities;
 
 namespace SmartNet.OPEManager.Data.EntityConfig
 {
@@ -8,11 +8,14 @@ namespace SmartNet.OPEManager.Data.EntityConfig
         public AgendamentoConfig()
         {
             ToTable("Agendamentos")
-                .HasKey(o => new { o.data, o.horario });
-
-           HasRequired(o => o.fase)
-          .WithMany()
-          .HasForeignKey(o => o.faseId);
+                .HasKey(o => o.agendamentoId)
+                .Property(o => o.assunto)
+                .IsRequired()
+                .HasMaxLength(400);
+            HasRequired(o => o.fase)
+           .WithMany(o => o.agendamentos)
+           .HasForeignKey(o => o.faseId);
+           
         }
     }
 }

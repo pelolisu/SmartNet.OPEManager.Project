@@ -7,7 +7,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartNet.OPEManager.Data", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteProject", "TesteProject\TesteProject.csproj", "{977E0E3D-0FEA-442C-B66C-D53C008E7233}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartNet.OPEManager.Model", "SmartNet.OPEManager.Model\SmartNet.OPEManager.Model.csproj", "{1C6489F4-FA6F-4791-933A-F16CACF5DA16}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartNet.OPEManager.Domain", "SmartNet.OPEManager.Model\SmartNet.OPEManager.Domain.csproj", "{1C6489F4-FA6F-4791-933A-F16CACF5DA16}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infra", "4 - Infra", "{19BF2A14-DCCB-4BCB-8801-D91BFEFF2CC2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", "{160CEC2F-0B57-4795-9CBD-4652BAD859C7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Presentation", "1 - Presentation", "{ED6C0592-B9D8-4902-9202-416A48D3A674}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Application", "2 - Application", "{CD5A608F-BB53-414C-B214-FA8FA5822E67}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,5 +38,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{34D48C2C-D2D3-457D-A3E9-CE65D8FAFF3A} = {19BF2A14-DCCB-4BCB-8801-D91BFEFF2CC2}
+		{977E0E3D-0FEA-442C-B66C-D53C008E7233} = {ED6C0592-B9D8-4902-9202-416A48D3A674}
+		{1C6489F4-FA6F-4791-933A-F16CACF5DA16} = {160CEC2F-0B57-4795-9CBD-4652BAD859C7}
 	EndGlobalSection
 EndGlobal
