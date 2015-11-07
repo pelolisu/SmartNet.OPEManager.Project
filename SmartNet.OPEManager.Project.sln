@@ -5,9 +5,9 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartNet.OPEManager.Data", "SmartNet.OPEManager.Data\SmartNet.OPEManager.Data.csproj", "{34D48C2C-D2D3-457D-A3E9-CE65D8FAFF3A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "TesteProject\ConsoleApp.csproj", "{977E0E3D-0FEA-442C-B66C-D53C008E7233}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{977E0E3D-0FEA-442C-B66C-D53C008E7233}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartNet.OPEManager.Domain", "SmartNet.OPEManager.Model\SmartNet.OPEManager.Domain.csproj", "{1C6489F4-FA6F-4791-933A-F16CACF5DA16}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartNet.OPEManager.Domain", "SmartNet.OPEManager.Domain\SmartNet.OPEManager.Domain.csproj", "{1C6489F4-FA6F-4791-933A-F16CACF5DA16}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infra", "4 - Infra", "{19BF2A14-DCCB-4BCB-8801-D91BFEFF2CC2}"
 EndProject
