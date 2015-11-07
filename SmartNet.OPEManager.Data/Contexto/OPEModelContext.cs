@@ -7,20 +7,19 @@ using SmartNet.OPEManager.Domain.Entities;
 
 namespace SmartNet.OPEManager.Data.Contexto
 {
-   public class OPEModelContext : DbContext
+    public class OPEModelContext : DbContext
     {
-       
         public OPEModelContext()
             : base("name=OPEModel")
         {
-
+            Configuration.LazyLoadingEnabled = false;
+            Configuration.ProxyCreationEnabled = false;
         }
 
         //Mapeia Entidades para tabelas em banco de dados
         public virtual DbSet<Agendamento> Agendamentos { get; set; }
         public virtual DbSet<Aluno> Alunos { get; set; }
         public virtual DbSet<Comentario> Comentarios { get; set; }
-        public virtual DbSet<Convidado> Convidados { get; set; }
         public virtual DbSet<Curso> Cursos { get; set; }
         public virtual DbSet<Fase> Fases { get; set; }
         public virtual DbSet<Grupo> Grupos { get; set; }
@@ -29,7 +28,6 @@ namespace SmartNet.OPEManager.Data.Contexto
         public virtual DbSet<Semestre> Semestre { get; set; }
         public virtual DbSet<Turma> Turmas { get; set; }
         public virtual DbSet<Usuario> Usuarios { get; set; }
-
         
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -60,13 +58,10 @@ namespace SmartNet.OPEManager.Data.Contexto
             modelBuilder.Configurations.Add(new TurmaConfig());
             modelBuilder.Configurations.Add(new SemestreConfig());
             modelBuilder.Configurations.Add(new ComentarioConfig());
-            modelBuilder.Configurations.Add(new ConvidadoConfig());
-
         }
 
         public override int SaveChanges()
         {
-
             foreach (var entry in ChangeTracker.Entries().Where(entry => entry.Entity.GetType().GetProperty("dataCadastro") != null))
             {
                 if (entry.State == EntityState.Added)
@@ -77,11 +72,10 @@ namespace SmartNet.OPEManager.Data.Contexto
                 {
                     entry.Property("dataCadastro").IsModified = false;
                 }
-
             }
             return base.SaveChanges();
         }
     }
 
- 
+
 }

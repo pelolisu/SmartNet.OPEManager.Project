@@ -5,27 +5,22 @@ using SmartNet.OPEManager.Domain.Entities;
 
 namespace SmartNet.OPEManager.Data.EntityConfig
 {
-    public class ProjetoConfig  : EntityTypeConfiguration<Projeto>
+    public class ProjetoConfig : EntityTypeConfiguration<Projeto>
     {
         public ProjetoConfig()
         {
             ToTable("Projetos")
             .HasKey(o => o.projetoId);
-            Property(o => o.grupoId).HasColumnName("grupoId")
-                .HasColumnAnnotation("Index", new IndexAnnotation(new IndexAttribute("IX_GrupoId", 1) { IsUnique = true }));
-            Property(o => o.titulo).HasColumnName("titulo")
-                         .HasColumnAnnotation("Index", new IndexAnnotation(new IndexAttribute("IX_Titulo", 2) { IsUnique = true }));
-
             Property(o => o.empresa)
-                .HasMaxLength(200)
-                .IsRequired();
+                 .HasMaxLength(200)
+                 .IsRequired();
             Property(o => o.descricao)
                 .HasMaxLength(255)
                 .IsRequired();
             Property(o => o.urlSistema)
                 .HasMaxLength(500);
 
-            //Foreign Key Many-To-One
+            //1:N - 1 projeto DEVE ter 1 curso e 1 curso pode ter muitos projetos
             HasRequired(o => o.curso)
                 .WithMany(o => o.projetos)
                 .HasForeignKey(o => o.cursoId);

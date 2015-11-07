@@ -7,9 +7,9 @@ namespace SmartNet.OPEManager.Data.EntityConfig
     {
         public ProfessorConfig()
         {
-            ToTable("Professores");
-           
-           
+            ToTable("Professores")
+                .HasKey(o => o.RA);
+
         }
     }
 }

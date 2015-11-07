@@ -13,9 +13,18 @@ namespace SmartNet.OPEManager.Data.EntityConfig
                 .IsRequired()
                 .HasMaxLength(400);
             HasRequired(o => o.fase)
-           .WithMany(o => o.agendamentos)
-           .HasForeignKey(o => o.faseId);
-           
+                .WithMany(o => o.agendamentos)
+                .HasForeignKey(o => o.faseId);
+
+            //N:N
+            HasMany(o => o.convidados)
+            .WithMany(o => o.agendamentos)
+            .Map(o =>
+            {
+                o.MapLeftKey("agendamentoId");
+                o.MapRightKey("RA");
+                o.ToTable("Convidados");
+            });
         }
     }
 }

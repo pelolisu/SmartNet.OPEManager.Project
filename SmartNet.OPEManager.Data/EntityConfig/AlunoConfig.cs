@@ -8,11 +8,13 @@ namespace SmartNet.OPEManager.Data.EntityConfig
         public AlunoConfig()
         {
             ToTable("Alunos")
-            //Foreign Key Many - To - One
-            .HasRequired(o => o.grupo)
+                .HasKey(o => o.RA);
+            
+            //1:N - 1 aluno DEVE ter 1 grupo e 1 grupo pode ter muitos alunos
+            HasRequired(o => o.grupo)
                 .WithMany(o => o.alunos)
                 .HasForeignKey(o => o.grupoId);
-        }
-         
+            }
+
     }
 }

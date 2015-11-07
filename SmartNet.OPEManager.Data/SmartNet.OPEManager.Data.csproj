@@ -55,7 +55,6 @@
     <Compile Include="EntityConfig\AgendamentoConfig.cs" />
     <Compile Include="EntityConfig\AlunoConfig.cs" />
     <Compile Include="EntityConfig\ComentarioConfig.cs" />
-    <Compile Include="EntityConfig\ConvidadoConfig.cs" />
     <Compile Include="EntityConfig\CursoConfig.cs" />
     <Compile Include="EntityConfig\FaseConfig.cs" />
     <Compile Include="EntityConfig\GrupoConfig.cs" />
@@ -66,6 +65,18 @@
     <Compile Include="EntityConfig\UsuarioConfig.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\UsuarioRep.cs" />
+    <Compile Include="Repositories\TurmaRep.cs" />
+    <Compile Include="Repositories\SemestreRep.cs" />
+    <Compile Include="Repositories\ProjetoRep.cs" />
+    <Compile Include="Repositories\ProfessorRep.cs" />
+    <Compile Include="Repositories\GrupoRep.cs" />
+    <Compile Include="Repositories\FaseRep.cs" />
+    <Compile Include="Repositories\CursoRep.cs" />
+    <Compile Include="Repositories\ComentarioRep.cs" />
+    <Compile Include="Repositories\AlunoRep.cs" />
+    <Compile Include="Repositories\AgendamentoRep.cs" />
+    <Compile Include="Repositories\Base\Crud.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -77,9 +88,7 @@
       <Name>SmartNet.OPEManager.Domain</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Repositories\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

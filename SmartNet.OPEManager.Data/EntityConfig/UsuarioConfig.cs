@@ -1,4 +1,5 @@
-﻿using System.Data.Entity.ModelConfiguration;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity.ModelConfiguration;
 using SmartNet.OPEManager.Domain.Entities;
 
 namespace SmartNet.OPEManager.Data.EntityConfig
@@ -7,9 +8,10 @@ namespace SmartNet.OPEManager.Data.EntityConfig
     {
         public UsuarioConfig()
         {
-            ToTable("Usuários")
-               .HasKey(o => o.RA);
-
+            ToTable("Usuarios")
+                .HasKey(o => o.RA);
+            Property(o => o.RA)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
             Property(o => o.nome)
                 .HasMaxLength(255)
                 .IsRequired();

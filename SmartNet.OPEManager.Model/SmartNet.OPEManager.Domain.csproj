@@ -7,8 +7,8 @@
     <ProjectGuid>{1C6489F4-FA6F-4791-933A-F16CACF5DA16}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SmartNet.OPEManager.Model</RootNamespace>
-    <AssemblyName>SmartNet.OPEManager.Model</AssemblyName>
+    <RootNamespace>SmartNet.OPEManager.Domain</RootNamespace>
+    <AssemblyName>SmartNet.OPEManager.Domain</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -33,7 +33,6 @@
     <Compile Include="Entities\Agendamento.cs" />
     <Compile Include="Entities\Aluno.cs" />
     <Compile Include="Entities\Comentario.cs" />
-    <Compile Include="Entities\Convidado.cs" />
     <Compile Include="Entities\Curso.cs" />
     <Compile Include="Entities\Fase.cs" />
     <Compile Include="Entities\Grupo.cs" />
@@ -42,6 +41,18 @@
     <Compile Include="Entities\Semestre.cs" />
     <Compile Include="Entities\Turma.cs" />
     <Compile Include="Entities\Usuario.cs" />
+    <Compile Include="Interfaces\Repositories\IAlunoRep.cs" />
+    <Compile Include="Interfaces\Repositories\IGrupoRep.cs" />
+    <Compile Include="Interfaces\Repositories\IFaseRep.cs" />
+    <Compile Include="Interfaces\Repositories\ICursoRep.cs" />
+    <Compile Include="Interfaces\Repositories\Base\ICrud.cs" />
+    <Compile Include="Interfaces\Repositories\IComentarioRep.cs" />
+    <Compile Include="Interfaces\Repositories\ITurmaRep.cs" />
+    <Compile Include="Interfaces\Repositories\ISemestreRep.cs" />
+    <Compile Include="Interfaces\Repositories\IProjetoRep.cs" />
+    <Compile Include="Interfaces\Repositories\IAgendamentoRep.cs" />
+    <Compile Include="Interfaces\Repositories\IUsuarioRep.cs" />
+    <Compile Include="Interfaces\Repositories\IProfessorRep.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

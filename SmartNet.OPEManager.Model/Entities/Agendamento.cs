@@ -11,7 +11,12 @@ namespace SmartNet.OPEManager.Domain.Entities
         public string assunto { get; set; }
         public int faseId { get; set; }
         public virtual Fase fase { get; set; }
-        public virtual ICollection<Convidado> convidados { get; set; }
+        public virtual ICollection<Usuario> convidados { get; set; }
         public virtual ICollection<Comentario> comentarios { get; set; }
+
+       public Agendamento()
+       {
+           convidados = new List<Usuario>();
+       }
     }
 }
