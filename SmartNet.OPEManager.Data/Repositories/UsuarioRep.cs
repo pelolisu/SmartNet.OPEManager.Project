@@ -10,7 +10,7 @@ namespace SmartNet.OPEManager.Data.Repositories
 {
     public class UsuarioRep : Crud<Usuario>, IUsuarioRep
     {
-        public Usuario BuscarPorId(int id)
+        public new Usuario BuscarPorId(int id)
         {
             using (Db = new OPEModelContext())
             {

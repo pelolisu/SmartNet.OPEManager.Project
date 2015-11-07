@@ -10,7 +10,7 @@ namespace SmartNet.OPEManager.Data.Repositories
 {
     public class AgendamentoRep : Crud<Agendamento>, IAgendamentoRep
     {
-        public Agendamento BuscarPorId(int id)
+        public new Agendamento BuscarPorId(int id)
         {
             using (Db = new OPEModelContext())
             {
@@ -20,7 +20,7 @@ namespace SmartNet.OPEManager.Data.Repositories
             }
         }
 
-        public Agendamento Atualizar(Agendamento obj)
+        public new Agendamento Atualizar(Agendamento obj)
         {
             using (Db = new OPEModelContext())
             {

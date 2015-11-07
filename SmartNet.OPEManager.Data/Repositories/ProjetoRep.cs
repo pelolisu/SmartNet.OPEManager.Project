@@ -9,7 +9,7 @@ namespace SmartNet.OPEManager.Data.Repositories
 {
     public class ProjetoRep : Crud<Projeto>, IProjetoRep
     {
-        public Projeto BuscarPorId(int id)
+        public new Projeto BuscarPorId(int id)
         {
             using (Db = new OPEModelContext())
             {

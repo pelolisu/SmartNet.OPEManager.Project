@@ -9,7 +9,7 @@ namespace SmartNet.OPEManager.Data.Repositories
 {
     public class FaseRep : Crud<Fase>, IFaseRep
     {
-        public Fase BuscarPorId(int id)
+        public new Fase BuscarPorId(int id)
         {
             using (Db = new OPEModelContext())
             {

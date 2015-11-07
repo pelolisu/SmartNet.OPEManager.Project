@@ -9,7 +9,7 @@ namespace SmartNet.OPEManager.Data.Repositories
 {
     public class AlunoRep : Crud<Aluno>, IAlunoRep
     {
-        public Aluno BuscarPorId(int id)
+        public new Aluno BuscarPorId(int id)
         {
             using (Db = new OPEModelContext())
             {

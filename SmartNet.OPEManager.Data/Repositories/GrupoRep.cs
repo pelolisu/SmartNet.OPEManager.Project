@@ -9,7 +9,7 @@ namespace SmartNet.OPEManager.Data.Repositories
 {
     public class GrupoRep : Crud<Grupo>, IGrupoRep
     {
-        public Grupo BuscarPorId(int id)
+        public new Grupo BuscarPorId(int id)
         {
             using (Db = new OPEModelContext())
             {
