@@ -83,7 +83,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SmartNet.OPEManager.Model\SmartNet.OPEManager.Domain.csproj">
+    <ProjectReference Include="..\SmartNet.OPEManager.Domain\SmartNet.OPEManager.Domain.csproj">
       <Project>{1c6489f4-fa6f-4791-933a-f16cacf5da16}</Project>
       <Name>SmartNet.OPEManager.Domain</Name>
     </ProjectReference>
