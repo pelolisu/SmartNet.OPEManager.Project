@@ -8,7 +8,7 @@ using SmartNet.OPEManager.Domain.Entities;
 
 namespace GangOfSeven.OPEManager.Application.Forms
 {
-    class FormUsuario
+    public class FormUsuario
     {
         public void incluirUsuario(int ra, String nome, String email, String senha, int tipoPerfil, Boolean status)
         {

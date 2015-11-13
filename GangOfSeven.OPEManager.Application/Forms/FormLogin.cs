@@ -8,7 +8,7 @@ using SmartNet.OPEManager.Domain.Entities;
 
 namespace GangOfSeven.OPEManager.Application.Forms
 {
-    class FormLogin
+    public class FormLogin
     {
         public Boolean fazerLogin(int ra, String senha)
         {
