@@ -74,12 +74,9 @@ namespace GangOfSeven.OPEManager.Application.Forms
             }
         }
 
-        public void excluirLogin(int ra)
+        public void excluirUsuario(int ra)
         {
-            var usuario = new Usuario
-            {
-                RA = ra
-            };
+            var usuario = new UsuarioRep().BuscarPorId(ra);
 
             new UsuarioRep().Remover(usuario);
         }

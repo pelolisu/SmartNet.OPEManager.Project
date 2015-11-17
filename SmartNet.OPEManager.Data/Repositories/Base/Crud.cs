@@ -51,7 +51,7 @@ namespace SmartNet.OPEManager.Data.Repositories.Base
         {
             using (Db = new OPEModelContext())
             {
-                Db.Set<TEntity>().Remove(obj);
+                Db.Entry(obj).State = EntityState.Deleted;
                 Db.SaveChanges();
             }
         }
