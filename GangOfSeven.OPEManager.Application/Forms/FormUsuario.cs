@@ -87,5 +87,10 @@ namespace GangOfSeven.OPEManager.Application.Forms
 
             return usuarios;
         }
+
+        public Usuario buscaUsuario(int id)
+        {
+            return new UsuarioRep().BuscarPorId(id);
+        }
     }
 }

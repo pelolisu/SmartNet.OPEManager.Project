@@ -46,5 +46,10 @@ namespace GangOfSeven.OPEManager.Application.Forms
 
             return semestres;
         }
+
+        public Semestre buscaSemestre(int id)
+        {
+            return new SemestreRep().BuscarPorId(id);
+        }
     }
 }

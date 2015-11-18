@@ -46,5 +46,10 @@ namespace GangOfSeven.OPEManager.Application.Forms
 
             return turmas;
         }
+
+        public Turma buscaTurma(int id)
+        {
+            return new TurmaRep().BuscarPorId(id);
+        }
     }
 }

@@ -19,12 +19,14 @@ namespace ConsoleApp_2
             new FormUsuario().excluirUsuario(1410402);
 
             ICollection<Usuario> usuarios = new FormUsuario().listarLogin();
-
             foreach (Usuario usuario in usuarios)
             {
                 System.Console.WriteLine(usuario.nome +" - "+ usuario.RA);                
             }
             System.Console.ReadKey();
+
+            var buscaUsuario = new FormUsuario().buscaUsuario(1410403);
+            System.Console.WriteLine(buscaUsuario.RA + " - " + buscaUsuario.nome);
 
             // Form Turma
             new FormTurma().incluirTurma("teste", true);
@@ -39,6 +41,9 @@ namespace ConsoleApp_2
             }
             System.Console.ReadKey();
 
+            var buscaTurma = new FormTurma().buscaTurma(3);
+            System.Console.WriteLine(buscaTurma.turmaId + " - " + buscaTurma.nome);
+
             // Form Semestre
             new FormSemestre().incluirSemestre("teste", true);
             new FormSemestre().alterarSemestre(2, "teste teste", true);
@@ -51,6 +56,9 @@ namespace ConsoleApp_2
                 System.Console.WriteLine(semestre.semestreId + " - " + semestre.nome);
             }
             System.Console.ReadKey();
+            
+            var buscaSemestre = new FormSemestre().buscaSemestre(3);
+            System.Console.WriteLine(buscaSemestre.semestreId + " - " + buscaSemestre.nome);
         }
     }
 }
