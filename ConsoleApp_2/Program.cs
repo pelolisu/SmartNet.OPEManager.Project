@@ -9,16 +9,15 @@ namespace ConsoleApp_2
     {
         static void Main(string[] args)
         {
-            // inclui um usuario
-            new FormUsuario().incluirUsuario(1410403, "Eduardo", "r.eduardo00@gmail.com", "123456", 1, true);
+            // From login
+            System.Console.WriteLine(new FormLogin().fazerLogin(1410401, "123456"));
+            System.Console.ReadKey();
 
-            // altera um usuario
-            new FormUsuario().alterarLogin(1410402, "Eduardo teste", "r.eduardo00@gmail.com", "123456", 1, true);
-
-            // exclui um usuario
+            // Form Usuario
+            new FormUsuario().incluirUsuario(1410402, "Teste", "teste@teste.com", "123456", 1, true);
+            new FormUsuario().alterarUsuario(1410402, "Teste teste", "teste@teste.com", "123456", 1, true);
             new FormUsuario().excluirUsuario(1410402);
 
-            // lista um usuario
             ICollection<Usuario> usuarios = new FormUsuario().listarLogin();
 
             foreach (Usuario usuario in usuarios)
@@ -27,8 +26,17 @@ namespace ConsoleApp_2
             }
             System.Console.ReadKey();
 
-            // validacao de usuario
-            System.Console.WriteLine(new FormLogin().fazerLogin(1410401, "123456"));
+            // Form Turma
+            new FormTurma().incluirTurma("teste", true);
+            new FormTurma().alterarTurma(2, "teste teste", true);
+            new FormTurma().excluirTurma(2);
+
+            ICollection<Turma> turmas = new FormTurma().listarTurmas();
+
+            foreach (Turma turma in turmas)
+            {
+                System.Console.WriteLine(turma.turmaId + " - " + turma.nome);
+            }
             System.Console.ReadKey();
         }
     }

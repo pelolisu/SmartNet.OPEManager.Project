@@ -42,7 +42,7 @@ namespace GangOfSeven.OPEManager.Application.Forms
             }
         }
 
-        public void alterarLogin(int ra, String nome, String email, String senha, int tipoPerfil, Boolean status)
+        public void alterarUsuario(int ra, String nome, String email, String senha, int tipoPerfil, Boolean status)
         {
             if (tipoPerfil == 1)
             {

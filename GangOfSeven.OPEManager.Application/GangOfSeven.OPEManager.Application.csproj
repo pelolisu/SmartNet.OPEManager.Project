@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Forms\FormLogin.cs" />
+    <Compile Include="Forms\FormTurma.cs" />
     <Compile Include="Forms\FormUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
