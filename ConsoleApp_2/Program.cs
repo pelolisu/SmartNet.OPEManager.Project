@@ -38,6 +38,19 @@ namespace ConsoleApp_2
                 System.Console.WriteLine(turma.turmaId + " - " + turma.nome);
             }
             System.Console.ReadKey();
+
+            // Form Semestre
+            new FormSemestre().incluirSemestre("teste", true);
+            new FormSemestre().alterarSemestre(2, "teste teste", true);
+            new FormSemestre().excluirSemestre(2);
+
+            ICollection<Semestre> semestres = new FormSemestre().listarSemestre();
+
+            foreach (Semestre semestre in semestres)
+            {
+                System.Console.WriteLine(semestre.semestreId + " - " + semestre.nome);
+            }
+            System.Console.ReadKey();
         }
     }
 }
