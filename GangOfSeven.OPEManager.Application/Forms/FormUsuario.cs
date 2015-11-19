@@ -10,67 +10,19 @@ namespace GangOfSeven.OPEManager.Application.Forms
 {
     public class FormUsuario
     {
-        public void incluirUsuario(int ra, String nome, String email, String senha, int tipoPerfil, Boolean status)
+        public void incluirUsuario(Usuario usuario)
         {
-            if (tipoPerfil == 1)
+            if (usuario != null)
             {
-                var professor = new Professor
-                {
-                    RA = ra,
-                    nome = nome,
-                    email = email,
-                    senha = senha,
-                    perfil = Usuario.Perfil.Administrador,
-                    ativo = status
-                };
-
-                var professorRep = new ProfessorRep().Adicionar(professor);
-            }
-            else
-            {
-                var aluno = new Aluno
-                {
-                    RA = ra,
-                    nome = nome,
-                    email = email,
-                    senha = senha,
-                    perfil = Usuario.Perfil.Usuario,
-                    ativo = status
-                };
-
-                var alunoRep = new AlunoRep().Adicionar(aluno);
+                new UsuarioRep().Adicionar(usuario);
             }
         }
 
-        public void alterarUsuario(int ra, String nome, String email, String senha, int tipoPerfil, Boolean status)
+        public void alterarUsuario(Usuario usuario)
         {
-            if (tipoPerfil == 1)
+            if (usuario != null)
             {
-                var professor = new Professor
-                {
-                    RA = ra,
-                    nome = nome,
-                    email = email,
-                    senha = senha,
-                    perfil = Usuario.Perfil.Administrador,
-                    ativo = status
-                };
-
-                var professorRep = new ProfessorRep().Atualizar(professor);
-            }
-            else
-            {
-                var aluno = new Aluno
-                {
-                    RA = ra,
-                    nome = nome,
-                    email = email,
-                    senha = senha,
-                    perfil = Usuario.Perfil.Usuario,
-                    ativo = status
-                };
-
-                var alunoRep = new AlunoRep().Atualizar(aluno);
+                new UsuarioRep().Atualizar(usuario);
             }
         }
 

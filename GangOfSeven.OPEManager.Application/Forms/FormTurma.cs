@@ -10,27 +10,20 @@ namespace GangOfSeven.OPEManager.Application.Forms
 {
     public class FormTurma
     {
-        public void incluirTurma(String nome, Boolean status)
+        public void incluirTurma(Turma turma)
         {
-            var turma = new Turma
+            if (turma != null)
             {
-                nome = nome,
-                ativo = status
-            };
-
-            new TurmaRep().Adicionar(turma);
+                new TurmaRep().Adicionar(turma);
+            }
         }
 
-        public void alterarTurma(int id, String nome, Boolean status)
+        public void alterarTurma(Turma turma)
         {
-            var turma = new Turma
+            if (turma != null)
             {
-                turmaId = id,
-                nome = nome,
-                ativo = status
-            };
-
-            new TurmaRep().Atualizar(turma);
+                new TurmaRep().Atualizar(turma);
+            }
         }
 
         public void excluirTurma(int id)

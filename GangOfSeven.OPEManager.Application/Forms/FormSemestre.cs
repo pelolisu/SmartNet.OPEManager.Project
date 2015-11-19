@@ -10,27 +10,20 @@ namespace GangOfSeven.OPEManager.Application.Forms
 {
     public class FormSemestre
     {
-        public void incluirSemestre(String nome, Boolean status)
+        public void incluirSemestre(Semestre semestre)
         {
-            var semestre = new Semestre
+            if (semestre != null)
             {
-                nome = nome,
-                ativo = status
-            };
-
-            new SemestreRep().Adicionar(semestre);
+                new SemestreRep().Adicionar(semestre);
+            }
         }
 
-        public void alterarSemestre(int id, String nome, Boolean status)
+        public void alterarSemestre(Semestre semestre)
         {
-            var semestre = new Semestre
+            if (semestre != null)
             {
-                semestreId = id,
-                nome = nome,
-                ativo = status
-            };
-
-            new SemestreRep().Atualizar(semestre);
+                new SemestreRep().Atualizar(semestre);
+            }
         }
 
         public void excluirSemestre(int id)
