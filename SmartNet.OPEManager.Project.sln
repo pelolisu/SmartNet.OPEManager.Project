@@ -17,7 +17,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Apresentação", "1 - A
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Aplicação", "2 - Aplicação", "{E851D69D-F5AF-4798-8194-243A6DF6ED33}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LayoutGestaoOPE", "SmartNet.OPEManager.Presentation\LayoutGestaoOPE.csproj", "{6C0520A3-5166-4E72-9601-3C67464BE067}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartNet.OPEManager.Presentation", "SmartNet.OPEManager.Presentation\SmartNet.OPEManager.Presentation.csproj", "{6C0520A3-5166-4E72-9601-3C67464BE067}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GangOfSeven.OPEManager.Application", "GangOfSeven.OPEManager.Application\GangOfSeven.OPEManager.Application.csproj", "{3C282C40-ACA4-461A-8153-CF8DBAD254B1}"
 EndProject
