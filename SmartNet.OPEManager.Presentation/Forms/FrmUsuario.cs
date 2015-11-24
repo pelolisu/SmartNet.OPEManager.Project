@@ -125,9 +125,7 @@ namespace LayoutGestaoOPE.Forms
             usuario.email = txtEmail.Text;
             usuario.senha = txtSenha.Text;
             usuario.ativo = chkAtivo.Checked;
-
-            //usuario.P
-
+            
             //usuario.perfil = 1;
 
             if (tipoAcao == (int)Acao.incluir)
