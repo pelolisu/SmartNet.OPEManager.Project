@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\FormAgendamento.cs" />
     <Compile Include="Forms\FormLogin.cs" />
     <Compile Include="Forms\FormSemestre.cs" />
     <Compile Include="Forms\FormTurma.cs" />
