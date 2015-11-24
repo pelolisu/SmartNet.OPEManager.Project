@@ -10,7 +10,7 @@ namespace ConsoleApp_2
         static void Main(string[] args)
         {
             // From login
-            System.Console.WriteLine(new FormLogin().fazerLogin(1410403, "123456"));
+            System.Console.WriteLine(new FormLogin().fazerLogin(1410403));
             System.Console.ReadKey();
 
             // Form Usuario            

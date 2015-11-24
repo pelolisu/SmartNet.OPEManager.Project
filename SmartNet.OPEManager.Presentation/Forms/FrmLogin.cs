@@ -1,4 +1,5 @@
 ﻿using GangOfSeven.OPEManager.Application.Forms;
+using SmartNet.OPEManager.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,7 +31,6 @@ namespace LayoutGestaoOPE.Forms
             {
 
 
-
             } catch (Exception ex)
             {
                 MessageBox.Show("Houve erro: " + ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -38,9 +38,9 @@ namespace LayoutGestaoOPE.Forms
 
             //Verificar se txtUsuario é numero;
             FormLogin loginDao = new FormLogin();
-            String retorno = loginDao.fazerLogin(int.Parse(txtUsuario.Text), txtSenha.Text);
-
-            if (retorno.Equals("OK"))
+            Usuario usuario = loginDao.fazerLogin(int.Parse(txtUsuario.Text));
+            
+            if (usuario != null)
             {
                 FrmMenu frmMenu = new FrmMenu();
                 this.Hide();
