@@ -30,7 +30,7 @@ namespace GangOfSeven.OPEManager.Application.Forms
         {
             var usuario = new UsuarioRep().BuscarPorId(ra);
 
-            usuario.visualizacao = false;
+            usuario.ativo = false;
 
             new UsuarioRep().Atualizar(usuario);
         }
