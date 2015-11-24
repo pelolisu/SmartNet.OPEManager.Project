@@ -10,31 +10,13 @@ namespace GangOfSeven.OPEManager.Application.Forms
 {
     public class FormLogin
     {
-        public String fazerLogin(int ra, String senha)
+        public Usuario fazerLogin(int ra)
         {
-            var usuarioRep = new UsuarioRep().BuscarPorId(ra);
+            Usuario usuario;
 
-            if (usuarioRep.RA.ToString().Equals(ra.ToString()) && usuarioRep.senha.Equals(senha))
-            {
-                if (usuarioRep.ativo == true)
-                {
-                    return "OK";
-                } else
-                {
-                    return "BLOQUEADO";
-                }
-            }
-            else
-            {
-                return "NOK";
-            }
-        }
+            usuario = new UsuarioRep().BuscarPorId(ra);
 
-        public String retornaPerfil(int ra)
-        {
-            var usuarioRep = new UsuarioRep().BuscarPorId(ra);
-
-            return usuarioRep.perfil.ToString();
+            return usuario;
         }
     }
 }
