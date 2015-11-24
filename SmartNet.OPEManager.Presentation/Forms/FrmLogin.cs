@@ -24,6 +24,7 @@ namespace LayoutGestaoOPE.Forms
 
         private void btnUsuario_Click(object sender, EventArgs e)
         {
+
             if(txtUsuario.Text == "Senha" && txtSenha.Text == "Senha")
             {
                 FrmMenu frmMenu = new FrmMenu();
