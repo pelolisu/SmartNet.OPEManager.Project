@@ -183,6 +183,16 @@
   <ItemGroup>
     <Content Include="favicon.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GangOfSeven.OPEManager.Application\GangOfSeven.OPEManager.Application.csproj">
+      <Project>{3c282c40-aca4-461a-8153-cf8dbad254b1}</Project>
+      <Name>GangOfSeven.OPEManager.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartNet.OPEManager.Domain\SmartNet.OPEManager.Domain.csproj">
+      <Project>{1c6489f4-fa6f-4791-933a-f16cacf5da16}</Project>
+      <Name>SmartNet.OPEManager.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
