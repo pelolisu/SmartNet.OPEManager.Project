@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GangOfSeven.OPEManager.Application.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,12 +26,27 @@ namespace LayoutGestaoOPE.Forms
         private void btnUsuario_Click(object sender, EventArgs e)
         {
 
-            if(txtUsuario.Text == "Senha" && txtSenha.Text == "Senha")
+            try
+            {
+
+
+
+            } catch (Exception ex)
+            {
+                MessageBox.Show("Houve erro: " + ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            //Verificar se txtUsuario é numero;
+            FormLogin loginDao = new FormLogin();
+            String retorno = loginDao.fazerLogin(int.Parse(txtUsuario.Text), txtSenha.Text);
+
+            if (retorno.Equals("OK"))
             {
                 FrmMenu frmMenu = new FrmMenu();
                 this.Hide();
                 frmMenu.Show();
             }
+
         }
     }
 }

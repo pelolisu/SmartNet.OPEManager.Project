@@ -27,7 +27,10 @@ namespace SmartNet.OPEManager.Data.EntityConfig
             Property(o => o.ativo)
               .IsRequired();
 
-            
+            Property(o => o.visualizacao)
+              .IsRequired();
+
+
         }
     }
 }

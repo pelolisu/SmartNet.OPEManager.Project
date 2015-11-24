@@ -14,6 +14,8 @@ namespace SmartNet.OPEManager.Domain.Entities
         public Perfil perfil { get; set; }
         public bool ativo { get; set; }
         public virtual ICollection<Agendamento> agendamentos { get; set; }
+        public bool visualizacao { get; set; }
+
 
     }
 }
