@@ -100,6 +100,7 @@
             this.dgvUsuario.Name = "dgvUsuario";
             this.dgvUsuario.Size = new System.Drawing.Size(335, 383);
             this.dgvUsuario.TabIndex = 2;
+            this.dgvUsuario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuario_CellContentClick);
             // 
             // gbxPesquisa
             // 

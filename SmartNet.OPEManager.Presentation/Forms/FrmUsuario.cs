@@ -34,7 +34,10 @@ namespace LayoutGestaoOPE.Forms
             rbnProfesssor.Checked = true;
             tipoAcao = (int) Acao.nenhum;
             travarCampos(tipoAcao);
-            criarCamposDVG();
+
+            ClsUtil clsUtil = new ClsUtil();
+            clsUtil.criarGrid(dgvUsuario);
+
             apresentarUsuarios();
         }
         
@@ -78,6 +81,7 @@ namespace LayoutGestaoOPE.Forms
                 usuarioDao.excluirUsuario(RA);
             }
 
+            apresentarUsuarios();
             tipoAcao = (int)Acao.nenhum;
             travarCampos(tipoAcao);
         }
@@ -141,54 +145,12 @@ namespace LayoutGestaoOPE.Forms
                 usuarioDao.alterarUsuario(usuario);
                 MessageBox.Show("Usuario alterado com sucesso.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            
+
+            apresentarUsuarios();
             tipoAcao = (int)Acao.nenhum;
             travarCampos(tipoAcao);
         }
-
-        private void criarCamposDVG()
-        {
-            dgvUsuario.Columns.Clear();
-            dgvUsuario.ColumnCount = 2;
-            dgvUsuario.CurrentCell = null;
-
-            var _columnHeader = dgvUsuario.ColumnHeadersDefaultCellStyle;
-            _columnHeader.BackColor = Color.Navy;
-            _columnHeader.ForeColor = Color.White;
-            _columnHeader.Font = new Font("Garamond", 12, FontStyle.Bold);
-
-            dgvUsuario.Columns[0].HeaderText = "Codigo";
-            dgvUsuario.Columns[0].Name = "CodigoMensalista";
-            dgvUsuario.Columns[0].Width = 218;
-            dgvUsuario.Columns[0].DefaultCellStyle.Font = new Font(dgvUsuario.DefaultCellStyle.Font, FontStyle.Regular);
-            dgvUsuario.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dgvUsuario.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dgvUsuario.Columns[0].DividerWidth = 1;
-            dgvUsuario.Columns[0].SortMode = DataGridViewColumnSortMode.NotSortable;
-            dgvUsuario.Columns[0].Visible = false;
-
-            dgvUsuario.Columns[1].HeaderText = "Nome";
-            dgvUsuario.Columns[1].Name = "NomeMensalista";
-            dgvUsuario.Columns[1].Width = 330;
-            dgvUsuario.Columns[1].DefaultCellStyle.Font = new Font(dgvUsuario.DefaultCellStyle.Font, FontStyle.Regular);
-            dgvUsuario.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dgvUsuario.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dgvUsuario.Columns[1].DividerWidth = 1;
-            dgvUsuario.Columns[1].SortMode = DataGridViewColumnSortMode.NotSortable;
-
-            dgvUsuario.GridColor = Color.Black;
-            dgvUsuario.AllowUserToAddRows = false;
-            dgvUsuario.RowHeadersVisible = false;
-            dgvUsuario.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvUsuario.ReadOnly = true;
-            dgvUsuario.AllowUserToResizeColumns = false;
-            dgvUsuario.AllowUserToResizeRows = false;
-            dgvUsuario.CellBorderStyle = DataGridViewCellBorderStyle.RaisedHorizontal;
-            dgvUsuario.DefaultCellStyle.SelectionForeColor = Color.Black;
-            dgvUsuario.DefaultCellStyle.SelectionBackColor = Color.Beige;
-            //dgvMensalista.Enabled = false;
-        }
-
+        
         private void apresentarUsuarios()
         {
             dgvUsuario.Rows.Clear();
@@ -203,6 +165,25 @@ namespace LayoutGestaoOPE.Forms
             
         }
 
+        private void dgvUsuario_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            Usuario usuario = new Usuario();
+            DataGridViewRow linhaUsuario = dgvUsuario.Rows[e.RowIndex];
+            int codigo = int.Parse(linhaUsuario.Cells["Codigo"].Value.ToString());
+
+            FormUsuario usuarioDao = new FormUsuario();
+            usuario = usuarioDao.buscaUsuario(codigo);
+
+            txtRA.Text = usuario.RA.ToString();
+            txtNome.Text = usuario.nome.ToString();
+            txtEmail.Text = usuario.email.ToString();
+            txtSenha.Text = usuario.senha.ToString();
+            
+            tipoAcao = (int)Acao.nenhum;
+            travarCampos(tipoAcao);
+
+        }
 
     }
 }

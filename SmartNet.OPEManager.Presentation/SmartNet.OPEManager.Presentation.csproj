@@ -70,6 +70,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\ClsUtil.cs" />
     <Compile Include="Forms\FrmAgendamento.cs">
       <SubType>Form</SubType>
     </Compile>

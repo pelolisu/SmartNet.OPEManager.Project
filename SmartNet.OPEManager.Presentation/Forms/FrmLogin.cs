@@ -27,25 +27,37 @@ namespace LayoutGestaoOPE.Forms
         private void btnUsuario_Click(object sender, EventArgs e)
         {
 
-
-
             try
             {
-                FormLogin loginDao = new FormLogin();
-                Usuario usuario = loginDao.fazerLogin(int.Parse(txtUsuario.Text));
-                
-                if (usuario != null)
+                if (ClsUtil.IsNumeric(txtUsuario.Text))
                 {
-                    FrmMenu frmMenu = new FrmMenu();
-                    this.Hide();
-                    frmMenu.Show();
+                    FormLogin loginDao = new FormLogin();
+                    Usuario usuario = loginDao.fazerLogin(int.Parse(txtUsuario.Text));
+
+                    if (usuario != null)
+                    {
+                        FrmMenu frmMenu = new FrmMenu();
+                        this.Hide();
+                        frmMenu.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Usuario ou senha incorreto.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
-                
-            } catch (Exception ex)
+                else
+                {
+                    MessageBox.Show("RA é um campo numerico.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+
+
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show("Houve erro: " + ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
         }
     }
 }
