@@ -27,26 +27,25 @@ namespace LayoutGestaoOPE.Forms
         private void btnUsuario_Click(object sender, EventArgs e)
         {
 
+
+
             try
             {
-
-
+                FormLogin loginDao = new FormLogin();
+                Usuario usuario = loginDao.fazerLogin(int.Parse(txtUsuario.Text));
+                
+                if (usuario != null)
+                {
+                    FrmMenu frmMenu = new FrmMenu();
+                    this.Hide();
+                    frmMenu.Show();
+                }
+                
             } catch (Exception ex)
             {
                 MessageBox.Show("Houve erro: " + ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            //Verificar se txtUsuario é numero;
-            FormLogin loginDao = new FormLogin();
-            Usuario usuario = loginDao.fazerLogin(int.Parse(txtUsuario.Text));
             
-            if (usuario != null)
-            {
-                FrmMenu frmMenu = new FrmMenu();
-                this.Hide();
-                frmMenu.Show();
-            }
-
         }
     }
 }

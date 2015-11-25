@@ -34,6 +34,8 @@ namespace LayoutGestaoOPE.Forms
             rbnProfesssor.Checked = true;
             tipoAcao = (int) Acao.nenhum;
             travarCampos(tipoAcao);
+            criarCamposDVG();
+            apresentarUsuarios();
         }
         
         private void travarCampos(int tipoAcao)
@@ -143,5 +145,64 @@ namespace LayoutGestaoOPE.Forms
             tipoAcao = (int)Acao.nenhum;
             travarCampos(tipoAcao);
         }
+
+        private void criarCamposDVG()
+        {
+            dgvUsuario.Columns.Clear();
+            dgvUsuario.ColumnCount = 2;
+            dgvUsuario.CurrentCell = null;
+
+            var _columnHeader = dgvUsuario.ColumnHeadersDefaultCellStyle;
+            _columnHeader.BackColor = Color.Navy;
+            _columnHeader.ForeColor = Color.White;
+            _columnHeader.Font = new Font("Garamond", 12, FontStyle.Bold);
+
+            dgvUsuario.Columns[0].HeaderText = "Codigo";
+            dgvUsuario.Columns[0].Name = "CodigoMensalista";
+            dgvUsuario.Columns[0].Width = 218;
+            dgvUsuario.Columns[0].DefaultCellStyle.Font = new Font(dgvUsuario.DefaultCellStyle.Font, FontStyle.Regular);
+            dgvUsuario.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dgvUsuario.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dgvUsuario.Columns[0].DividerWidth = 1;
+            dgvUsuario.Columns[0].SortMode = DataGridViewColumnSortMode.NotSortable;
+            dgvUsuario.Columns[0].Visible = false;
+
+            dgvUsuario.Columns[1].HeaderText = "Nome";
+            dgvUsuario.Columns[1].Name = "NomeMensalista";
+            dgvUsuario.Columns[1].Width = 330;
+            dgvUsuario.Columns[1].DefaultCellStyle.Font = new Font(dgvUsuario.DefaultCellStyle.Font, FontStyle.Regular);
+            dgvUsuario.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dgvUsuario.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dgvUsuario.Columns[1].DividerWidth = 1;
+            dgvUsuario.Columns[1].SortMode = DataGridViewColumnSortMode.NotSortable;
+
+            dgvUsuario.GridColor = Color.Black;
+            dgvUsuario.AllowUserToAddRows = false;
+            dgvUsuario.RowHeadersVisible = false;
+            dgvUsuario.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvUsuario.ReadOnly = true;
+            dgvUsuario.AllowUserToResizeColumns = false;
+            dgvUsuario.AllowUserToResizeRows = false;
+            dgvUsuario.CellBorderStyle = DataGridViewCellBorderStyle.RaisedHorizontal;
+            dgvUsuario.DefaultCellStyle.SelectionForeColor = Color.Black;
+            dgvUsuario.DefaultCellStyle.SelectionBackColor = Color.Beige;
+            //dgvMensalista.Enabled = false;
+        }
+
+        private void apresentarUsuarios()
+        {
+            dgvUsuario.Rows.Clear();
+
+            FormUsuario usuarioDao = new FormUsuario();
+            ICollection<Usuario> usuarios = usuarioDao.listarLogin();
+
+            foreach(Usuario usuario in usuarios)
+            {
+                dgvUsuario.Rows.Add(usuario.RA, usuario.nome);
+            }
+            
+        }
+
+
     }
 }

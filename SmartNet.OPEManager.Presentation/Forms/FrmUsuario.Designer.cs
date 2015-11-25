@@ -32,7 +32,7 @@
             this.pnlCabecalho = new System.Windows.Forms.Panel();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.pnlIcone = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvUsuario = new System.Windows.Forms.DataGridView();
             this.gbxPesquisa = new System.Windows.Forms.GroupBox();
             this.btnUsuario = new System.Windows.Forms.Button();
             this.txtPesquisaEmail = new System.Windows.Forms.TextBox();
@@ -58,7 +58,7 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.pnlCabecalho.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuario)).BeginInit();
             this.gbxPesquisa.SuspendLayout();
             this.gbxCadastro.SuspendLayout();
             this.grbTipoPerfil.SuspendLayout();
@@ -93,13 +93,13 @@
             this.pnlIcone.Size = new System.Drawing.Size(177, 100);
             this.pnlIcone.TabIndex = 0;
             // 
-            // dataGridView1
+            // dgvUsuario
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 259);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(335, 383);
-            this.dataGridView1.TabIndex = 2;
+            this.dgvUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUsuario.Location = new System.Drawing.Point(0, 259);
+            this.dgvUsuario.Name = "dgvUsuario";
+            this.dgvUsuario.Size = new System.Drawing.Size(335, 383);
+            this.dgvUsuario.TabIndex = 2;
             // 
             // gbxPesquisa
             // 
@@ -397,7 +397,7 @@
             this.Controls.Add(this.btnIncluir);
             this.Controls.Add(this.gbxCadastro);
             this.Controls.Add(this.gbxPesquisa);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvUsuario);
             this.Controls.Add(this.pnlCabecalho);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -407,7 +407,7 @@
             this.Load += new System.EventHandler(this.FrmUsuario_Load);
             this.pnlCabecalho.ResumeLayout(false);
             this.pnlCabecalho.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuario)).EndInit();
             this.gbxPesquisa.ResumeLayout(false);
             this.gbxPesquisa.PerformLayout();
             this.gbxCadastro.ResumeLayout(false);
@@ -423,7 +423,7 @@
         private System.Windows.Forms.Panel pnlCabecalho;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Panel pnlIcone;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvUsuario;
         private System.Windows.Forms.GroupBox gbxPesquisa;
         private System.Windows.Forms.TextBox txtPesquisaEmail;
         private System.Windows.Forms.Label lblPesquisaEmail;
