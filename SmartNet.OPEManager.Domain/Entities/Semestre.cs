@@ -2,7 +2,7 @@
 
 namespace SmartNet.OPEManager.Domain.Entities
 {
-    public class Semestre
+    public class Semestre : Base.Base
     {
         public int semestreId { get; set; }
         public string nome { get; set; }

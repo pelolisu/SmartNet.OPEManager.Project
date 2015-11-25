@@ -2,7 +2,7 @@
 
 namespace SmartNet.OPEManager.Domain.Entities
 {
-    public class Projeto
+    public class Projeto : Base.Base
     {
         public int projetoId { get; set; }
         public string titulo { get; set; }
@@ -14,7 +14,7 @@ namespace SmartNet.OPEManager.Domain.Entities
         public virtual Grupo grupo { get; set; }
         public virtual Curso curso { get; set; }
         public virtual ICollection<Fase> fases { get; set; }
-        public bool ativo { get; set; }
+       
 
     }
 }

@@ -1,9 +1,10 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 
 namespace SmartNet.OPEManager.Domain.Entities
 {
-    public class Usuario
+    public class Usuario : Base.Base
     {
         public enum Perfil:int {Administrador = 1, Usuario = 2};
         public int RA { get; set; }
@@ -12,7 +13,6 @@ namespace SmartNet.OPEManager.Domain.Entities
         public string senha { get; set; }
         public DateTime dataCadastro { get; set; }
         public Perfil perfil { get; set; }
-        public bool ativo { get; set; }
         public virtual ICollection<Agendamento> agendamentos { get; set; }
         public bool visualizacao { get; set; }
 

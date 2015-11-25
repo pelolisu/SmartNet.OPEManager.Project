@@ -3,10 +3,11 @@ using System.Data.Entity;
 using System.Linq;
 using SmartNet.OPEManager.Data.Contexto;
 using SmartNet.OPEManager.Domain.Interfaces.Repositories.Base;
+using SmartNet.OPEManager.Domain.Entities.Base;
 
 namespace SmartNet.OPEManager.Data.Repositories.Base
 {
-    public class Crud<TEntity> : ICrud<TEntity> where TEntity : class
+    public class Crud<TEntity> : ICrud<TEntity> where TEntity : Domain.Entities.Base.Base
     {
 
         protected OPEModelContext Db;
@@ -29,11 +30,11 @@ namespace SmartNet.OPEManager.Data.Repositories.Base
             }
         }
 
-        public ICollection<TEntity> BuscarTodos()
+        public virtual ICollection<TEntity> BuscarTodos()
         {
             using (Db = new OPEModelContext())
             {
-                return Db.Set<TEntity>().ToList();
+                return Db.Set<TEntity>().Where(m => m.ativo).ToList();
             }
         }
 

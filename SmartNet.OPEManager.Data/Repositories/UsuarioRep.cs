@@ -1,5 +1,6 @@
 ﻿
 
+using System.Collections.Generic;
 using System.Linq;
 using SmartNet.OPEManager.Data.Contexto;
 using SmartNet.OPEManager.Data.Repositories.Base;
@@ -19,5 +20,17 @@ namespace SmartNet.OPEManager.Data.Repositories
 
             }
         }
+
+        //public override ICollection<Usuario> BuscarTodos()
+        //{
+        //    using (Db = new OPEModelContext())
+        //    {
+        //        var usuarios = Db.Usuarios.Where(m => m.ativo == true).ToList();
+        //        return usuarios;
+        //    }
+
+        //    //return base.BuscarTodos();
+        //}
+
     }
 }

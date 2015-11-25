@@ -15,6 +15,7 @@ namespace LayoutGestaoOPE.Forms
     public partial class FrmUsuario : Form
     {
         private int tipoAcao;
+        private int codigoUsuario = 0;
 
         public FrmUsuario()
         {
@@ -28,11 +29,11 @@ namespace LayoutGestaoOPE.Forms
             alterar,
             excluir
         }
-        
+
         private void FrmUsuario_Load(object sender, EventArgs e)
         {
             rbnProfesssor.Checked = true;
-            tipoAcao = (int) Acao.nenhum;
+            tipoAcao = (int)Acao.nenhum;
             travarCampos(tipoAcao);
 
             ClsUtil clsUtil = new ClsUtil();
@@ -40,10 +41,10 @@ namespace LayoutGestaoOPE.Forms
 
             apresentarUsuarios();
         }
-        
+
         private void travarCampos(int tipoAcao)
         {
-            txtRA.Enabled = (tipoAcao != (int) Acao.nenhum);
+            txtRA.Enabled = (tipoAcao == (int)Acao.incluir);
             txtNome.Enabled = (tipoAcao != (int)Acao.nenhum);
             txtEmail.Enabled = (tipoAcao != (int)Acao.nenhum);
             txtSenha.Enabled = (tipoAcao != (int)Acao.nenhum);
@@ -56,7 +57,6 @@ namespace LayoutGestaoOPE.Forms
             btnExcluir.Enabled = (tipoAcao != (int)Acao.incluir) && (txtNome.Text.Length > 0);
             btnIncluir.Enabled = (tipoAcao != (int)Acao.alterar);
             btnAlterar.Enabled = (tipoAcao != (int)Acao.incluir);
-
         }
 
         private void btnIncluir_Click(object sender, EventArgs e)
@@ -73,12 +73,19 @@ namespace LayoutGestaoOPE.Forms
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("Deseja excluir usuario?", this.Text, MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Deseja excluir usuario?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 int RA = int.Parse(txtRA.Text);
 
-                FormUsuario usuarioDao = new FormUsuario();
-                usuarioDao.excluirUsuario(RA);
+                try
+                {
+                    FormUsuario usuarioDao = new FormUsuario();
+                    usuarioDao.excluirUsuario(RA);
+                } catch(Exception ex)
+                {
+                    MessageBox.Show("Erro: " + ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                
             }
 
             apresentarUsuarios();
@@ -88,37 +95,38 @@ namespace LayoutGestaoOPE.Forms
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            atualizarCampos();
             tipoAcao = (int)Acao.nenhum;
             travarCampos(tipoAcao);
         }
 
         private Boolean consistir()
         {
-            if(txtRA.Text.Length == 0)
+            if (txtRA.Text.Length == 0)
             {
                 MessageBox.Show("Informe o RA.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return false;
             }
 
-            if(txtNome.Text.Length == 0)
+            if (txtNome.Text.Length == 0)
             {
                 MessageBox.Show("Informe o nome.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return false;
             }
 
-            if(txtSenha.Text.Length == 0)
+            if (txtSenha.Text.Length == 0)
             {
                 MessageBox.Show("Informe uma senha.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return false;
             }
-            
+
             return true;
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
 
-            if(consistir() == false)
+            if (consistir() == false)
             {
                 return;
             }
@@ -132,25 +140,41 @@ namespace LayoutGestaoOPE.Forms
             usuario.senha = txtSenha.Text;
             usuario.ativo = chkAtivo.Checked;
             
-            //usuario.perfil = 1;
-
-            if (tipoAcao == (int)Acao.incluir)
+            if (rbnProfesssor.Checked)
             {
-                usuarioDao.incluirUsuario(usuario);
-                MessageBox.Show("Usuario salvo com sucesso.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                usuario.perfil = Usuario.Perfil.Administrador;
+            }
+            else
+            {
+                usuario.perfil = Usuario.Perfil.Usuario;
             }
 
-            if (tipoAcao == (int)Acao.alterar)
+            try
             {
-                usuarioDao.alterarUsuario(usuario);
-                MessageBox.Show("Usuario alterado com sucesso.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                if (tipoAcao == (int)Acao.incluir)
+                {
+                    usuarioDao.incluirUsuario(usuario);
+                    MessageBox.Show("Usuario salvo com sucesso.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                if (tipoAcao == (int)Acao.alterar)
+                {
+                    usuarioDao.alterarUsuario(usuario);
+                    MessageBox.Show("Usuario alterado com sucesso.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+            } catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+            atualizarCampos();
             apresentarUsuarios();
             tipoAcao = (int)Acao.nenhum;
             travarCampos(tipoAcao);
         }
-        
+
         private void apresentarUsuarios()
         {
             dgvUsuario.Rows.Clear();
@@ -158,31 +182,44 @@ namespace LayoutGestaoOPE.Forms
             FormUsuario usuarioDao = new FormUsuario();
             ICollection<Usuario> usuarios = usuarioDao.listarLogin();
 
-            foreach(Usuario usuario in usuarios)
+            foreach (Usuario usuario in usuarios)
             {
                 dgvUsuario.Rows.Add(usuario.RA, usuario.nome);
             }
-            
+
         }
 
         private void dgvUsuario_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
-            Usuario usuario = new Usuario();
             DataGridViewRow linhaUsuario = dgvUsuario.Rows[e.RowIndex];
-            int codigo = int.Parse(linhaUsuario.Cells["Codigo"].Value.ToString());
+            codigoUsuario = int.Parse(linhaUsuario.Cells["Codigo"].Value.ToString());
+            atualizarCampos();
+        }
 
+        private void atualizarCampos()
+        {
+            Usuario usuario = new Usuario();
             FormUsuario usuarioDao = new FormUsuario();
-            usuario = usuarioDao.buscaUsuario(codigo);
+            usuario = usuarioDao.buscaUsuario(codigoUsuario);
 
             txtRA.Text = usuario.RA.ToString();
             txtNome.Text = usuario.nome.ToString();
             txtEmail.Text = usuario.email.ToString();
             txtSenha.Text = usuario.senha.ToString();
-            
+            chkAtivo.Checked = usuario.visualizacao;
+
+            if (Usuario.Perfil.Administrador == usuario.perfil)
+            {
+                rbnProfesssor.Checked = true;
+            }
+
+            if (Usuario.Perfil.Usuario == usuario.perfil)
+            {
+                rbnAluno.Checked = true;
+            }
+
             tipoAcao = (int)Acao.nenhum;
             travarCampos(tipoAcao);
-
         }
 
     }

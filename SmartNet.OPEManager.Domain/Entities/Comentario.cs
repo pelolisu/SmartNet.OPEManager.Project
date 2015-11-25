@@ -3,7 +3,7 @@ using System;
 
 namespace SmartNet.OPEManager.Domain.Entities
 {
-    public class Comentario
+    public class Comentario : Base.Base
     {
         public int comentarioId { get; set; }
         public string comentario { get; set; }

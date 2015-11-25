@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace SmartNet.OPEManager.Domain.Entities
 {
-   public class Agendamento
+   public class Agendamento : Base.Base
     {
         public int agendamentoId { get; set; }
         public DateTime data { get; set; }
