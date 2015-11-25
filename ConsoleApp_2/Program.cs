@@ -10,18 +10,20 @@ namespace ConsoleApp_2
         static void Main(string[] args)
         {
             // From login
-            System.Console.WriteLine(new FormLogin().fazerLogin(1410403));
+            Usuario usuarioLogin = new FormLogin().fazerLogin(14104);
+            System.Console.WriteLine(usuarioLogin.nome);
             System.Console.ReadKey();
 
             // Form Usuario            
             var incluiUsuario = new Usuario
             {
-                RA = 14104,
+                RA = 1410402,
                 nome = "Teste",
                 email = "teste@teste.com",
                 senha = "123456",
                 perfil = Usuario.Perfil.Usuario,
-                ativo = true
+                ativo = true,
+                visualizacao = true
             };
             new FormUsuario().incluirUsuario(incluiUsuario);
 
@@ -32,11 +34,12 @@ namespace ConsoleApp_2
                 email = "teste@teste.com",
                 senha = "123456",
                 perfil = Usuario.Perfil.Usuario,
-                ativo = true
+                ativo = true,
+                visualizacao = true
             };
             new FormUsuario().alterarUsuario(alteraUsuario);
 
-            new FormUsuario().excluirUsuario(1410402);
+            new FormUsuario().excluirUsuario(14104);
 
             ICollection<Usuario> usuarios = new FormUsuario().listarLogin();
             foreach (Usuario usuario in usuarios)
