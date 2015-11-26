@@ -56,11 +56,22 @@ namespace LayoutGestaoOPE.Forms
             btnCancelar.Enabled = (tipoAcao != (int)Acao.nenhum);
             btnExcluir.Enabled = (tipoAcao != (int)Acao.incluir) && (txtNome.Text.Length > 0);
             btnIncluir.Enabled = (tipoAcao != (int)Acao.alterar);
-            btnAlterar.Enabled = (tipoAcao != (int)Acao.incluir);
+            btnAlterar.Enabled = (tipoAcao != (int)Acao.incluir && codigoUsuario != 0);
+        }
+
+        private void limparCampos()
+        {
+            txtRA.Clear();
+            txtNome.Clear();
+            txtEmail.Clear();
+            txtSenha.Clear();
+            chkAtivo.Checked = false;
+            rbnProfesssor.Checked = true;
         }
 
         private void btnIncluir_Click(object sender, EventArgs e)
         {
+            limparCampos();
             tipoAcao = (int)Acao.incluir;
             travarCampos(tipoAcao);
         }
@@ -81,6 +92,7 @@ namespace LayoutGestaoOPE.Forms
                 {
                     FormUsuario usuarioDao = new FormUsuario();
                     usuarioDao.excluirUsuario(RA);
+                    limparCampos();
                 } catch(Exception ex)
                 {
                     MessageBox.Show("Erro: " + ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -198,29 +210,47 @@ namespace LayoutGestaoOPE.Forms
 
         private void atualizarCampos()
         {
-            Usuario usuario = new Usuario();
-            FormUsuario usuarioDao = new FormUsuario();
-            usuario = usuarioDao.buscaUsuario(codigoUsuario);
-
-            txtRA.Text = usuario.RA.ToString();
-            txtNome.Text = usuario.nome.ToString();
-            txtEmail.Text = usuario.email.ToString();
-            txtSenha.Text = usuario.senha.ToString();
-            chkAtivo.Checked = usuario.visualizacao;
-
-            if (Usuario.Perfil.Administrador == usuario.perfil)
+            try
             {
-                rbnProfesssor.Checked = true;
-            }
 
-            if (Usuario.Perfil.Usuario == usuario.perfil)
+                Usuario usuario = new Usuario();
+                FormUsuario usuarioDao = new FormUsuario();
+
+                if(codigoUsuario != 0)
+                {
+                    usuario = usuarioDao.buscaUsuario(codigoUsuario);
+
+                    txtRA.Text = usuario.RA.ToString();
+                    txtNome.Text = usuario.nome.ToString();
+                    txtEmail.Text = usuario.email.ToString();
+                    txtSenha.Text = usuario.senha.ToString();
+                    chkAtivo.Checked = usuario.visualizacao;
+
+                    if (Usuario.Perfil.Administrador == usuario.perfil)
+                    {
+                        rbnProfesssor.Checked = true;
+                    }
+
+                    if (Usuario.Perfil.Usuario == usuario.perfil)
+                    {
+                        rbnAluno.Checked = true;
+                    }
+
+                }
+                
+                tipoAcao = (int)Acao.nenhum;
+                travarCampos(tipoAcao);
+
+            } catch(Exception ex)
             {
-                rbnAluno.Checked = true;
+                MessageBox.Show("Erro: " + ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            tipoAcao = (int)Acao.nenhum;
-            travarCampos(tipoAcao);
         }
 
+        private void btnUsuario_Click(object sender, EventArgs e)
+        {
+            FormUsuario usuarioDao = new FormUsuario();
+            
+        }
     }
 }

@@ -131,6 +131,7 @@
             this.btnUsuario.Size = new System.Drawing.Size(38, 33);
             this.btnUsuario.TabIndex = 5;
             this.btnUsuario.UseVisualStyleBackColor = false;
+            this.btnUsuario.Click += new System.EventHandler(this.btnUsuario_Click);
             // 
             // txtPesquisaEmail
             // 
