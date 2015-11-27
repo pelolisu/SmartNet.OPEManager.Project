@@ -206,6 +206,8 @@ namespace LayoutGestaoOPE.Forms
             DataGridViewRow linhaUsuario = dgvUsuario.Rows[e.RowIndex];
             codigoUsuario = int.Parse(linhaUsuario.Cells["Codigo"].Value.ToString());
             atualizarCampos();
+            tipoAcao = (int)Acao.nenhum;
+            travarCampos(tipoAcao);
         }
 
         private void atualizarCampos()

@@ -99,7 +99,7 @@
             this.dgvUsuario.Location = new System.Drawing.Point(0, 259);
             this.dgvUsuario.Name = "dgvUsuario";
             this.dgvUsuario.Size = new System.Drawing.Size(335, 383);
-            this.dgvUsuario.TabIndex = 2;
+            this.dgvUsuario.TabIndex = 7;
             this.dgvUsuario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuario_CellContentClick);
             // 
             // gbxPesquisa
@@ -113,7 +113,7 @@
             this.gbxPesquisa.Location = new System.Drawing.Point(0, 109);
             this.gbxPesquisa.Name = "gbxPesquisa";
             this.gbxPesquisa.Size = new System.Drawing.Size(335, 144);
-            this.gbxPesquisa.TabIndex = 4;
+            this.gbxPesquisa.TabIndex = 6;
             this.gbxPesquisa.TabStop = false;
             this.gbxPesquisa.Text = "Pesquisa";
             // 
@@ -129,7 +129,7 @@
             this.btnUsuario.Location = new System.Drawing.Point(291, 103);
             this.btnUsuario.Name = "btnUsuario";
             this.btnUsuario.Size = new System.Drawing.Size(38, 33);
-            this.btnUsuario.TabIndex = 5;
+            this.btnUsuario.TabIndex = 4;
             this.btnUsuario.UseVisualStyleBackColor = false;
             this.btnUsuario.Click += new System.EventHandler(this.btnUsuario_Click);
             // 
@@ -185,7 +185,7 @@
             this.gbxCadastro.Location = new System.Drawing.Point(341, 109);
             this.gbxCadastro.Name = "gbxCadastro";
             this.gbxCadastro.Size = new System.Drawing.Size(577, 458);
-            this.gbxCadastro.TabIndex = 5;
+            this.gbxCadastro.TabIndex = 0;
             this.gbxCadastro.TabStop = false;
             this.gbxCadastro.Text = "Cadastro";
             // 
@@ -196,7 +196,7 @@
             this.grbTipoPerfil.Location = new System.Drawing.Point(9, 207);
             this.grbTipoPerfil.Name = "grbTipoPerfil";
             this.grbTipoPerfil.Size = new System.Drawing.Size(215, 49);
-            this.grbTipoPerfil.TabIndex = 16;
+            this.grbTipoPerfil.TabIndex = 8;
             this.grbTipoPerfil.TabStop = false;
             this.grbTipoPerfil.Text = "Tipo Perfil";
             // 
@@ -206,7 +206,7 @@
             this.rbnProfesssor.Location = new System.Drawing.Point(6, 20);
             this.rbnProfesssor.Name = "rbnProfesssor";
             this.rbnProfesssor.Size = new System.Drawing.Size(77, 19);
-            this.rbnProfesssor.TabIndex = 14;
+            this.rbnProfesssor.TabIndex = 0;
             this.rbnProfesssor.TabStop = true;
             this.rbnProfesssor.Text = "Professor";
             this.rbnProfesssor.UseVisualStyleBackColor = true;
@@ -217,7 +217,7 @@
             this.rbnAluno.Location = new System.Drawing.Point(89, 20);
             this.rbnAluno.Name = "rbnAluno";
             this.rbnAluno.Size = new System.Drawing.Size(56, 19);
-            this.rbnAluno.TabIndex = 15;
+            this.rbnAluno.TabIndex = 1;
             this.rbnAluno.TabStop = true;
             this.rbnAluno.Text = "Aluno";
             this.rbnAluno.UseVisualStyleBackColor = true;
@@ -228,7 +228,7 @@
             this.chkAtivo.Location = new System.Drawing.Point(9, 272);
             this.chkAtivo.Name = "chkAtivo";
             this.chkAtivo.Size = new System.Drawing.Size(51, 19);
-            this.chkAtivo.TabIndex = 13;
+            this.chkAtivo.TabIndex = 9;
             this.chkAtivo.Text = "Ativo";
             this.chkAtivo.UseVisualStyleBackColor = true;
             // 
@@ -238,7 +238,7 @@
             this.txtRA.Location = new System.Drawing.Point(9, 35);
             this.txtRA.Name = "txtRA";
             this.txtRA.Size = new System.Drawing.Size(215, 21);
-            this.txtRA.TabIndex = 12;
+            this.txtRA.TabIndex = 1;
             // 
             // lblRA
             // 
@@ -247,7 +247,7 @@
             this.lblRA.Location = new System.Drawing.Point(8, 17);
             this.lblRA.Name = "lblRA";
             this.lblRA.Size = new System.Drawing.Size(23, 15);
-            this.lblRA.TabIndex = 11;
+            this.lblRA.TabIndex = 0;
             this.lblRA.Text = "RA";
             // 
             // txtSenha
@@ -257,7 +257,7 @@
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(556, 21);
-            this.txtSenha.TabIndex = 10;
+            this.txtSenha.TabIndex = 7;
             // 
             // lblSenha
             // 
@@ -266,7 +266,7 @@
             this.lblSenha.Location = new System.Drawing.Point(6, 149);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(43, 15);
-            this.lblSenha.TabIndex = 9;
+            this.lblSenha.TabIndex = 6;
             this.lblSenha.Text = "Senha";
             // 
             // txtEmail
@@ -275,7 +275,7 @@
             this.txtEmail.Location = new System.Drawing.Point(9, 123);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(556, 21);
-            this.txtEmail.TabIndex = 8;
+            this.txtEmail.TabIndex = 5;
             // 
             // lblEmail
             // 
@@ -284,7 +284,7 @@
             this.lblEmail.Location = new System.Drawing.Point(6, 105);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(43, 15);
-            this.lblEmail.TabIndex = 7;
+            this.lblEmail.TabIndex = 4;
             this.lblEmail.Text = "E-Mail";
             // 
             // txtNome
@@ -293,7 +293,7 @@
             this.txtNome.Location = new System.Drawing.Point(9, 77);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(556, 21);
-            this.txtNome.TabIndex = 6;
+            this.txtNome.TabIndex = 3;
             // 
             // lblNome
             // 
@@ -302,7 +302,7 @@
             this.lblNome.Location = new System.Drawing.Point(6, 59);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(41, 15);
-            this.lblNome.TabIndex = 6;
+            this.lblNome.TabIndex = 2;
             this.lblNome.Text = "Nome";
             // 
             // btnIncluir
@@ -316,7 +316,7 @@
             this.btnIncluir.Location = new System.Drawing.Point(341, 587);
             this.btnIncluir.Name = "btnIncluir";
             this.btnIncluir.Size = new System.Drawing.Size(109, 43);
-            this.btnIncluir.TabIndex = 6;
+            this.btnIncluir.TabIndex = 1;
             this.btnIncluir.Text = "Incluir";
             this.btnIncluir.UseVisualStyleBackColor = false;
             this.btnIncluir.Click += new System.EventHandler(this.btnIncluir_Click);
@@ -332,7 +332,7 @@
             this.btnAlterar.Location = new System.Drawing.Point(456, 587);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(109, 43);
-            this.btnAlterar.TabIndex = 7;
+            this.btnAlterar.TabIndex = 2;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = false;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
@@ -348,7 +348,7 @@
             this.btnExcluir.Location = new System.Drawing.Point(571, 587);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(109, 43);
-            this.btnExcluir.TabIndex = 8;
+            this.btnExcluir.TabIndex = 3;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = false;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
@@ -364,7 +364,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(686, 587);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(109, 43);
-            this.btnCancelar.TabIndex = 9;
+            this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -380,7 +380,7 @@
             this.btnSalvar.Location = new System.Drawing.Point(801, 587);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(109, 43);
-            this.btnSalvar.TabIndex = 10;
+            this.btnSalvar.TabIndex = 5;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);

@@ -32,6 +32,8 @@ namespace LayoutGestaoOPE.Forms
 
         private void travarCampos(int tipoAcao)
         {
+            txtNome.Enabled = (tipoAcao != (int)Acao.nenhum);
+
             btnSalvar.Enabled = (tipoAcao != (int)Acao.nenhum);
             btnCancelar.Enabled = (tipoAcao != (int)Acao.nenhum);
             btnExcluir.Enabled = (tipoAcao != (int)Acao.incluir) && (txtNome.Text.Length > 0);
@@ -96,7 +98,7 @@ namespace LayoutGestaoOPE.Forms
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            //atualizarCampos();
+            atualizarCampos();
             tipoAcao = (int)Acao.nenhum;
             travarCampos(tipoAcao);
         }
@@ -122,6 +124,7 @@ namespace LayoutGestaoOPE.Forms
             Turma turma = new Turma();
             FormTurma turmaDao = new FormTurma();
 
+            turma.turmaId = codigoTurma;
             turma.nome = txtNome.Text;
             turma.ativo = true;
 
@@ -145,6 +148,11 @@ namespace LayoutGestaoOPE.Forms
                 MessageBox.Show("Erro: " + ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+            atualizarCampos();
+            apresentarTurma();
+            tipoAcao = (int)Acao.nenhum;
+            travarCampos(tipoAcao);
+
         }
 
         private void apresentarTurma()
@@ -166,6 +174,8 @@ namespace LayoutGestaoOPE.Forms
             DataGridViewRow linhaTurma = dgvTurmas.Rows[e.RowIndex];
             codigoTurma = int.Parse(linhaTurma.Cells["Codigo"].Value.ToString());
             atualizarCampos();
+            tipoAcao = (int)Acao.nenhum;
+            travarCampos(tipoAcao);
         }
 
         private void atualizarCampos()
