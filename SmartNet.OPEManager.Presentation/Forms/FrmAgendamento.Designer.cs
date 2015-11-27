@@ -36,20 +36,20 @@
             this.btnUsuario = new System.Windows.Forms.Button();
             this.txtPesquisaNome = new System.Windows.Forms.TextBox();
             this.lblPesquisaNome = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvAgendamento = new System.Windows.Forms.DataGridView();
             this.gbxCadastro = new System.Windows.Forms.GroupBox();
+            this.txtDataHora = new System.Windows.Forms.DateTimePicker();
+            this.lblDataHora = new System.Windows.Forms.Label();
+            this.lblAssunto = new System.Windows.Forms.Label();
+            this.txtAssunto = new System.Windows.Forms.TextBox();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnIncluir = new System.Windows.Forms.Button();
-            this.txtAssunti = new System.Windows.Forms.TextBox();
-            this.lblAssunto = new System.Windows.Forms.Label();
-            this.lblDataHora = new System.Windows.Forms.Label();
-            this.dtpDataHora = new System.Windows.Forms.DateTimePicker();
             this.pnlCabecalho.SuspendLayout();
             this.gbxPesquisa.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAgendamento)).BeginInit();
             this.gbxCadastro.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,7 +61,7 @@
             this.pnlCabecalho.Location = new System.Drawing.Point(0, 0);
             this.pnlCabecalho.Name = "pnlCabecalho";
             this.pnlCabecalho.Size = new System.Drawing.Size(918, 109);
-            this.pnlCabecalho.TabIndex = 3;
+            this.pnlCabecalho.TabIndex = 8;
             // 
             // lblTitulo
             // 
@@ -70,7 +70,7 @@
             this.lblTitulo.Location = new System.Drawing.Point(186, 45);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(149, 25);
-            this.lblTitulo.TabIndex = 10;
+            this.lblTitulo.TabIndex = 1;
             this.lblTitulo.Text = "Gestão de OPE";
             // 
             // pnlIcone
@@ -107,7 +107,7 @@
             this.btnUsuario.Location = new System.Drawing.Point(291, 61);
             this.btnUsuario.Name = "btnUsuario";
             this.btnUsuario.Size = new System.Drawing.Size(38, 33);
-            this.btnUsuario.TabIndex = 5;
+            this.btnUsuario.TabIndex = 2;
             this.btnUsuario.UseVisualStyleBackColor = false;
             // 
             // txtPesquisaNome
@@ -128,27 +128,65 @@
             this.lblPesquisaNome.TabIndex = 0;
             this.lblPesquisaNome.Text = "Assunto";
             // 
-            // dataGridView1
+            // dgvAgendamento
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 220);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(335, 424);
-            this.dataGridView1.TabIndex = 7;
+            this.dgvAgendamento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAgendamento.Location = new System.Drawing.Point(0, 220);
+            this.dgvAgendamento.Name = "dgvAgendamento";
+            this.dgvAgendamento.Size = new System.Drawing.Size(335, 424);
+            this.dgvAgendamento.TabIndex = 7;
             // 
             // gbxCadastro
             // 
-            this.gbxCadastro.Controls.Add(this.dtpDataHora);
+            this.gbxCadastro.Controls.Add(this.txtDataHora);
             this.gbxCadastro.Controls.Add(this.lblDataHora);
             this.gbxCadastro.Controls.Add(this.lblAssunto);
-            this.gbxCadastro.Controls.Add(this.txtAssunti);
+            this.gbxCadastro.Controls.Add(this.txtAssunto);
             this.gbxCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbxCadastro.Location = new System.Drawing.Point(342, 109);
             this.gbxCadastro.Name = "gbxCadastro";
             this.gbxCadastro.Size = new System.Drawing.Size(576, 463);
-            this.gbxCadastro.TabIndex = 17;
+            this.gbxCadastro.TabIndex = 0;
             this.gbxCadastro.TabStop = false;
             this.gbxCadastro.Text = "Cadastro";
+            // 
+            // txtDataHora
+            // 
+            this.txtDataHora.CustomFormat = "dd/MM/yyyy HH:mm";
+            this.txtDataHora.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txtDataHora.Location = new System.Drawing.Point(12, 36);
+            this.txtDataHora.Name = "txtDataHora";
+            this.txtDataHora.Size = new System.Drawing.Size(174, 21);
+            this.txtDataHora.TabIndex = 1;
+            // 
+            // lblDataHora
+            // 
+            this.lblDataHora.AutoSize = true;
+            this.lblDataHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDataHora.Location = new System.Drawing.Point(9, 18);
+            this.lblDataHora.Name = "lblDataHora";
+            this.lblDataHora.Size = new System.Drawing.Size(63, 15);
+            this.lblDataHora.TabIndex = 0;
+            this.lblDataHora.Text = "Data Hora";
+            // 
+            // lblAssunto
+            // 
+            this.lblAssunto.AutoSize = true;
+            this.lblAssunto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAssunto.Location = new System.Drawing.Point(9, 63);
+            this.lblAssunto.Name = "lblAssunto";
+            this.lblAssunto.Size = new System.Drawing.Size(50, 15);
+            this.lblAssunto.TabIndex = 2;
+            this.lblAssunto.Text = "Assunto";
+            // 
+            // txtAssunto
+            // 
+            this.txtAssunto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAssunto.Location = new System.Drawing.Point(8, 81);
+            this.txtAssunto.Multiline = true;
+            this.txtAssunto.Name = "txtAssunto";
+            this.txtAssunto.Size = new System.Drawing.Size(556, 118);
+            this.txtAssunto.TabIndex = 3;
             // 
             // btnSalvar
             // 
@@ -161,9 +199,10 @@
             this.btnSalvar.Location = new System.Drawing.Point(805, 587);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(109, 43);
-            this.btnSalvar.TabIndex = 22;
+            this.btnSalvar.TabIndex = 5;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = false;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnCancelar
             // 
@@ -176,9 +215,10 @@
             this.btnCancelar.Location = new System.Drawing.Point(690, 587);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(109, 43);
-            this.btnCancelar.TabIndex = 21;
+            this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnExcluir
             // 
@@ -191,9 +231,10 @@
             this.btnExcluir.Location = new System.Drawing.Point(575, 587);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(109, 43);
-            this.btnExcluir.TabIndex = 20;
+            this.btnExcluir.TabIndex = 3;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = false;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnAlterar
             // 
@@ -206,9 +247,10 @@
             this.btnAlterar.Location = new System.Drawing.Point(460, 587);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(109, 43);
-            this.btnAlterar.TabIndex = 19;
+            this.btnAlterar.TabIndex = 2;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = false;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnIncluir
             // 
@@ -221,47 +263,10 @@
             this.btnIncluir.Location = new System.Drawing.Point(345, 587);
             this.btnIncluir.Name = "btnIncluir";
             this.btnIncluir.Size = new System.Drawing.Size(109, 43);
-            this.btnIncluir.TabIndex = 18;
+            this.btnIncluir.TabIndex = 1;
             this.btnIncluir.Text = "Incluir";
             this.btnIncluir.UseVisualStyleBackColor = false;
-            // 
-            // txtAssunti
-            // 
-            this.txtAssunti.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAssunti.Location = new System.Drawing.Point(8, 81);
-            this.txtAssunti.Multiline = true;
-            this.txtAssunti.Name = "txtAssunti";
-            this.txtAssunti.Size = new System.Drawing.Size(556, 118);
-            this.txtAssunti.TabIndex = 9;
-            // 
-            // lblAssunto
-            // 
-            this.lblAssunto.AutoSize = true;
-            this.lblAssunto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAssunto.Location = new System.Drawing.Point(9, 63);
-            this.lblAssunto.Name = "lblAssunto";
-            this.lblAssunto.Size = new System.Drawing.Size(50, 15);
-            this.lblAssunto.TabIndex = 10;
-            this.lblAssunto.Text = "Assunto";
-            // 
-            // lblDataHora
-            // 
-            this.lblDataHora.AutoSize = true;
-            this.lblDataHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDataHora.Location = new System.Drawing.Point(9, 18);
-            this.lblDataHora.Name = "lblDataHora";
-            this.lblDataHora.Size = new System.Drawing.Size(63, 15);
-            this.lblDataHora.TabIndex = 11;
-            this.lblDataHora.Text = "Data Hora";
-            // 
-            // dtpDataHora
-            // 
-            this.dtpDataHora.CustomFormat = "dd/MM/yyyy HH:mm";
-            this.dtpDataHora.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDataHora.Location = new System.Drawing.Point(12, 36);
-            this.dtpDataHora.Name = "dtpDataHora";
-            this.dtpDataHora.Size = new System.Drawing.Size(174, 21);
-            this.dtpDataHora.TabIndex = 12;
+            this.btnIncluir.Click += new System.EventHandler(this.btnIncluir_Click);
             // 
             // FrmAgendamento
             // 
@@ -276,7 +281,7 @@
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnIncluir);
             this.Controls.Add(this.gbxCadastro);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvAgendamento);
             this.Controls.Add(this.gbxPesquisa);
             this.Controls.Add(this.pnlCabecalho);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -284,11 +289,12 @@
             this.Name = "FrmAgendamento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAgendamento";
+            this.Load += new System.EventHandler(this.FrmAgendamento_Load);
             this.pnlCabecalho.ResumeLayout(false);
             this.pnlCabecalho.PerformLayout();
             this.gbxPesquisa.ResumeLayout(false);
             this.gbxPesquisa.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAgendamento)).EndInit();
             this.gbxCadastro.ResumeLayout(false);
             this.gbxCadastro.PerformLayout();
             this.ResumeLayout(false);
@@ -304,16 +310,16 @@
         private System.Windows.Forms.Button btnUsuario;
         private System.Windows.Forms.TextBox txtPesquisaNome;
         private System.Windows.Forms.Label lblPesquisaNome;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvAgendamento;
         private System.Windows.Forms.GroupBox gbxCadastro;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnIncluir;
-        private System.Windows.Forms.DateTimePicker dtpDataHora;
+        private System.Windows.Forms.DateTimePicker txtDataHora;
         private System.Windows.Forms.Label lblDataHora;
         private System.Windows.Forms.Label lblAssunto;
-        private System.Windows.Forms.TextBox txtAssunti;
+        private System.Windows.Forms.TextBox txtAssunto;
     }
 }

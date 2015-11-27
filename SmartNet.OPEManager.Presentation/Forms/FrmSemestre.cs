@@ -88,7 +88,7 @@ namespace LayoutGestaoOPE.Forms
 
             }
 
-            //apresentarUsuarios();
+            apresentarSemestre();
             tipoAcao = (int)Acao.nenhum;
             travarCampos(tipoAcao);
         }

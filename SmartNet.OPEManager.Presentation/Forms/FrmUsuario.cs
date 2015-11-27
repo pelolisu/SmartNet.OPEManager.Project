@@ -150,7 +150,8 @@ namespace LayoutGestaoOPE.Forms
             usuario.nome = txtNome.Text;
             usuario.email = txtEmail.Text;
             usuario.senha = txtSenha.Text;
-            usuario.ativo = chkAtivo.Checked;
+            usuario.visualizacao = chkAtivo.Checked;
+            usuario.ativo = true;
             
             if (rbnProfesssor.Checked)
             {

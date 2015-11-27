@@ -33,19 +33,19 @@
             this.lblTitulo = new System.Windows.Forms.Label();
             this.pnlIcone = new System.Windows.Forms.Panel();
             this.gbxPesquisa = new System.Windows.Forms.GroupBox();
+            this.txtDescricaoPesquisa = new System.Windows.Forms.TextBox();
+            this.lblDescricaoPesquisa = new System.Windows.Forms.Label();
             this.btnUsuario = new System.Windows.Forms.Button();
             this.txtPesquisaNome = new System.Windows.Forms.TextBox();
             this.lblPesquisaNome = new System.Windows.Forms.Label();
-            this.txtDescricaoPesquisa = new System.Windows.Forms.TextBox();
-            this.lblDescricaoPesquisa = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvProjeto = new System.Windows.Forms.DataGridView();
             this.gbxCadastro = new System.Windows.Forms.GroupBox();
-            this.txtTitulo = new System.Windows.Forms.TextBox();
-            this.lblTituloOpe = new System.Windows.Forms.Label();
-            this.txtURL = new System.Windows.Forms.TextBox();
-            this.lblURL = new System.Windows.Forms.Label();
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.lblDescricao = new System.Windows.Forms.Label();
+            this.txtURL = new System.Windows.Forms.TextBox();
+            this.lblURL = new System.Windows.Forms.Label();
+            this.txtTitulo = new System.Windows.Forms.TextBox();
+            this.lblTituloOpe = new System.Windows.Forms.Label();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
@@ -53,7 +53,7 @@
             this.btnIncluir = new System.Windows.Forms.Button();
             this.pnlCabecalho.SuspendLayout();
             this.gbxPesquisa.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProjeto)).BeginInit();
             this.gbxCadastro.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -101,6 +101,24 @@
             this.gbxPesquisa.TabStop = false;
             this.gbxPesquisa.Text = "Pesquisa";
             // 
+            // txtDescricaoPesquisa
+            // 
+            this.txtDescricaoPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescricaoPesquisa.Location = new System.Drawing.Point(15, 76);
+            this.txtDescricaoPesquisa.Name = "txtDescricaoPesquisa";
+            this.txtDescricaoPesquisa.Size = new System.Drawing.Size(314, 21);
+            this.txtDescricaoPesquisa.TabIndex = 3;
+            // 
+            // lblDescricaoPesquisa
+            // 
+            this.lblDescricaoPesquisa.AutoSize = true;
+            this.lblDescricaoPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescricaoPesquisa.Location = new System.Drawing.Point(12, 58);
+            this.lblDescricaoPesquisa.Name = "lblDescricaoPesquisa";
+            this.lblDescricaoPesquisa.Size = new System.Drawing.Size(62, 15);
+            this.lblDescricaoPesquisa.TabIndex = 2;
+            this.lblDescricaoPesquisa.Text = "Descrição";
+            // 
             // btnUsuario
             // 
             this.btnUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(89)))), ((int)(((byte)(152)))));
@@ -113,7 +131,7 @@
             this.btnUsuario.Location = new System.Drawing.Point(291, 103);
             this.btnUsuario.Name = "btnUsuario";
             this.btnUsuario.Size = new System.Drawing.Size(38, 33);
-            this.btnUsuario.TabIndex = 5;
+            this.btnUsuario.TabIndex = 4;
             this.btnUsuario.UseVisualStyleBackColor = false;
             // 
             // txtPesquisaNome
@@ -134,31 +152,13 @@
             this.lblPesquisaNome.TabIndex = 0;
             this.lblPesquisaNome.Text = "Titulo";
             // 
-            // txtDescricaoPesquisa
+            // dgvProjeto
             // 
-            this.txtDescricaoPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescricaoPesquisa.Location = new System.Drawing.Point(15, 76);
-            this.txtDescricaoPesquisa.Name = "txtDescricaoPesquisa";
-            this.txtDescricaoPesquisa.Size = new System.Drawing.Size(314, 21);
-            this.txtDescricaoPesquisa.TabIndex = 7;
-            // 
-            // lblDescricaoPesquisa
-            // 
-            this.lblDescricaoPesquisa.AutoSize = true;
-            this.lblDescricaoPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescricaoPesquisa.Location = new System.Drawing.Point(12, 58);
-            this.lblDescricaoPesquisa.Name = "lblDescricaoPesquisa";
-            this.lblDescricaoPesquisa.Size = new System.Drawing.Size(62, 15);
-            this.lblDescricaoPesquisa.TabIndex = 6;
-            this.lblDescricaoPesquisa.Text = "Descrição";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 260);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(335, 383);
-            this.dataGridView1.TabIndex = 7;
+            this.dgvProjeto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProjeto.Location = new System.Drawing.Point(0, 260);
+            this.dgvProjeto.Name = "dgvProjeto";
+            this.dgvProjeto.Size = new System.Drawing.Size(335, 383);
+            this.dgvProjeto.TabIndex = 7;
             // 
             // gbxCadastro
             // 
@@ -172,45 +172,9 @@
             this.gbxCadastro.Location = new System.Drawing.Point(342, 110);
             this.gbxCadastro.Name = "gbxCadastro";
             this.gbxCadastro.Size = new System.Drawing.Size(576, 463);
-            this.gbxCadastro.TabIndex = 17;
+            this.gbxCadastro.TabIndex = 0;
             this.gbxCadastro.TabStop = false;
             this.gbxCadastro.Text = "Cadastro";
-            // 
-            // txtTitulo
-            // 
-            this.txtTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTitulo.Location = new System.Drawing.Point(6, 35);
-            this.txtTitulo.Name = "txtTitulo";
-            this.txtTitulo.Size = new System.Drawing.Size(556, 21);
-            this.txtTitulo.TabIndex = 6;
-            // 
-            // lblTituloOpe
-            // 
-            this.lblTituloOpe.AutoSize = true;
-            this.lblTituloOpe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloOpe.Location = new System.Drawing.Point(6, 17);
-            this.lblTituloOpe.Name = "lblTituloOpe";
-            this.lblTituloOpe.Size = new System.Drawing.Size(37, 15);
-            this.lblTituloOpe.TabIndex = 6;
-            this.lblTituloOpe.Text = "Titulo";
-            // 
-            // txtURL
-            // 
-            this.txtURL.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtURL.Location = new System.Drawing.Point(6, 77);
-            this.txtURL.Name = "txtURL";
-            this.txtURL.Size = new System.Drawing.Size(556, 21);
-            this.txtURL.TabIndex = 14;
-            // 
-            // lblURL
-            // 
-            this.lblURL.AutoSize = true;
-            this.lblURL.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblURL.Location = new System.Drawing.Point(6, 59);
-            this.lblURL.Name = "lblURL";
-            this.lblURL.Size = new System.Drawing.Size(32, 15);
-            this.lblURL.TabIndex = 15;
-            this.lblURL.Text = "URL";
             // 
             // txtDescricao
             // 
@@ -219,7 +183,7 @@
             this.txtDescricao.Multiline = true;
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(556, 126);
-            this.txtDescricao.TabIndex = 16;
+            this.txtDescricao.TabIndex = 5;
             // 
             // lblDescricao
             // 
@@ -228,8 +192,44 @@
             this.lblDescricao.Location = new System.Drawing.Point(6, 104);
             this.lblDescricao.Name = "lblDescricao";
             this.lblDescricao.Size = new System.Drawing.Size(62, 15);
-            this.lblDescricao.TabIndex = 17;
+            this.lblDescricao.TabIndex = 4;
             this.lblDescricao.Text = "Descricao";
+            // 
+            // txtURL
+            // 
+            this.txtURL.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtURL.Location = new System.Drawing.Point(6, 77);
+            this.txtURL.Name = "txtURL";
+            this.txtURL.Size = new System.Drawing.Size(556, 21);
+            this.txtURL.TabIndex = 3;
+            // 
+            // lblURL
+            // 
+            this.lblURL.AutoSize = true;
+            this.lblURL.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblURL.Location = new System.Drawing.Point(6, 59);
+            this.lblURL.Name = "lblURL";
+            this.lblURL.Size = new System.Drawing.Size(32, 15);
+            this.lblURL.TabIndex = 2;
+            this.lblURL.Text = "URL";
+            // 
+            // txtTitulo
+            // 
+            this.txtTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTitulo.Location = new System.Drawing.Point(6, 35);
+            this.txtTitulo.Name = "txtTitulo";
+            this.txtTitulo.Size = new System.Drawing.Size(556, 21);
+            this.txtTitulo.TabIndex = 1;
+            // 
+            // lblTituloOpe
+            // 
+            this.lblTituloOpe.AutoSize = true;
+            this.lblTituloOpe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloOpe.Location = new System.Drawing.Point(6, 17);
+            this.lblTituloOpe.Name = "lblTituloOpe";
+            this.lblTituloOpe.Size = new System.Drawing.Size(37, 15);
+            this.lblTituloOpe.TabIndex = 0;
+            this.lblTituloOpe.Text = "Titulo";
             // 
             // btnSalvar
             // 
@@ -242,9 +242,10 @@
             this.btnSalvar.Location = new System.Drawing.Point(806, 587);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(109, 43);
-            this.btnSalvar.TabIndex = 22;
+            this.btnSalvar.TabIndex = 5;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = false;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnCancelar
             // 
@@ -257,9 +258,10 @@
             this.btnCancelar.Location = new System.Drawing.Point(691, 587);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(109, 43);
-            this.btnCancelar.TabIndex = 21;
+            this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnExcluir
             // 
@@ -272,9 +274,10 @@
             this.btnExcluir.Location = new System.Drawing.Point(576, 587);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(109, 43);
-            this.btnExcluir.TabIndex = 20;
+            this.btnExcluir.TabIndex = 3;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = false;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnAlterar
             // 
@@ -287,9 +290,10 @@
             this.btnAlterar.Location = new System.Drawing.Point(461, 587);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(109, 43);
-            this.btnAlterar.TabIndex = 19;
+            this.btnAlterar.TabIndex = 2;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = false;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnIncluir
             // 
@@ -302,9 +306,10 @@
             this.btnIncluir.Location = new System.Drawing.Point(346, 587);
             this.btnIncluir.Name = "btnIncluir";
             this.btnIncluir.Size = new System.Drawing.Size(109, 43);
-            this.btnIncluir.TabIndex = 18;
+            this.btnIncluir.TabIndex = 1;
             this.btnIncluir.Text = "Incluir";
             this.btnIncluir.UseVisualStyleBackColor = false;
+            this.btnIncluir.Click += new System.EventHandler(this.btnIncluir_Click);
             // 
             // FrmProjeto
             // 
@@ -319,7 +324,7 @@
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnIncluir);
             this.Controls.Add(this.gbxCadastro);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvProjeto);
             this.Controls.Add(this.gbxPesquisa);
             this.Controls.Add(this.pnlCabecalho);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -327,11 +332,12 @@
             this.Name = "FrmProjeto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmProjeto";
+            this.Load += new System.EventHandler(this.FrmProjeto_Load);
             this.pnlCabecalho.ResumeLayout(false);
             this.pnlCabecalho.PerformLayout();
             this.gbxPesquisa.ResumeLayout(false);
             this.gbxPesquisa.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProjeto)).EndInit();
             this.gbxCadastro.ResumeLayout(false);
             this.gbxCadastro.PerformLayout();
             this.ResumeLayout(false);
@@ -349,7 +355,7 @@
         private System.Windows.Forms.Label lblPesquisaNome;
         private System.Windows.Forms.TextBox txtDescricaoPesquisa;
         private System.Windows.Forms.Label lblDescricaoPesquisa;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvProjeto;
         private System.Windows.Forms.GroupBox gbxCadastro;
         private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.Label lblDescricao;
