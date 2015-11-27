@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using SmartNet.OPEManager.Domain.Entities.Base;
 
 namespace SmartNet.OPEManager.Domain.Interfaces.Repositories.Base
 {
