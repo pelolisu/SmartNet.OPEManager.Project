@@ -36,7 +36,7 @@
             this.btnUsuario = new System.Windows.Forms.Button();
             this.txtPesquisaNome = new System.Windows.Forms.TextBox();
             this.lblPesquisaNome = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvSemestre = new System.Windows.Forms.DataGridView();
             this.gbxCadastro = new System.Windows.Forms.GroupBox();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
@@ -47,7 +47,7 @@
             this.btnIncluir = new System.Windows.Forms.Button();
             this.pnlCabecalho.SuspendLayout();
             this.gbxPesquisa.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSemestre)).BeginInit();
             this.gbxCadastro.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -126,13 +126,14 @@
             this.lblPesquisaNome.TabIndex = 0;
             this.lblPesquisaNome.Text = "Nome";
             // 
-            // dataGridView1
+            // dgvSemestre
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(1, 220);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(335, 422);
-            this.dataGridView1.TabIndex = 7;
+            this.dgvSemestre.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSemestre.Location = new System.Drawing.Point(1, 220);
+            this.dgvSemestre.Name = "dgvSemestre";
+            this.dgvSemestre.Size = new System.Drawing.Size(335, 422);
+            this.dgvSemestre.TabIndex = 7;
+            this.dgvSemestre.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSemestre_CellContentClick);
             // 
             // gbxCadastro
             // 
@@ -178,6 +179,7 @@
             this.btnSalvar.TabIndex = 22;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = false;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnCancelar
             // 
@@ -193,6 +195,7 @@
             this.btnCancelar.TabIndex = 21;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnExcluir
             // 
@@ -208,6 +211,7 @@
             this.btnExcluir.TabIndex = 20;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = false;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnAlterar
             // 
@@ -223,6 +227,7 @@
             this.btnAlterar.TabIndex = 19;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = false;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnIncluir
             // 
@@ -253,7 +258,7 @@
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnIncluir);
             this.Controls.Add(this.gbxCadastro);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvSemestre);
             this.Controls.Add(this.gbxPesquisa);
             this.Controls.Add(this.pnlCabecalho);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -261,11 +266,12 @@
             this.Name = "FrmSemestre";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Semestre";
+            this.Load += new System.EventHandler(this.FrmSemestre_Load);
             this.pnlCabecalho.ResumeLayout(false);
             this.pnlCabecalho.PerformLayout();
             this.gbxPesquisa.ResumeLayout(false);
             this.gbxPesquisa.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSemestre)).EndInit();
             this.gbxCadastro.ResumeLayout(false);
             this.gbxCadastro.PerformLayout();
             this.ResumeLayout(false);
@@ -281,7 +287,7 @@
         private System.Windows.Forms.Button btnUsuario;
         private System.Windows.Forms.TextBox txtPesquisaNome;
         private System.Windows.Forms.Label lblPesquisaNome;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvSemestre;
         private System.Windows.Forms.GroupBox gbxCadastro;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label lblNome;

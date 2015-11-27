@@ -90,7 +90,7 @@ namespace LayoutGestaoOPE.Forms
 
             }
 
-            //apresentarUsuarios();
+            apresentarTurma();
             tipoAcao = (int)Acao.nenhum;
             travarCampos(tipoAcao);
 
@@ -123,8 +123,7 @@ namespace LayoutGestaoOPE.Forms
 
             Turma turma = new Turma();
             FormTurma turmaDao = new FormTurma();
-
-            turma.turmaId = codigoTurma;
+            
             turma.nome = txtNome.Text;
             turma.ativo = true;
 
@@ -139,6 +138,7 @@ namespace LayoutGestaoOPE.Forms
 
                 if (tipoAcao == (int)Acao.alterar)
                 {
+                    turma.turmaId = codigoTurma;
                     turmaDao.alterarTurma(turma);
                     MessageBox.Show("Usuario alterado com sucesso.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
