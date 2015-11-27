@@ -1,0 +1,4 @@
+D:\Developer\SmartNet.OPEManager.Project\SmartNet.OPEManager.Model\bin\Debug\SmartNet.OPEManager.Model.dll
+D:\Developer\SmartNet.OPEManager.Project\SmartNet.OPEManager.Model\bin\Debug\SmartNet.OPEManager.Model.pdb
+D:\Developer\SmartNet.OPEManager.Project\SmartNet.OPEManager.Model\obj\Debug\SmartNet.OPEManager.Model.dll
+D:\Developer\SmartNet.OPEManager.Project\SmartNet.OPEManager.Model\obj\Debug\SmartNet.OPEManager.Model.pdb

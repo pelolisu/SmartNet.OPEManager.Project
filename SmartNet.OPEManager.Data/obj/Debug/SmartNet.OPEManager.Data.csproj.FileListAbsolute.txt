@@ -1,0 +1,12 @@
+D:\Developer\SmartNet.OPEManager.Project\SmartNet.OPEManager.Data\bin\Debug\SmartNet.OPEManager.Data.dll.config
+D:\Developer\SmartNet.OPEManager.Project\SmartNet.OPEManager.Data\bin\Debug\SmartNet.OPEManager.Data.dll
+D:\Developer\SmartNet.OPEManager.Project\SmartNet.OPEManager.Data\bin\Debug\SmartNet.OPEManager.Data.pdb
+D:\Developer\SmartNet.OPEManager.Project\SmartNet.OPEManager.Data\bin\Debug\EntityFramework.dll
+D:\Developer\SmartNet.OPEManager.Project\SmartNet.OPEManager.Data\bin\Debug\EntityFramework.SqlServer.dll
+D:\Developer\SmartNet.OPEManager.Project\SmartNet.OPEManager.Data\bin\Debug\SmartNet.OPEManager.Domain.dll
+D:\Developer\SmartNet.OPEManager.Project\SmartNet.OPEManager.Data\bin\Debug\SmartNet.OPEManager.Domain.pdb
+D:\Developer\SmartNet.OPEManager.Project\SmartNet.OPEManager.Data\bin\Debug\EntityFramework.xml
+D:\Developer\SmartNet.OPEManager.Project\SmartNet.OPEManager.Data\bin\Debug\EntityFramework.SqlServer.xml
+D:\Developer\SmartNet.OPEManager.Project\SmartNet.OPEManager.Data\obj\Debug\SmartNet.OPEManager.Data.csprojResolveAssemblyReference.cache
+D:\Developer\SmartNet.OPEManager.Project\SmartNet.OPEManager.Data\obj\Debug\SmartNet.OPEManager.Data.dll
+D:\Developer\SmartNet.OPEManager.Project\SmartNet.OPEManager.Data\obj\Debug\SmartNet.OPEManager.Data.pdb

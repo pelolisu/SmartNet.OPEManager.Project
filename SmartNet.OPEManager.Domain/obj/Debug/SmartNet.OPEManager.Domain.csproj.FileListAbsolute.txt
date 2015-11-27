@@ -1,0 +1,9 @@
+D:\Developer\SmartNet.OPEManager.Project\SmartNet.OPEManager.Model\bin\Debug\SmartNet.OPEManager.Domain.dll
+D:\Developer\SmartNet.OPEManager.Project\SmartNet.OPEManager.Model\bin\Debug\SmartNet.OPEManager.Domain.pdb
+D:\Developer\SmartNet.OPEManager.Project\SmartNet.OPEManager.Model\obj\Debug\SmartNet.OPEManager.Domain.dll
+D:\Developer\SmartNet.OPEManager.Project\SmartNet.OPEManager.Model\obj\Debug\SmartNet.OPEManager.Domain.pdb
+D:\Developer\SmartNet.OPEManager.Project\SmartNet.OPEManager.Domain\bin\Debug\SmartNet.OPEManager.Domain.dll
+D:\Developer\SmartNet.OPEManager.Project\SmartNet.OPEManager.Domain\bin\Debug\SmartNet.OPEManager.Domain.pdb
+D:\Developer\SmartNet.OPEManager.Project\SmartNet.OPEManager.Domain\obj\Debug\SmartNet.OPEManager.Domain.csprojResolveAssemblyReference.cache
+D:\Developer\SmartNet.OPEManager.Project\SmartNet.OPEManager.Domain\obj\Debug\SmartNet.OPEManager.Domain.dll
+D:\Developer\SmartNet.OPEManager.Project\SmartNet.OPEManager.Domain\obj\Debug\SmartNet.OPEManager.Domain.pdb

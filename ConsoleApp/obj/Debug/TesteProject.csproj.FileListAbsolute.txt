@@ -1,0 +1,14 @@
+D:\Developer\SmartNet.OPEManager.Project\TesteProject\bin\Debug\TesteProject.exe.config
+D:\Developer\SmartNet.OPEManager.Project\TesteProject\bin\Debug\TesteProject.exe
+D:\Developer\SmartNet.OPEManager.Project\TesteProject\bin\Debug\TesteProject.pdb
+D:\Developer\SmartNet.OPEManager.Project\TesteProject\bin\Debug\EntityFramework.dll
+D:\Developer\SmartNet.OPEManager.Project\TesteProject\bin\Debug\EntityFramework.SqlServer.dll
+D:\Developer\SmartNet.OPEManager.Project\TesteProject\bin\Debug\SmartNet.OPEManager.Data.dll
+D:\Developer\SmartNet.OPEManager.Project\TesteProject\bin\Debug\SmartNet.OPEManager.Model.dll
+D:\Developer\SmartNet.OPEManager.Project\TesteProject\bin\Debug\SmartNet.OPEManager.Data.pdb
+D:\Developer\SmartNet.OPEManager.Project\TesteProject\bin\Debug\SmartNet.OPEManager.Model.pdb
+D:\Developer\SmartNet.OPEManager.Project\TesteProject\bin\Debug\EntityFramework.xml
+D:\Developer\SmartNet.OPEManager.Project\TesteProject\bin\Debug\EntityFramework.SqlServer.xml
+D:\Developer\SmartNet.OPEManager.Project\TesteProject\obj\Debug\TesteProject.csprojResolveAssemblyReference.cache
+D:\Developer\SmartNet.OPEManager.Project\TesteProject\obj\Debug\TesteProject.exe
+D:\Developer\SmartNet.OPEManager.Project\TesteProject\obj\Debug\TesteProject.pdb
