@@ -9,7 +9,7 @@ namespace SmartNet.OPEManager.Data.Repositories
 {
     public class ComentarioRep : Crud<Comentario>, IComentarioRep
     {
-        public Comentario BuscarPorId(int id)
+        public new Comentario BuscarPorId(int id)
         {
             using (Db = new OPEModelContext())
             {
