@@ -48,7 +48,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Forms\FormAgendamento.cs" />
+    <Compile Include="Forms\FormFase.cs" />
     <Compile Include="Forms\FormLogin.cs" />
+    <Compile Include="Forms\formProjeto.cs" />
     <Compile Include="Forms\FormSemestre.cs" />
     <Compile Include="Forms\FormTurma.cs" />
     <Compile Include="Forms\FormUsuario.cs" />
