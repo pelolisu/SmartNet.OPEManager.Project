@@ -50,12 +50,15 @@
     <Compile Include="Forms\FormAgendamento.cs" />
     <Compile Include="Forms\FormAluno.cs" />
     <Compile Include="Forms\FormComentario.cs" />
+    <Compile Include="Forms\FormCurso.cs" />
     <Compile Include="Forms\FormFase.cs" />
+    <Compile Include="Forms\FormGrupo.cs" />
     <Compile Include="Forms\FormLogin.cs" />
     <Compile Include="Forms\formProjeto.cs" />
     <Compile Include="Forms\FormSemestre.cs" />
     <Compile Include="Forms\FormTurma.cs" />
     <Compile Include="Forms\FormUsuario.cs" />
+    <Compile Include="Forms\FormProfessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
