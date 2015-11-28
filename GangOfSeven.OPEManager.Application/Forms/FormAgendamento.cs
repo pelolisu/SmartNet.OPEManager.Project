@@ -26,12 +26,13 @@ namespace GangOfSeven.OPEManager.Application.Forms
             }
         }
 
-        public void excluirAgendamento(Agendamento agendamento)
+        public void excluirAgendamento(int id)
         {
-            if (agendamento != null)
-            {
-                new AgendamentoRep().Remover(agendamento);
-            }
+
+            var agendamento = new AgendamentoRep().BuscarPorId(id);
+            agendamento.ativo = false;
+            new AgendamentoRep().Atualizar(agendamento);
+
         }
 
         public ICollection<Agendamento> listarAgendamento()

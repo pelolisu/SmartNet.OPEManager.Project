@@ -29,3 +29,6 @@ D:\Developer\SmartNet.OPEManager.Project\ConsoleApp\obj\Debug\ConsoleApp.csprojR
 C:\Users\Eduardo\Documents\GitHub\SmartNet.OPEManager.Project\ConsoleApp\bin\Debug\ConsoleApp.exe.config
 C:\Users\Eduardo\Documents\GitHub\SmartNet.OPEManager.Project\ConsoleApp\obj\Debug\ConsoleApp.exe
 C:\Users\Eduardo\Documents\GitHub\SmartNet.OPEManager.Project\ConsoleApp\obj\Debug\ConsoleApp.pdb
+C:\Users\vtrmantovani\Documents\Visual Studio 2015\Projects\SmartNet.OPEManager.Project\ConsoleApp\bin\Debug\ConsoleApp.exe.config
+C:\Users\vtrmantovani\Documents\Visual Studio 2015\Projects\SmartNet.OPEManager.Project\ConsoleApp\obj\Debug\ConsoleApp.exe
+C:\Users\vtrmantovani\Documents\Visual Studio 2015\Projects\SmartNet.OPEManager.Project\ConsoleApp\obj\Debug\ConsoleApp.pdb
