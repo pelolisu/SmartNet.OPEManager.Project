@@ -26,3 +26,6 @@ D:\Developer\SmartNet.OPEManager.Project\ConsoleApp\bin\Debug\SmartNet.OPEManage
 D:\Developer\SmartNet.OPEManager.Project\ConsoleApp\bin\Debug\EntityFramework.xml
 D:\Developer\SmartNet.OPEManager.Project\ConsoleApp\bin\Debug\EntityFramework.SqlServer.xml
 D:\Developer\SmartNet.OPEManager.Project\ConsoleApp\obj\Debug\ConsoleApp.csprojResolveAssemblyReference.cache
+C:\Users\Eduardo\Documents\GitHub\SmartNet.OPEManager.Project\ConsoleApp\bin\Debug\ConsoleApp.exe.config
+C:\Users\Eduardo\Documents\GitHub\SmartNet.OPEManager.Project\ConsoleApp\obj\Debug\ConsoleApp.exe
+C:\Users\Eduardo\Documents\GitHub\SmartNet.OPEManager.Project\ConsoleApp\obj\Debug\ConsoleApp.pdb
