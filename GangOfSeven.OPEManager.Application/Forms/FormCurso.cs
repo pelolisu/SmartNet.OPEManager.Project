@@ -26,12 +26,12 @@ namespace GangOfSeven.OPEManager.Application.Forms
             }
         }
 
-        public void excluirCurso(Curso curso)
+        public void excluirCurso(int id)
         {
-            if (curso != null)
-            {
-                new CursoRep().Remover(curso);
-            }
+            var curso = new CursoRep().BuscarPorId(id);
+            curso.ativo = false;
+
+            new CursoRep().Atualizar(curso);
         }
 
         public ICollection<Curso> listarCurso()
