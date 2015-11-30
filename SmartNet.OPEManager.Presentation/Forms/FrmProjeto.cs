@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GangOfSeven.OPEManager.Application.Forms;
+using SmartNet.OPEManager.Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -56,7 +58,7 @@ namespace LayoutGestaoOPE.Forms
             ClsUtil clsUtil = new ClsUtil();
             clsUtil.criarGrid(dgvProjeto);
 
-            //apresentarSemestre();
+            apresentarProjetos();
         }
 
         private void btnIncluir_Click(object sender, EventArgs e)
@@ -79,8 +81,9 @@ namespace LayoutGestaoOPE.Forms
 
                 try
                 {
-                    //FormTurma turmaDao = new FormTurma();
-                    //turmaDao.excluirTurma(codigoTurma);
+                    FormProjeto projetoDao = new FormProjeto();
+                    projetoDao.excluirProjeto(codigoProjeto);
+                    
                     limparCampos();
                 }
                 catch (Exception ex)
@@ -90,14 +93,14 @@ namespace LayoutGestaoOPE.Forms
 
             }
 
-            //apresentarUsuarios();
+            apresentarProjetos();
             tipoAcao = (int)Acao.nenhum;
             travarCampos(tipoAcao);
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            //atualizarCampos();
+            atualizarCampos();
             tipoAcao = (int)Acao.nenhum;
             travarCampos(tipoAcao);
         }
@@ -128,16 +131,40 @@ namespace LayoutGestaoOPE.Forms
         private void btnSalvar_Click(object sender, EventArgs e)
         {
 
+            if (consistir() == false)
+            {
+                return;
+            }
+
+            Projeto projeto = new Projeto();
+            FormProjeto projetoDao = new FormProjeto();
+
+            projeto.titulo = txtTitulo.Text;
+            projeto.urlSistema = txtURL.Text;
+            projeto.descricao = txtDescricao.Text;
+
             try
             {
 
+                if (tipoAcao == (int)Acao.incluir)
+                {
+                    projetoDao.incluirProjeto(projeto);
+                    MessageBox.Show("Projeto salvo com sucesso.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                if (tipoAcao == (int)Acao.alterar)
+                {
+                    projetoDao.alterarProjeto(projeto);
+                    MessageBox.Show("Projeto salvo com sucesso.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
             } catch(Exception ex)
             {
-
+                MessageBox.Show("Erro: " + ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            //atualizarCampos();
-            //apresentarSemestre();
+            atualizarCampos();
+            apresentarProjetos();
             tipoAcao = (int)Acao.nenhum;
             travarCampos(tipoAcao);
         }
@@ -146,14 +173,50 @@ namespace LayoutGestaoOPE.Forms
         {
             dgvProjeto.Rows.Clear();
 
-            //FormProjeto semestreDao = new FormProjeto();
-            //ICollection<Semestre> semestres = semestreDao.listarSemestre();
+            FormProjeto projetoDao = new FormProjeto();
+            ICollection<Projeto> projetos = projetoDao.listarProjetos();
 
-            /*foreach (Semestre semestre in semestres)
+            foreach(Projeto projeto in projetos)
             {
-                dgvSemestre.Rows.Add(semestre.semestreId, semestre.nome);
-            }*/
+                dgvProjeto.Rows.Add(projeto.projetoId, projeto.titulo);
+            }   
+        }
 
+        private void dgvProjeto_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow linhaProjeto = dgvProjeto.Rows[e.RowIndex];
+            codigoProjeto = int.Parse(linhaProjeto.Cells["Codigo"].Value.ToString());
+            atualizarCampos();
+            tipoAcao = (int)Acao.nenhum;
+            travarCampos(tipoAcao);
+        }
+
+        private void atualizarCampos()
+        {
+            try
+            {
+
+                Projeto projeto = new Projeto();
+                FormProjeto projetoDao = new FormProjeto();
+                
+                if (codigoProjeto != 0)
+                {
+                    projeto = projetoDao.BuscarPorId(codigoProjeto);
+
+                    txtTitulo.Text = projeto.titulo.ToString();
+                    txtURL.Text = projeto.urlSistema.ToString();
+                    txtDescricao.Text = projeto.descricao.ToString();
+                    
+                }
+
+                tipoAcao = (int)Acao.nenhum;
+                travarCampos(tipoAcao);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
     }

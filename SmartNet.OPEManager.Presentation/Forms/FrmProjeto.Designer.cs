@@ -159,6 +159,7 @@
             this.dgvProjeto.Name = "dgvProjeto";
             this.dgvProjeto.Size = new System.Drawing.Size(335, 383);
             this.dgvProjeto.TabIndex = 7;
+            this.dgvProjeto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProjeto_CellContentClick);
             // 
             // gbxCadastro
             // 

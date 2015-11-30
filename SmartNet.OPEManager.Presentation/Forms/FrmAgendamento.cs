@@ -1,4 +1,5 @@
-﻿using SmartNet.OPEManager.Domain.Entities;
+﻿using GangOfSeven.OPEManager.Application.Forms;
+using SmartNet.OPEManager.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -55,7 +56,7 @@ namespace LayoutGestaoOPE.Forms
             ClsUtil clsUtil = new ClsUtil();
             clsUtil.criarGrid(dgvAgendamento);
 
-            //apresentarSemestre();
+            apresentarAgendamento();
         }
 
         private void btnIncluir_Click(object sender, EventArgs e)
@@ -73,13 +74,14 @@ namespace LayoutGestaoOPE.Forms
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Deseja excluir semestre?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Deseja excluir agendamento?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
 
                 try
                 {
-                    //FormTurma turmaDao = new FormTurma();
-                    //turmaDao.excluirTurma(codigoTurma);
+                    FormAgendamento agendamentoDao = new FormAgendamento();
+                    agendamentoDao.excluirAgendamento(codigoAgendamento);
+                    
                     limparCampos();
                 }
                 catch (Exception ex)
@@ -89,14 +91,14 @@ namespace LayoutGestaoOPE.Forms
 
             }
 
-            //apresentarSemestre();
+            apresentarAgendamentos();
             tipoAcao = (int)Acao.nenhum;
             travarCampos(tipoAcao);
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            //atualizarCampos();
+            atualizarCampos();
             tipoAcao = (int)Acao.nenhum;
             travarCampos(tipoAcao);
         }
@@ -134,10 +136,61 @@ namespace LayoutGestaoOPE.Forms
                 MessageBox.Show("Erro: " + ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            //atualizarCampos();
-            //apresentarSemestre();
+            atualizarCampos();
+            apresentarAgendamentos();
             tipoAcao = (int)Acao.nenhum;
             travarCampos(tipoAcao);
         }
+
+        private void apresentarAgendamento()
+        {
+            dgvAgendamento.Rows.Clear();
+
+            FormAgendamento agendamentoDao = new FormAgendamento();
+            ICollection<Agendamento> agendamentos = agendamentoDao.listarAgendamento();
+
+            foreach (Agendamento agendamento in agendamentos)
+            {
+                dgvAgendamento.Rows.Add(agendamento.agendamentoId, agendamento.assunto);
+            }
+        }
+
+        private void dgvAgendamento_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow linhaAgendamento = dgvAgendamento.Rows[e.RowIndex];
+            codigoAgendamento = int.Parse(linhaAgendamento.Cells["Codigo"].Value.ToString());
+            atualizarCampos();
+            tipoAcao = (int)Acao.nenhum;
+            travarCampos(tipoAcao);
+        }
+
+        private void atualizarCampos()
+        {
+            try
+            {
+
+                Agendamento agendamento = new Agendamento();
+                FormAgendamento agendamentoDao = new FormAgendamento();
+                
+                if (codigoAgendamento != 0)
+                {
+                    agendamento = agendamentoDao.BuscarPorId(codigoAgendamento);
+
+                    txtAssunto.Text = agendamento.assunto.ToString();
+                    txtDataHora.Text = agendamento.data.ToString();
+
+                }
+
+                tipoAcao = (int)Acao.nenhum;
+                travarCampos(tipoAcao);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
     }
 }

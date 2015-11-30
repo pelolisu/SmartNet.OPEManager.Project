@@ -80,7 +80,7 @@ namespace LayoutGestaoOPE.Forms
                 try
                 {
                     FormTurma turmaDao = new FormTurma();
-                    //turmaDao.excluirTurma(codigoTurma);
+                    turmaDao.excluirTurma(codigoTurma);
                     limparCampos();
                 }
                 catch (Exception ex)

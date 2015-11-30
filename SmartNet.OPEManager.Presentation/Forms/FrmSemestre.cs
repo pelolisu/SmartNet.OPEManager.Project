@@ -77,8 +77,8 @@ namespace LayoutGestaoOPE.Forms
 
                 try
                 {
-                    //FormTurma turmaDao = new FormTurma();
-                    //turmaDao.excluirTurma(codigoTurma);
+                    FormSemestre semestreDao = new FormSemestre();
+                    semestreDao.excluirSemestre(codigoSemestre);
                     limparCampos();
                 }
                 catch (Exception ex)

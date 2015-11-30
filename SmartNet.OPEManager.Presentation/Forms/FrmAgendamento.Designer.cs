@@ -135,6 +135,7 @@
             this.dgvAgendamento.Name = "dgvAgendamento";
             this.dgvAgendamento.Size = new System.Drawing.Size(335, 424);
             this.dgvAgendamento.TabIndex = 7;
+            this.dgvAgendamento.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAgendamento_CellContentClick);
             // 
             // gbxCadastro
             // 

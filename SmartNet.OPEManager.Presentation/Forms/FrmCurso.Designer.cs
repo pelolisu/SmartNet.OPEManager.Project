@@ -36,19 +36,18 @@
             this.btnUsuario = new System.Windows.Forms.Button();
             this.txtPesquisaNome = new System.Windows.Forms.TextBox();
             this.lblPesquisaNome = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvCurso = new System.Windows.Forms.DataGridView();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnIncluir = new System.Windows.Forms.Button();
             this.gbxCadastro = new System.Windows.Forms.GroupBox();
-            this.chkAtivo = new System.Windows.Forms.CheckBox();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
             this.pnlCabecalho.SuspendLayout();
             this.gbxPesquisa.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCurso)).BeginInit();
             this.gbxCadastro.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -127,13 +126,14 @@
             this.lblPesquisaNome.TabIndex = 0;
             this.lblPesquisaNome.Text = "Nome";
             // 
-            // dataGridView1
+            // dgvCurso
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 219);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(335, 424);
-            this.dataGridView1.TabIndex = 6;
+            this.dgvCurso.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCurso.Location = new System.Drawing.Point(0, 219);
+            this.dgvCurso.Name = "dgvCurso";
+            this.dgvCurso.Size = new System.Drawing.Size(335, 424);
+            this.dgvCurso.TabIndex = 6;
+            this.dgvCurso.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCurso_CellContentClick);
             // 
             // btnSalvar
             // 
@@ -149,6 +149,7 @@
             this.btnSalvar.TabIndex = 15;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = false;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnCancelar
             // 
@@ -164,6 +165,7 @@
             this.btnCancelar.TabIndex = 14;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnExcluir
             // 
@@ -179,6 +181,7 @@
             this.btnExcluir.TabIndex = 13;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = false;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnAlterar
             // 
@@ -194,6 +197,7 @@
             this.btnAlterar.TabIndex = 12;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = false;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnIncluir
             // 
@@ -209,10 +213,10 @@
             this.btnIncluir.TabIndex = 11;
             this.btnIncluir.Text = "Incluir";
             this.btnIncluir.UseVisualStyleBackColor = false;
+            this.btnIncluir.Click += new System.EventHandler(this.btnIncluir_Click);
             // 
             // gbxCadastro
             // 
-            this.gbxCadastro.Controls.Add(this.chkAtivo);
             this.gbxCadastro.Controls.Add(this.txtNome);
             this.gbxCadastro.Controls.Add(this.lblNome);
             this.gbxCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -222,16 +226,6 @@
             this.gbxCadastro.TabIndex = 16;
             this.gbxCadastro.TabStop = false;
             this.gbxCadastro.Text = "Cadastro";
-            // 
-            // chkAtivo
-            // 
-            this.chkAtivo.AutoSize = true;
-            this.chkAtivo.Location = new System.Drawing.Point(6, 68);
-            this.chkAtivo.Name = "chkAtivo";
-            this.chkAtivo.Size = new System.Drawing.Size(51, 19);
-            this.chkAtivo.TabIndex = 13;
-            this.chkAtivo.Text = "Ativo";
-            this.chkAtivo.UseVisualStyleBackColor = true;
             // 
             // txtNome
             // 
@@ -263,7 +257,7 @@
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnIncluir);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvCurso);
             this.Controls.Add(this.gbxPesquisa);
             this.Controls.Add(this.pnlCabecalho);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -271,11 +265,12 @@
             this.Name = "FrmCurso";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cursos";
+            this.Load += new System.EventHandler(this.FrmCurso_Load);
             this.pnlCabecalho.ResumeLayout(false);
             this.pnlCabecalho.PerformLayout();
             this.gbxPesquisa.ResumeLayout(false);
             this.gbxPesquisa.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCurso)).EndInit();
             this.gbxCadastro.ResumeLayout(false);
             this.gbxCadastro.PerformLayout();
             this.ResumeLayout(false);
@@ -291,14 +286,13 @@
         private System.Windows.Forms.Button btnUsuario;
         private System.Windows.Forms.TextBox txtPesquisaNome;
         private System.Windows.Forms.Label lblPesquisaNome;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvCurso;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnIncluir;
         private System.Windows.Forms.GroupBox gbxCadastro;
-        private System.Windows.Forms.CheckBox chkAtivo;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label lblNome;
     }

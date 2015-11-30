@@ -36,9 +36,8 @@
             this.btnUsuario = new System.Windows.Forms.Button();
             this.txtPesquisaNome = new System.Windows.Forms.TextBox();
             this.lblPesquisaNome = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvGrupo = new System.Windows.Forms.DataGridView();
             this.gbxCadastro = new System.Windows.Forms.GroupBox();
-            this.chkAtivo = new System.Windows.Forms.CheckBox();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
             this.btnSalvar = new System.Windows.Forms.Button();
@@ -48,7 +47,7 @@
             this.btnIncluir = new System.Windows.Forms.Button();
             this.pnlCabecalho.SuspendLayout();
             this.gbxPesquisa.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGrupo)).BeginInit();
             this.gbxCadastro.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -127,17 +126,17 @@
             this.lblPesquisaNome.TabIndex = 0;
             this.lblPesquisaNome.Text = "Nome";
             // 
-            // dataGridView1
+            // dgvGrupo
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 220);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(335, 424);
-            this.dataGridView1.TabIndex = 7;
+            this.dgvGrupo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvGrupo.Location = new System.Drawing.Point(0, 220);
+            this.dgvGrupo.Name = "dgvGrupo";
+            this.dgvGrupo.Size = new System.Drawing.Size(335, 424);
+            this.dgvGrupo.TabIndex = 7;
+            this.dgvGrupo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGrupo_CellContentClick);
             // 
             // gbxCadastro
             // 
-            this.gbxCadastro.Controls.Add(this.chkAtivo);
             this.gbxCadastro.Controls.Add(this.txtNome);
             this.gbxCadastro.Controls.Add(this.lblNome);
             this.gbxCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -147,16 +146,6 @@
             this.gbxCadastro.TabIndex = 17;
             this.gbxCadastro.TabStop = false;
             this.gbxCadastro.Text = "Cadastro";
-            // 
-            // chkAtivo
-            // 
-            this.chkAtivo.AutoSize = true;
-            this.chkAtivo.Location = new System.Drawing.Point(6, 68);
-            this.chkAtivo.Name = "chkAtivo";
-            this.chkAtivo.Size = new System.Drawing.Size(51, 19);
-            this.chkAtivo.TabIndex = 13;
-            this.chkAtivo.Text = "Ativo";
-            this.chkAtivo.UseVisualStyleBackColor = true;
             // 
             // txtNome
             // 
@@ -190,6 +179,7 @@
             this.btnSalvar.TabIndex = 22;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = false;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnCancelar
             // 
@@ -205,6 +195,7 @@
             this.btnCancelar.TabIndex = 21;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnExcluir
             // 
@@ -220,6 +211,7 @@
             this.btnExcluir.TabIndex = 20;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = false;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnAlterar
             // 
@@ -235,6 +227,7 @@
             this.btnAlterar.TabIndex = 19;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = false;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnIncluir
             // 
@@ -250,6 +243,7 @@
             this.btnIncluir.TabIndex = 18;
             this.btnIncluir.Text = "Incluir";
             this.btnIncluir.UseVisualStyleBackColor = false;
+            this.btnIncluir.Click += new System.EventHandler(this.btnIncluir_Click);
             // 
             // FrmGrupo
             // 
@@ -264,7 +258,7 @@
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnIncluir);
             this.Controls.Add(this.gbxCadastro);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvGrupo);
             this.Controls.Add(this.gbxPesquisa);
             this.Controls.Add(this.pnlCabecalho);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -272,11 +266,12 @@
             this.Name = "FrmGrupo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Grupo";
+            this.Load += new System.EventHandler(this.FrmGrupo_Load);
             this.pnlCabecalho.ResumeLayout(false);
             this.pnlCabecalho.PerformLayout();
             this.gbxPesquisa.ResumeLayout(false);
             this.gbxPesquisa.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGrupo)).EndInit();
             this.gbxCadastro.ResumeLayout(false);
             this.gbxCadastro.PerformLayout();
             this.ResumeLayout(false);
@@ -292,9 +287,8 @@
         private System.Windows.Forms.Button btnUsuario;
         private System.Windows.Forms.TextBox txtPesquisaNome;
         private System.Windows.Forms.Label lblPesquisaNome;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvGrupo;
         private System.Windows.Forms.GroupBox gbxCadastro;
-        private System.Windows.Forms.CheckBox chkAtivo;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.Button btnSalvar;
