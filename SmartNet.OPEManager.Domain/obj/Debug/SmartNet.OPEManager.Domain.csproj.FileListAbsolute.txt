@@ -7,3 +7,8 @@ D:\Developer\SmartNet.OPEManager.Project\SmartNet.OPEManager.Domain\bin\Debug\Sm
 D:\Developer\SmartNet.OPEManager.Project\SmartNet.OPEManager.Domain\obj\Debug\SmartNet.OPEManager.Domain.csprojResolveAssemblyReference.cache
 D:\Developer\SmartNet.OPEManager.Project\SmartNet.OPEManager.Domain\obj\Debug\SmartNet.OPEManager.Domain.dll
 D:\Developer\SmartNet.OPEManager.Project\SmartNet.OPEManager.Domain\obj\Debug\SmartNet.OPEManager.Domain.pdb
+C:\Users\Admin\Desktop\Controle OPE\SmartNet.OPEManager.Domain\bin\Debug\SmartNet.OPEManager.Domain.dll
+C:\Users\Admin\Desktop\Controle OPE\SmartNet.OPEManager.Domain\bin\Debug\SmartNet.OPEManager.Domain.pdb
+C:\Users\Admin\Desktop\Controle OPE\SmartNet.OPEManager.Domain\obj\Debug\SmartNet.OPEManager.Domain.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Desktop\Controle OPE\SmartNet.OPEManager.Domain\obj\Debug\SmartNet.OPEManager.Domain.dll
+C:\Users\Admin\Desktop\Controle OPE\SmartNet.OPEManager.Domain\obj\Debug\SmartNet.OPEManager.Domain.pdb

@@ -78,8 +78,7 @@ namespace LayoutGestaoOPE.Forms
                 try
                 {
                     FormCurso cursoDao = new FormCurso();
-                    cursoDao.excluirCurso(codigoCurso);
-                    
+                    cursoDao.excluirCurso(codigoCurso);    
                     limparCampos();
                 }
                 catch (Exception ex)
@@ -87,6 +86,10 @@ namespace LayoutGestaoOPE.Forms
                     MessageBox.Show("Erro: " + ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+
+            apresentarCursos();
+            tipoAcao = (int)Acao.nenhum;
+            travarCampos(tipoAcao);
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -131,6 +134,7 @@ namespace LayoutGestaoOPE.Forms
 
                 if (tipoAcao == (int)Acao.alterar)
                 {
+                    curso.cursoId = codigoCurso;
                     cursoDao.alterarCurso(curso);
                     MessageBox.Show("Curso salvo com sucesso.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }

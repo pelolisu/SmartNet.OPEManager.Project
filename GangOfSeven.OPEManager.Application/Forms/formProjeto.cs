@@ -8,7 +8,7 @@ using SmartNet.OPEManager.Domain.Entities;
 
 namespace GangOfSeven.OPEManager.Application.Forms
 {
-    class formProjeto
+    public class FormProjeto
     {
 
         public void incluirProjeto(Projeto projeto)

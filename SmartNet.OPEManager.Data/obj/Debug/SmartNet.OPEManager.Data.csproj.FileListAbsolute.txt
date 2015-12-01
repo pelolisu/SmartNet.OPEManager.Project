@@ -10,3 +10,15 @@ D:\Developer\SmartNet.OPEManager.Project\SmartNet.OPEManager.Data\bin\Debug\Enti
 D:\Developer\SmartNet.OPEManager.Project\SmartNet.OPEManager.Data\obj\Debug\SmartNet.OPEManager.Data.csprojResolveAssemblyReference.cache
 D:\Developer\SmartNet.OPEManager.Project\SmartNet.OPEManager.Data\obj\Debug\SmartNet.OPEManager.Data.dll
 D:\Developer\SmartNet.OPEManager.Project\SmartNet.OPEManager.Data\obj\Debug\SmartNet.OPEManager.Data.pdb
+C:\Users\Admin\Desktop\Controle OPE\SmartNet.OPEManager.Data\bin\Debug\SmartNet.OPEManager.Data.dll.config
+C:\Users\Admin\Desktop\Controle OPE\SmartNet.OPEManager.Data\bin\Debug\SmartNet.OPEManager.Data.dll
+C:\Users\Admin\Desktop\Controle OPE\SmartNet.OPEManager.Data\bin\Debug\SmartNet.OPEManager.Data.pdb
+C:\Users\Admin\Desktop\Controle OPE\SmartNet.OPEManager.Data\bin\Debug\EntityFramework.dll
+C:\Users\Admin\Desktop\Controle OPE\SmartNet.OPEManager.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Admin\Desktop\Controle OPE\SmartNet.OPEManager.Data\bin\Debug\SmartNet.OPEManager.Domain.dll
+C:\Users\Admin\Desktop\Controle OPE\SmartNet.OPEManager.Data\bin\Debug\SmartNet.OPEManager.Domain.pdb
+C:\Users\Admin\Desktop\Controle OPE\SmartNet.OPEManager.Data\bin\Debug\EntityFramework.xml
+C:\Users\Admin\Desktop\Controle OPE\SmartNet.OPEManager.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Admin\Desktop\Controle OPE\SmartNet.OPEManager.Data\obj\Debug\SmartNet.OPEManager.Data.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Desktop\Controle OPE\SmartNet.OPEManager.Data\obj\Debug\SmartNet.OPEManager.Data.dll
+C:\Users\Admin\Desktop\Controle OPE\SmartNet.OPEManager.Data\obj\Debug\SmartNet.OPEManager.Data.pdb

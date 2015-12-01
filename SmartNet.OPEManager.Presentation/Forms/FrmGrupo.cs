@@ -87,6 +87,10 @@ namespace LayoutGestaoOPE.Forms
                     MessageBox.Show("Erro: " + ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+
+            apresentarGrupos();
+            tipoAcao = (int)Acao.nenhum;
+            travarCampos(tipoAcao);
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -119,6 +123,7 @@ namespace LayoutGestaoOPE.Forms
             FormGrupo grupoDao = new FormGrupo();
 
             grupo.nome = txtNome.Text;
+            grupo.ativo = true;
 
             try
             {
@@ -131,6 +136,7 @@ namespace LayoutGestaoOPE.Forms
 
                 if (tipoAcao == (int)Acao.alterar)
                 {
+                    grupo.grupoId = codigoGrupo;
                     grupoDao.alterarGrupo(grupo);
                     MessageBox.Show("Grupo salvo com sucesso.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }

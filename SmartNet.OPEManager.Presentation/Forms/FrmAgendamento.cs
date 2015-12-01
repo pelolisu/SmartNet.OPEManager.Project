@@ -91,7 +91,7 @@ namespace LayoutGestaoOPE.Forms
 
             }
 
-            apresentarAgendamentos();
+            apresentarAgendamento();
             tipoAcao = (int)Acao.nenhum;
             travarCampos(tipoAcao);
         }
@@ -137,7 +137,7 @@ namespace LayoutGestaoOPE.Forms
             }
 
             atualizarCampos();
-            apresentarAgendamentos();
+            apresentarAgendamento();
             tipoAcao = (int)Acao.nenhum;
             travarCampos(tipoAcao);
         }

@@ -8,7 +8,7 @@ using SmartNet.OPEManager.Domain.Entities;
 
 namespace GangOfSeven.OPEManager.Application.Forms
 {
-    class FormAgendamento
+    public class FormAgendamento
     {
         public void incluirAgendamento(Agendamento agendamento)
         {
