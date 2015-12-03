@@ -47,6 +47,8 @@
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnIncluir = new System.Windows.Forms.Button();
+            this.lblProjeto = new System.Windows.Forms.Label();
+            this.cboProjeto = new System.Windows.Forms.ComboBox();
             this.pnlCabecalho.SuspendLayout();
             this.gbxPesquisa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAgendamento)).BeginInit();
@@ -139,6 +141,8 @@
             // 
             // gbxCadastro
             // 
+            this.gbxCadastro.Controls.Add(this.lblProjeto);
+            this.gbxCadastro.Controls.Add(this.cboProjeto);
             this.gbxCadastro.Controls.Add(this.txtDataHora);
             this.gbxCadastro.Controls.Add(this.lblDataHora);
             this.gbxCadastro.Controls.Add(this.lblAssunto);
@@ -269,6 +273,25 @@
             this.btnIncluir.UseVisualStyleBackColor = false;
             this.btnIncluir.Click += new System.EventHandler(this.btnIncluir_Click);
             // 
+            // lblProjeto
+            // 
+            this.lblProjeto.AutoSize = true;
+            this.lblProjeto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProjeto.Location = new System.Drawing.Point(8, 203);
+            this.lblProjeto.Name = "lblProjeto";
+            this.lblProjeto.Size = new System.Drawing.Size(46, 15);
+            this.lblProjeto.TabIndex = 8;
+            this.lblProjeto.Text = "Projeto";
+            // 
+            // cboProjeto
+            // 
+            this.cboProjeto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboProjeto.FormattingEnabled = true;
+            this.cboProjeto.Location = new System.Drawing.Point(8, 221);
+            this.cboProjeto.Name = "cboProjeto";
+            this.cboProjeto.Size = new System.Drawing.Size(556, 23);
+            this.cboProjeto.TabIndex = 9;
+            // 
             // FrmAgendamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -322,5 +345,7 @@
         private System.Windows.Forms.Label lblDataHora;
         private System.Windows.Forms.Label lblAssunto;
         private System.Windows.Forms.TextBox txtAssunto;
+        private System.Windows.Forms.Label lblProjeto;
+        private System.Windows.Forms.ComboBox cboProjeto;
     }
 }

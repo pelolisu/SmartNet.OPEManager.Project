@@ -56,6 +56,7 @@ namespace LayoutGestaoOPE.Forms
             clsUtil.criarGrid(dgvAgendamento);
 
             apresentarAgendamento();
+            carregarComboProjeto();
         }
 
         private void btnIncluir_Click(object sender, EventArgs e)
@@ -211,6 +212,15 @@ namespace LayoutGestaoOPE.Forms
             }
         }
 
+        private void carregarComboProjeto()
+        {
+            FormProjeto projetoDao = new FormProjeto();
+            ICollection<Projeto> projetos = projetoDao.listarProjetos();
 
+            cboProjeto.DataSource = projetos;
+            cboProjeto.ValueMember = "projetoId";
+            cboProjeto.DisplayMember = "titulo";
+        }
+        
     }
 }
