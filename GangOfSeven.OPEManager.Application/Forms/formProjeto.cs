@@ -11,12 +11,16 @@ namespace GangOfSeven.OPEManager.Application.Forms
     public class FormProjeto
     {
 
-        public void incluirProjeto(Projeto projeto)
+        public int incluirProjeto(Projeto projeto)
         {
             if (projeto != null)
             {
-                new ProjetoRep().Adicionar(projeto);
+                ProjetoRep projetoRep = new ProjetoRep();
+                var codigo = projetoRep.Adicionar(projeto);
+                return codigo.projetoId;
             }
+
+            return 0;
         }
 
         public void alterarProjeto(Projeto projeto)

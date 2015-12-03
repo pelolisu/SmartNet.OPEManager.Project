@@ -255,10 +255,6 @@ namespace LayoutGestaoOPE.Forms
             FormUsuario usuarioDao = new FormUsuario();
             
         }
-
-        public static implicit operator FrmUsuario(Usuario v)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

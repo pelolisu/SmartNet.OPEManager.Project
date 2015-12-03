@@ -201,5 +201,10 @@ namespace LayoutGestaoOPE.Forms
             }
         }
 
+        private void btnUsuario_Click(object sender, EventArgs e)
+        {
+            FormTurma turmaDao = new FormTurma();
+            
+        }
     }
 }

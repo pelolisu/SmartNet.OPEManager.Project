@@ -8,7 +8,7 @@ using SmartNet.OPEManager.Domain.Entities;
 
 namespace GangOfSeven.OPEManager.Application.Forms
 {
-    class FormFase
+    public class FormFase
     {
 
         public void incluirFase(Fase fase)
