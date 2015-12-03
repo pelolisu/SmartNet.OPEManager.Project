@@ -40,6 +40,12 @@
             this.lblPesquisaNome = new System.Windows.Forms.Label();
             this.dgvProjeto = new System.Windows.Forms.DataGridView();
             this.gbxCadastro = new System.Windows.Forms.GroupBox();
+            this.txtEmpresa = new System.Windows.Forms.TextBox();
+            this.lblEmpresa = new System.Windows.Forms.Label();
+            this.cboCurso = new System.Windows.Forms.ComboBox();
+            this.lblCurso = new System.Windows.Forms.Label();
+            this.lblGrupo = new System.Windows.Forms.Label();
+            this.cboGrupo = new System.Windows.Forms.ComboBox();
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.lblDescricao = new System.Windows.Forms.Label();
             this.txtURL = new System.Windows.Forms.TextBox();
@@ -51,6 +57,10 @@
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnIncluir = new System.Windows.Forms.Button();
+            this.cboSemestre = new System.Windows.Forms.ComboBox();
+            this.lblSemestre = new System.Windows.Forms.Label();
+            this.cboTurma = new System.Windows.Forms.ComboBox();
+            this.lblTurma = new System.Windows.Forms.Label();
             this.pnlCabecalho.SuspendLayout();
             this.gbxPesquisa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProjeto)).BeginInit();
@@ -163,6 +173,16 @@
             // 
             // gbxCadastro
             // 
+            this.gbxCadastro.Controls.Add(this.cboTurma);
+            this.gbxCadastro.Controls.Add(this.lblTurma);
+            this.gbxCadastro.Controls.Add(this.cboSemestre);
+            this.gbxCadastro.Controls.Add(this.lblSemestre);
+            this.gbxCadastro.Controls.Add(this.txtEmpresa);
+            this.gbxCadastro.Controls.Add(this.lblEmpresa);
+            this.gbxCadastro.Controls.Add(this.cboCurso);
+            this.gbxCadastro.Controls.Add(this.lblCurso);
+            this.gbxCadastro.Controls.Add(this.lblGrupo);
+            this.gbxCadastro.Controls.Add(this.cboGrupo);
             this.gbxCadastro.Controls.Add(this.txtDescricao);
             this.gbxCadastro.Controls.Add(this.lblDescricao);
             this.gbxCadastro.Controls.Add(this.txtURL);
@@ -177,23 +197,79 @@
             this.gbxCadastro.TabStop = false;
             this.gbxCadastro.Text = "Cadastro";
             // 
+            // txtEmpresa
+            // 
+            this.txtEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmpresa.Location = new System.Drawing.Point(6, 119);
+            this.txtEmpresa.Name = "txtEmpresa";
+            this.txtEmpresa.Size = new System.Drawing.Size(556, 21);
+            this.txtEmpresa.TabIndex = 5;
+            // 
+            // lblEmpresa
+            // 
+            this.lblEmpresa.AutoSize = true;
+            this.lblEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmpresa.Location = new System.Drawing.Point(6, 101);
+            this.lblEmpresa.Name = "lblEmpresa";
+            this.lblEmpresa.Size = new System.Drawing.Size(57, 15);
+            this.lblEmpresa.TabIndex = 4;
+            this.lblEmpresa.Text = "Empresa";
+            // 
+            // cboCurso
+            // 
+            this.cboCurso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCurso.FormattingEnabled = true;
+            this.cboCurso.Location = new System.Drawing.Point(6, 205);
+            this.cboCurso.Name = "cboCurso";
+            this.cboCurso.Size = new System.Drawing.Size(556, 23);
+            this.cboCurso.TabIndex = 9;
+            // 
+            // lblCurso
+            // 
+            this.lblCurso.AutoSize = true;
+            this.lblCurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCurso.Location = new System.Drawing.Point(6, 187);
+            this.lblCurso.Name = "lblCurso";
+            this.lblCurso.Size = new System.Drawing.Size(39, 15);
+            this.lblCurso.TabIndex = 8;
+            this.lblCurso.Text = "Curso";
+            // 
+            // lblGrupo
+            // 
+            this.lblGrupo.AutoSize = true;
+            this.lblGrupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGrupo.Location = new System.Drawing.Point(6, 143);
+            this.lblGrupo.Name = "lblGrupo";
+            this.lblGrupo.Size = new System.Drawing.Size(41, 15);
+            this.lblGrupo.TabIndex = 6;
+            this.lblGrupo.Text = "Grupo";
+            // 
+            // cboGrupo
+            // 
+            this.cboGrupo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboGrupo.FormattingEnabled = true;
+            this.cboGrupo.Location = new System.Drawing.Point(6, 161);
+            this.cboGrupo.Name = "cboGrupo";
+            this.cboGrupo.Size = new System.Drawing.Size(556, 23);
+            this.cboGrupo.TabIndex = 7;
+            // 
             // txtDescricao
             // 
             this.txtDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescricao.Location = new System.Drawing.Point(6, 123);
+            this.txtDescricao.Location = new System.Drawing.Point(9, 337);
             this.txtDescricao.Multiline = true;
             this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(556, 126);
-            this.txtDescricao.TabIndex = 5;
+            this.txtDescricao.Size = new System.Drawing.Size(556, 111);
+            this.txtDescricao.TabIndex = 11;
             // 
             // lblDescricao
             // 
             this.lblDescricao.AutoSize = true;
             this.lblDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescricao.Location = new System.Drawing.Point(6, 104);
+            this.lblDescricao.Location = new System.Drawing.Point(6, 319);
             this.lblDescricao.Name = "lblDescricao";
             this.lblDescricao.Size = new System.Drawing.Size(62, 15);
-            this.lblDescricao.TabIndex = 4;
+            this.lblDescricao.TabIndex = 10;
             this.lblDescricao.Text = "Descricao";
             // 
             // txtURL
@@ -312,6 +388,44 @@
             this.btnIncluir.UseVisualStyleBackColor = false;
             this.btnIncluir.Click += new System.EventHandler(this.btnIncluir_Click);
             // 
+            // cboSemestre
+            // 
+            this.cboSemestre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSemestre.FormattingEnabled = true;
+            this.cboSemestre.Location = new System.Drawing.Point(6, 249);
+            this.cboSemestre.Name = "cboSemestre";
+            this.cboSemestre.Size = new System.Drawing.Size(556, 23);
+            this.cboSemestre.TabIndex = 13;
+            // 
+            // lblSemestre
+            // 
+            this.lblSemestre.AutoSize = true;
+            this.lblSemestre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSemestre.Location = new System.Drawing.Point(6, 231);
+            this.lblSemestre.Name = "lblSemestre";
+            this.lblSemestre.Size = new System.Drawing.Size(60, 15);
+            this.lblSemestre.TabIndex = 12;
+            this.lblSemestre.Text = "Semestre";
+            // 
+            // cboTurma
+            // 
+            this.cboTurma.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTurma.FormattingEnabled = true;
+            this.cboTurma.Location = new System.Drawing.Point(6, 293);
+            this.cboTurma.Name = "cboTurma";
+            this.cboTurma.Size = new System.Drawing.Size(556, 23);
+            this.cboTurma.TabIndex = 15;
+            // 
+            // lblTurma
+            // 
+            this.lblTurma.AutoSize = true;
+            this.lblTurma.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTurma.Location = new System.Drawing.Point(6, 275);
+            this.lblTurma.Name = "lblTurma";
+            this.lblTurma.Size = new System.Drawing.Size(43, 15);
+            this.lblTurma.TabIndex = 14;
+            this.lblTurma.Text = "Turma";
+            // 
             // FrmProjeto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -369,5 +483,15 @@
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnIncluir;
+        private System.Windows.Forms.ComboBox cboCurso;
+        private System.Windows.Forms.Label lblCurso;
+        private System.Windows.Forms.Label lblGrupo;
+        private System.Windows.Forms.ComboBox cboGrupo;
+        private System.Windows.Forms.TextBox txtEmpresa;
+        private System.Windows.Forms.Label lblEmpresa;
+        private System.Windows.Forms.ComboBox cboTurma;
+        private System.Windows.Forms.Label lblTurma;
+        private System.Windows.Forms.ComboBox cboSemestre;
+        private System.Windows.Forms.Label lblSemestre;
     }
 }

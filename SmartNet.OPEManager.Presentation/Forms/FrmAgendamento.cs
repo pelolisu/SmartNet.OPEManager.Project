@@ -44,7 +44,6 @@ namespace LayoutGestaoOPE.Forms
 
         private void limparCampos()
         {
-            //txtDataHora.
             txtAssunto.Clear();
         }
 
@@ -122,13 +121,34 @@ namespace LayoutGestaoOPE.Forms
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            
             if (consistir() == false)
             {
                 return;
             }
-            
+
+            FormAgendamento agendamentoDao = new FormAgendamento();
+            Agendamento agendamento = new Agendamento();
+ 
             try
             {
+                agendamento.data = Convert.ToDateTime(txtDataHora.Text);
+                agendamento.horario = TimeSpan.Parse(ClsUtil.converterNumero(txtDataHora.Text));
+                agendamento.assunto = txtAssunto.Text;
+                agendamento.ativo = false;
+
+                if (tipoAcao == (int)Acao.incluir)
+                {
+                    agendamentoDao.incluirAgendamento(agendamento);
+                    MessageBox.Show("Projeto salvo com sucesso.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                if (tipoAcao == (int)Acao.alterar)
+                {
+                    agendamento.agendamentoId = codigoAgendamento;
+                    agendamentoDao.alterarAgendamento(agendamento);
+                    MessageBox.Show("Projeto salvo com sucesso.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
                 
             }
             catch (Exception ex)
@@ -168,7 +188,6 @@ namespace LayoutGestaoOPE.Forms
         {
             try
             {
-
                 Agendamento agendamento = new Agendamento();
                 FormAgendamento agendamentoDao = new FormAgendamento();
                 

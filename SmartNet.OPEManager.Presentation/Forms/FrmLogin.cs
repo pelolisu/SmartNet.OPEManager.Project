@@ -37,6 +37,7 @@ namespace LayoutGestaoOPE.Forms
                     if (usuario != null)
                     {
                         FrmMenu frmMenu = new FrmMenu();
+                        FrmMenu.usuario = usuario;
                         this.Hide();
                         frmMenu.Show();
                     }

@@ -33,14 +33,14 @@
             this.lblTitulo = new System.Windows.Forms.Label();
             this.pnlIcone = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnTurma = new System.Windows.Forms.Button();
+            this.btnSemestre = new System.Windows.Forms.Button();
             this.btnCadastroGrupo = new System.Windows.Forms.Button();
             this.btnUsuario = new System.Windows.Forms.Button();
             this.btnCadastroCurso = new System.Windows.Forms.Button();
             this.btnCadatroProjeto = new System.Windows.Forms.Button();
             this.btnAgendamento = new System.Windows.Forms.Button();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.btnSemestre = new System.Windows.Forms.Button();
-            this.btnTurma = new System.Windows.Forms.Button();
             this.pnlCabecalho.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -89,6 +89,38 @@
             this.panel1.Size = new System.Drawing.Size(180, 586);
             this.panel1.TabIndex = 1;
             // 
+            // btnTurma
+            // 
+            this.btnTurma.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(89)))), ((int)(((byte)(152)))));
+            this.btnTurma.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(89)))), ((int)(((byte)(152)))));
+            this.btnTurma.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.btnTurma.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(70)))), ((int)(((byte)(92)))));
+            this.btnTurma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTurma.ForeColor = System.Drawing.Color.White;
+            this.btnTurma.Location = new System.Drawing.Point(0, 156);
+            this.btnTurma.Name = "btnTurma";
+            this.btnTurma.Size = new System.Drawing.Size(180, 33);
+            this.btnTurma.TabIndex = 12;
+            this.btnTurma.Text = "Cadastro de Turma";
+            this.btnTurma.UseVisualStyleBackColor = false;
+            this.btnTurma.Click += new System.EventHandler(this.btnTurma_Click);
+            // 
+            // btnSemestre
+            // 
+            this.btnSemestre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(89)))), ((int)(((byte)(152)))));
+            this.btnSemestre.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(89)))), ((int)(((byte)(152)))));
+            this.btnSemestre.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.btnSemestre.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(70)))), ((int)(((byte)(92)))));
+            this.btnSemestre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSemestre.ForeColor = System.Drawing.Color.White;
+            this.btnSemestre.Location = new System.Drawing.Point(0, 117);
+            this.btnSemestre.Name = "btnSemestre";
+            this.btnSemestre.Size = new System.Drawing.Size(180, 33);
+            this.btnSemestre.TabIndex = 11;
+            this.btnSemestre.Text = "Cadastro de Semestre";
+            this.btnSemestre.UseVisualStyleBackColor = false;
+            this.btnSemestre.Click += new System.EventHandler(this.btnSemestre_Click);
+            // 
             // btnCadastroGrupo
             // 
             this.btnCadastroGrupo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(89)))), ((int)(((byte)(152)))));
@@ -97,7 +129,7 @@
             this.btnCadastroGrupo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(70)))), ((int)(((byte)(92)))));
             this.btnCadastroGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastroGrupo.ForeColor = System.Drawing.Color.White;
-            this.btnCadastroGrupo.Location = new System.Drawing.Point(0, 117);
+            this.btnCadastroGrupo.Location = new System.Drawing.Point(0, 78);
             this.btnCadastroGrupo.Name = "btnCadastroGrupo";
             this.btnCadastroGrupo.Size = new System.Drawing.Size(180, 33);
             this.btnCadastroGrupo.TabIndex = 10;
@@ -129,7 +161,7 @@
             this.btnCadastroCurso.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(70)))), ((int)(((byte)(92)))));
             this.btnCadastroCurso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastroCurso.ForeColor = System.Drawing.Color.White;
-            this.btnCadastroCurso.Location = new System.Drawing.Point(0, 78);
+            this.btnCadastroCurso.Location = new System.Drawing.Point(0, 39);
             this.btnCadastroCurso.Name = "btnCadastroCurso";
             this.btnCadastroCurso.Size = new System.Drawing.Size(180, 33);
             this.btnCadastroCurso.TabIndex = 9;
@@ -145,7 +177,7 @@
             this.btnCadatroProjeto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(70)))), ((int)(((byte)(92)))));
             this.btnCadatroProjeto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadatroProjeto.ForeColor = System.Drawing.Color.White;
-            this.btnCadatroProjeto.Location = new System.Drawing.Point(0, 39);
+            this.btnCadatroProjeto.Location = new System.Drawing.Point(0, 234);
             this.btnCadatroProjeto.Name = "btnCadatroProjeto";
             this.btnCadatroProjeto.Size = new System.Drawing.Size(180, 33);
             this.btnCadatroProjeto.TabIndex = 8;
@@ -161,7 +193,7 @@
             this.btnAgendamento.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(70)))), ((int)(((byte)(92)))));
             this.btnAgendamento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgendamento.ForeColor = System.Drawing.Color.White;
-            this.btnAgendamento.Location = new System.Drawing.Point(0, 234);
+            this.btnAgendamento.Location = new System.Drawing.Point(0, 195);
             this.btnAgendamento.Name = "btnAgendamento";
             this.btnAgendamento.Size = new System.Drawing.Size(180, 33);
             this.btnAgendamento.TabIndex = 7;
@@ -175,38 +207,6 @@
             this.monthCalendar1.Location = new System.Drawing.Point(207, 121);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 2;
-            // 
-            // btnSemestre
-            // 
-            this.btnSemestre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(89)))), ((int)(((byte)(152)))));
-            this.btnSemestre.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(89)))), ((int)(((byte)(152)))));
-            this.btnSemestre.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
-            this.btnSemestre.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(70)))), ((int)(((byte)(92)))));
-            this.btnSemestre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSemestre.ForeColor = System.Drawing.Color.White;
-            this.btnSemestre.Location = new System.Drawing.Point(0, 156);
-            this.btnSemestre.Name = "btnSemestre";
-            this.btnSemestre.Size = new System.Drawing.Size(180, 33);
-            this.btnSemestre.TabIndex = 11;
-            this.btnSemestre.Text = "Cadastro de Semestre";
-            this.btnSemestre.UseVisualStyleBackColor = false;
-            this.btnSemestre.Click += new System.EventHandler(this.btnSemestre_Click);
-            // 
-            // btnTurma
-            // 
-            this.btnTurma.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(89)))), ((int)(((byte)(152)))));
-            this.btnTurma.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(89)))), ((int)(((byte)(152)))));
-            this.btnTurma.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
-            this.btnTurma.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(70)))), ((int)(((byte)(92)))));
-            this.btnTurma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTurma.ForeColor = System.Drawing.Color.White;
-            this.btnTurma.Location = new System.Drawing.Point(0, 195);
-            this.btnTurma.Name = "btnTurma";
-            this.btnTurma.Size = new System.Drawing.Size(180, 33);
-            this.btnTurma.TabIndex = 12;
-            this.btnTurma.Text = "Cadastro de Turma";
-            this.btnTurma.UseVisualStyleBackColor = false;
-            this.btnTurma.Click += new System.EventHandler(this.btnTurma_Click);
             // 
             // FrmMenu
             // 

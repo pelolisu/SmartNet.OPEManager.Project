@@ -1,4 +1,5 @@
 ﻿using LayoutGestaoOPE.Forms;
+using SmartNet.OPEManager.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,8 @@ namespace LayoutGestaoOPE
         {
             InitializeComponent();
         }
+
+        public static Usuario usuario;
 
         private void btnUsuario_Click(object sender, EventArgs e)
         {
@@ -38,7 +41,11 @@ namespace LayoutGestaoOPE
 
         private void FrmMenu_Load(object sender, EventArgs e)
         {
-
+            if(usuario.perfil != Usuario.Perfil.Administrador)
+            {
+                btnCadatroProjeto.Visible = false;
+                btnAgendamento.Visible = false;
+            }
         }
 
         private void btnAgendamento_Click(object sender, EventArgs e)

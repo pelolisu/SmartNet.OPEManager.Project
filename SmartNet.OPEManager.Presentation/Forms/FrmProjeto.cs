@@ -35,6 +35,7 @@ namespace LayoutGestaoOPE.Forms
             txtTitulo.Enabled = (tipoAcao != (int)Acao.nenhum);
             txtURL.Enabled = (tipoAcao != (int)Acao.nenhum);
             txtDescricao.Enabled = (tipoAcao != (int)Acao.nenhum);
+            txtEmpresa.Enabled = (tipoAcao != (int)Acao.nenhum);
 
             btnSalvar.Enabled = (tipoAcao != (int)Acao.nenhum);
             btnCancelar.Enabled = (tipoAcao != (int)Acao.nenhum);
@@ -48,6 +49,7 @@ namespace LayoutGestaoOPE.Forms
             txtTitulo.Clear();
             txtURL.Clear();
             txtDescricao.Clear();
+            txtEmpresa.Clear();
         }
 
         private void FrmProjeto_Load(object sender, EventArgs e)
@@ -59,6 +61,10 @@ namespace LayoutGestaoOPE.Forms
             clsUtil.criarGrid(dgvProjeto);
 
             apresentarProjetos();
+            carregarComboGrupo();
+            carregarComboCurso();
+            carregarComboSemestre();
+            carregarComboTurma();
         }
 
         private void btnIncluir_Click(object sender, EventArgs e)
@@ -125,6 +131,12 @@ namespace LayoutGestaoOPE.Forms
                 return false;
             }
 
+            if (txtEmpresa.Text.Length == 0)
+            {
+                MessageBox.Show("Informe a Empresa.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return false;
+            }
+
             return true;
         }
 
@@ -135,17 +147,21 @@ namespace LayoutGestaoOPE.Forms
             {
                 return;
             }
-
-            Projeto projeto = new Projeto();
-            FormProjeto projetoDao = new FormProjeto();
-
-            projeto.titulo = txtTitulo.Text;
-            projeto.urlSistema = txtURL.Text;
-            projeto.descricao = txtDescricao.Text;
-
+            
             try
             {
 
+                Projeto projeto = new Projeto();
+                FormProjeto projetoDao = new FormProjeto();
+
+                projeto.titulo = txtTitulo.Text;
+                projeto.urlSistema = txtURL.Text;
+                projeto.descricao = txtDescricao.Text;
+                projeto.empresa = txtEmpresa.Text;
+                projeto.cursoId = int.Parse(cboCurso.SelectedValue.ToString());
+                projeto.grupoId = int.Parse(cboGrupo.SelectedValue.ToString());
+                projeto.ativo = true;
+                
                 if (tipoAcao == (int)Acao.incluir)
                 {
                     projetoDao.incluirProjeto(projeto);
@@ -154,6 +170,7 @@ namespace LayoutGestaoOPE.Forms
 
                 if (tipoAcao == (int)Acao.alterar)
                 {
+                    projeto.projetoId = codigoProjeto;
                     projetoDao.alterarProjeto(projeto);
                     MessageBox.Show("Projeto salvo com sucesso.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -217,6 +234,47 @@ namespace LayoutGestaoOPE.Forms
             {
                 MessageBox.Show("Erro: " + ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void carregarComboGrupo()
+        {
+
+            FormGrupo grupoDao = new FormGrupo();
+            ICollection<Grupo> grupos = grupoDao.listarGrupo();
+
+            cboGrupo.DataSource = grupos;
+            cboGrupo.ValueMember = "grupoId";
+            cboGrupo.DisplayMember = "nome";
+        }
+
+        private void carregarComboCurso()
+        {
+            FormCurso cursoDao = new FormCurso();
+            ICollection<Curso> cursos = cursoDao.listarCurso();
+
+            cboCurso.DataSource = cursos;
+            cboCurso.ValueMember = "cursoId";
+            cboCurso.DisplayMember = "nome";
+        }
+
+        private void carregarComboSemestre()
+        {
+            FormSemestre semestreDao = new FormSemestre();
+            ICollection<Semestre> semestres = semestreDao.listarSemestre();
+
+            cboSemestre.DataSource = semestres;
+            cboSemestre.ValueMember = "semestreId";
+            cboSemestre.DisplayMember = "nome";
+        }
+
+        private void carregarComboTurma()
+        {
+            FormTurma turmaDao = new FormTurma();
+            ICollection<Turma> turmas = turmaDao.listarTurmas();
+
+            cboTurma.DataSource = turmas;
+            cboSemestre.ValueMember = "turmaId";
+            cboSemestre.DisplayMember = "nome";
         }
 
     }

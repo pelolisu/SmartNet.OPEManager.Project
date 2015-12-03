@@ -58,5 +58,15 @@ namespace LayoutGestaoOPE.Forms
             dgv.DefaultCellStyle.SelectionForeColor = Color.Black;
             dgv.DefaultCellStyle.SelectionBackColor = Color.Beige;
         }
+
+        public static String converterNumero(string hora)
+        {
+            if(hora.Length >= 16) {
+                return hora.Substring(11, hora.Length - 11);
+            }
+
+            return "";
+        }
+
     }
 }
