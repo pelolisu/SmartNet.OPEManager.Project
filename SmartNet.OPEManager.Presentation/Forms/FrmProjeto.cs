@@ -164,7 +164,17 @@ namespace LayoutGestaoOPE.Forms
                 
                 if (tipoAcao == (int)Acao.incluir)
                 {
-                    projetoDao.incluirProjeto(projeto);
+                    int codigoProjeto = projetoDao.incluirProjeto(projeto);
+
+                    Fase fase = new Fase();
+                    fase.projetoId = codigoProjeto;
+                    fase.semestreId = int.Parse(cboSemestre.SelectedValue.ToString());
+                    fase.turmaId = int.Parse(cboTurma.SelectedValue.ToString());
+                    fase.ativo = true;
+
+                    FormFase faseDao = new FormFase();
+                    faseDao.incluirFase(fase);
+
                     MessageBox.Show("Projeto salvo com sucesso.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
@@ -223,6 +233,7 @@ namespace LayoutGestaoOPE.Forms
                     txtTitulo.Text = projeto.titulo.ToString();
                     txtURL.Text = projeto.urlSistema.ToString();
                     txtDescricao.Text = projeto.descricao.ToString();
+                    txtEmpresa.Text = projeto.empresa.ToString();
                     
                 }
 
@@ -273,8 +284,8 @@ namespace LayoutGestaoOPE.Forms
             ICollection<Turma> turmas = turmaDao.listarTurmas();
 
             cboTurma.DataSource = turmas;
-            cboSemestre.ValueMember = "turmaId";
-            cboSemestre.DisplayMember = "nome";
+            cboTurma.ValueMember = "turmaId";
+            cboTurma.DisplayMember = "nome";
         }
 
     }

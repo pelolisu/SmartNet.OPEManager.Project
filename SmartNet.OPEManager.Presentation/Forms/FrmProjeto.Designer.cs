@@ -40,6 +40,10 @@
             this.lblPesquisaNome = new System.Windows.Forms.Label();
             this.dgvProjeto = new System.Windows.Forms.DataGridView();
             this.gbxCadastro = new System.Windows.Forms.GroupBox();
+            this.cboTurma = new System.Windows.Forms.ComboBox();
+            this.lblTurma = new System.Windows.Forms.Label();
+            this.cboSemestre = new System.Windows.Forms.ComboBox();
+            this.lblSemestre = new System.Windows.Forms.Label();
             this.txtEmpresa = new System.Windows.Forms.TextBox();
             this.lblEmpresa = new System.Windows.Forms.Label();
             this.cboCurso = new System.Windows.Forms.ComboBox();
@@ -57,10 +61,6 @@
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnIncluir = new System.Windows.Forms.Button();
-            this.cboSemestre = new System.Windows.Forms.ComboBox();
-            this.lblSemestre = new System.Windows.Forms.Label();
-            this.cboTurma = new System.Windows.Forms.ComboBox();
-            this.lblTurma = new System.Windows.Forms.Label();
             this.pnlCabecalho.SuspendLayout();
             this.gbxPesquisa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProjeto)).BeginInit();
@@ -197,6 +197,44 @@
             this.gbxCadastro.TabStop = false;
             this.gbxCadastro.Text = "Cadastro";
             // 
+            // cboTurma
+            // 
+            this.cboTurma.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTurma.FormattingEnabled = true;
+            this.cboTurma.Location = new System.Drawing.Point(6, 293);
+            this.cboTurma.Name = "cboTurma";
+            this.cboTurma.Size = new System.Drawing.Size(556, 23);
+            this.cboTurma.TabIndex = 13;
+            // 
+            // lblTurma
+            // 
+            this.lblTurma.AutoSize = true;
+            this.lblTurma.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTurma.Location = new System.Drawing.Point(6, 275);
+            this.lblTurma.Name = "lblTurma";
+            this.lblTurma.Size = new System.Drawing.Size(43, 15);
+            this.lblTurma.TabIndex = 12;
+            this.lblTurma.Text = "Turma";
+            // 
+            // cboSemestre
+            // 
+            this.cboSemestre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSemestre.FormattingEnabled = true;
+            this.cboSemestre.Location = new System.Drawing.Point(6, 249);
+            this.cboSemestre.Name = "cboSemestre";
+            this.cboSemestre.Size = new System.Drawing.Size(556, 23);
+            this.cboSemestre.TabIndex = 11;
+            // 
+            // lblSemestre
+            // 
+            this.lblSemestre.AutoSize = true;
+            this.lblSemestre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSemestre.Location = new System.Drawing.Point(6, 231);
+            this.lblSemestre.Name = "lblSemestre";
+            this.lblSemestre.Size = new System.Drawing.Size(60, 15);
+            this.lblSemestre.TabIndex = 10;
+            this.lblSemestre.Text = "Semestre";
+            // 
             // txtEmpresa
             // 
             this.txtEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -260,7 +298,7 @@
             this.txtDescricao.Multiline = true;
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(556, 111);
-            this.txtDescricao.TabIndex = 11;
+            this.txtDescricao.TabIndex = 15;
             // 
             // lblDescricao
             // 
@@ -269,7 +307,7 @@
             this.lblDescricao.Location = new System.Drawing.Point(6, 319);
             this.lblDescricao.Name = "lblDescricao";
             this.lblDescricao.Size = new System.Drawing.Size(62, 15);
-            this.lblDescricao.TabIndex = 10;
+            this.lblDescricao.TabIndex = 14;
             this.lblDescricao.Text = "Descricao";
             // 
             // txtURL
@@ -387,44 +425,6 @@
             this.btnIncluir.Text = "Incluir";
             this.btnIncluir.UseVisualStyleBackColor = false;
             this.btnIncluir.Click += new System.EventHandler(this.btnIncluir_Click);
-            // 
-            // cboSemestre
-            // 
-            this.cboSemestre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSemestre.FormattingEnabled = true;
-            this.cboSemestre.Location = new System.Drawing.Point(6, 249);
-            this.cboSemestre.Name = "cboSemestre";
-            this.cboSemestre.Size = new System.Drawing.Size(556, 23);
-            this.cboSemestre.TabIndex = 13;
-            // 
-            // lblSemestre
-            // 
-            this.lblSemestre.AutoSize = true;
-            this.lblSemestre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSemestre.Location = new System.Drawing.Point(6, 231);
-            this.lblSemestre.Name = "lblSemestre";
-            this.lblSemestre.Size = new System.Drawing.Size(60, 15);
-            this.lblSemestre.TabIndex = 12;
-            this.lblSemestre.Text = "Semestre";
-            // 
-            // cboTurma
-            // 
-            this.cboTurma.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboTurma.FormattingEnabled = true;
-            this.cboTurma.Location = new System.Drawing.Point(6, 293);
-            this.cboTurma.Name = "cboTurma";
-            this.cboTurma.Size = new System.Drawing.Size(556, 23);
-            this.cboTurma.TabIndex = 15;
-            // 
-            // lblTurma
-            // 
-            this.lblTurma.AutoSize = true;
-            this.lblTurma.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTurma.Location = new System.Drawing.Point(6, 275);
-            this.lblTurma.Name = "lblTurma";
-            this.lblTurma.Size = new System.Drawing.Size(43, 15);
-            this.lblTurma.TabIndex = 14;
-            this.lblTurma.Text = "Turma";
             // 
             // FrmProjeto
             // 

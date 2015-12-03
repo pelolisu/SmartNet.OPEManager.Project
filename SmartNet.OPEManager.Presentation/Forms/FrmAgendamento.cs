@@ -135,7 +135,8 @@ namespace LayoutGestaoOPE.Forms
                 agendamento.data = Convert.ToDateTime(txtDataHora.Text);
                 agendamento.horario = TimeSpan.Parse(ClsUtil.converterNumero(txtDataHora.Text));
                 agendamento.assunto = txtAssunto.Text;
-                agendamento.ativo = false;
+                agendamento.faseId = 2;
+                agendamento.ativo = true;
 
                 if (tipoAcao == (int)Acao.incluir)
                 {

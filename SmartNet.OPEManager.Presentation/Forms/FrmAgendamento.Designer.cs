@@ -289,7 +289,7 @@
             this.MaximizeBox = false;
             this.Name = "FrmAgendamento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmAgendamento";
+            this.Text = "Agendamento";
             this.Load += new System.EventHandler(this.FrmAgendamento_Load);
             this.pnlCabecalho.ResumeLayout(false);
             this.pnlCabecalho.PerformLayout();
