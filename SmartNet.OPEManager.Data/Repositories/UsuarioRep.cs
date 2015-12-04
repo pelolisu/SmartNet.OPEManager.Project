@@ -21,16 +21,24 @@ namespace SmartNet.OPEManager.Data.Repositories
             }
         }
 
-        //public override ICollection<Usuario> BuscarTodos()
-        //{
-        //    using (Db = new OPEModelContext())
-        //    {
-        //        var usuarios = Db.Usuarios.Where(m => m.ativo == true).ToList();
-        //        return usuarios;
-        //    }
+        public virtual ICollection<Usuario> BuscarPorNome(string texto)
+        {
+            using (Db = new OPEModelContext())
+            {
+                return Db.Usuarios.Where(o => o.nome.Contains(texto)).ToList();
 
-        //    //return base.BuscarTodos();
-        //}
+            }
 
+        }
+
+        public virtual ICollection<Usuario> BuscarPorEmail(string texto)
+        {
+            using (Db = new OPEModelContext())
+            {
+                return Db.Usuarios.Where(o => o.email.Contains(texto)).ToList();
+
+            }
+
+        }
     }
 }

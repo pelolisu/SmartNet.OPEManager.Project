@@ -5,6 +5,7 @@ using SmartNet.OPEManager.Data.Contexto;
 using SmartNet.OPEManager.Data.Repositories.Base;
 using SmartNet.OPEManager.Domain.Entities;
 using SmartNet.OPEManager.Domain.Interfaces.Repositories;
+using System.Collections.Generic;
 
 namespace SmartNet.OPEManager.Data.Repositories
 {
@@ -18,6 +19,16 @@ namespace SmartNet.OPEManager.Data.Repositories
                 return Db.Agendamentos.Find(id);
 
             }
+        }
+
+        public virtual ICollection<Agendamento> BuscarPorAssunto(string texto)
+        {
+            using (Db = new OPEModelContext())
+            {
+                return Db.Agendamentos.Where(o => o.assunto.Contains(texto)).ToList();
+
+            }
+
         }
 
         public new Agendamento Atualizar(Agendamento obj)
@@ -34,15 +45,15 @@ namespace SmartNet.OPEManager.Data.Repositories
 
                 //Consulta Linq para obter os convidados que devem ser excluídas do item atual
                 var convidadosDeletados = (from c in itemAtual.convidados
-                    where !(from c1 in obj.convidados
-                        select c1.RA).Contains(c.RA)
-                    select c).ToList();
+                                           where !(from c1 in obj.convidados
+                                                   select c1.RA).Contains(c.RA)
+                                           select c).ToList();
 
                 //Consulta Linq para obter os convidados que devem ser adicionadas ao item atual
                 var convidadosAdicionados = (from c in obj.convidados
-                    where !(from c1 in itemAtual.convidados
-                        select c1.RA).Contains(c.RA)
-                    select c).ToList();
+                                             where !(from c1 in itemAtual.convidados
+                                                     select c1.RA).Contains(c.RA)
+                                             select c).ToList();
 
                 //Exclusão dos convidados relacionados ao item atual
                 convidadosDeletados.ForEach(c => itemAtual.convidados.Remove(c));
