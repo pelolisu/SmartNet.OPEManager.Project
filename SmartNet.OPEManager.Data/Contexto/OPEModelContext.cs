@@ -25,7 +25,7 @@ namespace SmartNet.OPEManager.Data.Contexto
         public virtual DbSet<Grupo> Grupos { get; set; }
         public virtual DbSet<Professor> Professores { get; set; }
         public virtual DbSet<Projeto> Projetos { get; set; }
-        public virtual DbSet<Semestre> Semestre { get; set; }
+        public virtual DbSet<Semestre> Semestres { get; set; }
         public virtual DbSet<Turma> Turmas { get; set; }
         public virtual DbSet<Usuario> Usuarios { get; set; }
         

@@ -1,5 +1,6 @@
 using System.Data.Entity.Migrations;
 using SmartNet.OPEManager.Data.Contexto;
+using SmartNet.OPEManager.Domain.Entities;
 
 namespace SmartNet.OPEManager.Data.Migrations
 {
@@ -24,6 +25,17 @@ namespace SmartNet.OPEManager.Data.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+
+            var professor = new Professor
+            {
+                nome = "Vanderson",
+                RA = 1400000,
+                senha = "123",
+                email = "varnderson@teste.com",
+                perfil = Usuario.Perfil.Administrador,
+                ativo = true
+            };
+            context.Professores.AddOrUpdate(professor);
         }
     }
 }

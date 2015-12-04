@@ -4,6 +4,7 @@ using SmartNet.OPEManager.Data.Contexto;
 using SmartNet.OPEManager.Data.Repositories.Base;
 using SmartNet.OPEManager.Domain.Entities;
 using SmartNet.OPEManager.Domain.Interfaces.Repositories;
+using System.Collections.Generic;
 
 namespace SmartNet.OPEManager.Data.Repositories
 {
@@ -17,6 +18,16 @@ namespace SmartNet.OPEManager.Data.Repositories
                 return Db.Grupos.Find(id);
 
             }
+        }
+
+        public virtual ICollection<Grupo> BuscarPorNome(string texto)
+        {
+            using (Db = new OPEModelContext())
+            {
+                return Db.Grupos.Where(o => o.nome.Contains(texto)).ToList();
+
+            }
+
         }
     }
 }
