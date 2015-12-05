@@ -46,5 +46,29 @@ namespace GangOfSeven.OPEManager.Application.Forms
         {
             return new UsuarioRep().BuscarPorId(id);
         }
+
+        public ICollection<Usuario> buscaEmailUsuario(string email)
+        {
+            ICollection<Usuario> emailUsuarios = null;
+
+            if (email != null)
+            {
+                emailUsuarios = new UsuarioRep().BuscarPorEmail(email);
+            }
+
+            return emailUsuarios;
+        }
+
+        public ICollection<Usuario> buscaNomeUsuario(string nome)
+        {
+            ICollection<Usuario> nomeUsuarios = null;
+
+            if (nome != null)
+            {
+                nomeUsuarios = new UsuarioRep().BuscarPorNome(nome);
+            }
+
+            return nomeUsuarios;
+        }
     }
 }
