@@ -74,5 +74,20 @@ namespace GangOfSeven.OPEManager.Application.Forms
 
             return descricaoProjetos;
         }
+
+        public int buscaCodigoFase(int codProjeto)
+        {
+            int codFase = 0;
+
+            ICollection<Fase> fases = new ProjetoRep().BuscarPorId(codProjeto).fases;           
+
+            foreach(var fase in fases)
+            {
+                codFase = fase.faseId;
+            }
+           
+            return codFase;
+        }
+
     }
 }
