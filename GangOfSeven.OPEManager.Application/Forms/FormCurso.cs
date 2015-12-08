@@ -45,5 +45,17 @@ namespace GangOfSeven.OPEManager.Application.Forms
         {
             return new CursoRep().BuscarPorId(id);
         }
+
+        public ICollection<Curso> buscaNomeCurso(string nome)
+        {
+            ICollection<Curso> nomeCursos = null;
+
+            if (nome != null)
+            {
+                nomeCursos = new CursoRep().BuscarPorNome(nome);
+            }
+
+            return nomeCursos;
+        }
     }
 }

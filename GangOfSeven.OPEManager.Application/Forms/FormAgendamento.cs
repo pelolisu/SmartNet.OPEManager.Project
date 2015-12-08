@@ -46,5 +46,17 @@ namespace GangOfSeven.OPEManager.Application.Forms
         {
             return new AgendamentoRep().BuscarPorId(id);
         }
+
+        public ICollection<Agendamento> buscaAssuntoAgendameto(string assunto)
+        {
+            ICollection<Agendamento> assuntoAgendamentos = null;
+
+            if (assunto != null)
+            {
+                assuntoAgendamentos = new AgendamentoRep().BuscarPorAssunto(assunto);
+            }
+
+            return assuntoAgendamentos;
+        }
     }
 }

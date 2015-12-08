@@ -51,5 +51,28 @@ namespace GangOfSeven.OPEManager.Application.Forms
         {
             return new ProjetoRep().BuscarPorId(id);
         }
+
+        public ICollection<Projeto> buscaTituloProjeto(string titulo)
+        {
+            ICollection<Projeto> tituloProjetos = null;
+
+            if (titulo != null){
+                tituloProjetos = new ProjetoRep().BuscarPorTitulo(titulo);
+            }
+
+            return tituloProjetos;
+        }
+
+        public ICollection<Projeto> buscaDescricaoProjeto(string descricao)
+        {
+            ICollection<Projeto> descricaoProjetos = null;
+
+            if (descricao != null)
+            {
+                descricaoProjetos = new ProjetoRep().BuscarPorDescricao(descricao);
+            }
+
+            return descricaoProjetos;
+        }
     }
 }

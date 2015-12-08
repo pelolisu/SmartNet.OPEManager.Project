@@ -45,5 +45,17 @@ namespace GangOfSeven.OPEManager.Application.Forms
         {
             return new GrupoRep().BuscarPorId(id);
         }
+
+        public ICollection<Grupo> buscaNomeGrupo(string nome)
+        {
+            ICollection<Grupo> nomeGrupos = null;
+
+            if (nome != null)
+            {
+                nomeGrupos = new GrupoRep().BuscarPorNome(nome);
+            }
+
+            return nomeGrupos;
+        }
     }
 }

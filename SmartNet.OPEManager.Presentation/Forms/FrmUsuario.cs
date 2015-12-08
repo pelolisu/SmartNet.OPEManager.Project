@@ -190,16 +190,20 @@ namespace LayoutGestaoOPE.Forms
 
         private void apresentarUsuarios()
         {
-            dgvUsuario.Rows.Clear();
-
             FormUsuario usuarioDao = new FormUsuario();
             ICollection<Usuario> usuarios = usuarioDao.listarLogin();
+
+            carregarGrid(usuarios);
+        }
+
+        private void carregarGrid(ICollection<Usuario> usuarios)
+        {
+            dgvUsuario.Rows.Clear();
 
             foreach (Usuario usuario in usuarios)
             {
                 dgvUsuario.Rows.Add(usuario.RA, usuario.nome);
             }
-
         }
 
         private void dgvUsuario_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -253,7 +257,23 @@ namespace LayoutGestaoOPE.Forms
         private void btnUsuario_Click(object sender, EventArgs e)
         {
             FormUsuario usuarioDao = new FormUsuario();
-            
+
+            if (txtPesquisaNome.Text != "")
+            {
+                ICollection<Usuario> usuarios = usuarioDao.buscaNomeUsuario(txtPesquisaNome.Text);
+                carregarGrid(usuarios);
+                return;
+            }
+
+            if (txtPesquisaEmail.Text != "")
+            {
+                ICollection<Usuario> usuarios = usuarioDao.buscaEmailUsuario(txtPesquisaEmail.Text);
+                carregarGrid(usuarios);
+                return;
+            }
+
+
+
         }
         
     }
