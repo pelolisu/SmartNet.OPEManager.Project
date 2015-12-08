@@ -154,11 +154,16 @@ namespace LayoutGestaoOPE.Forms
 
         private void apresentarCursos()
         {
-            dgvCurso.Rows.Clear();
-
             FormCurso cursoDao = new FormCurso();
             ICollection<Curso> cursos = cursoDao.listarCurso();
-            
+
+            carregarGrid(cursos);
+        }
+
+        private void carregarGrid(ICollection<Curso> cursos)
+        {
+            dgvCurso.Rows.Clear();
+
             foreach (Curso curso in cursos)
             {
                 dgvCurso.Rows.Add(curso.cursoId, curso.nome);
@@ -199,5 +204,12 @@ namespace LayoutGestaoOPE.Forms
             }
         }
 
+        private void btnUsuario_Click(object sender, EventArgs e)
+        {
+            FormCurso cursoDao = new FormCurso();
+            ICollection<Curso> cursos = cursoDao.buscaNomeCurso(txtPesquisaNome.Text);
+
+            carregarGrid(cursos);
+        }
     }
 }

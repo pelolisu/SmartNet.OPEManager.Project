@@ -136,7 +136,11 @@ namespace LayoutGestaoOPE.Forms
                 agendamento.data = Convert.ToDateTime(txtDataHora.Text);
                 agendamento.horario = TimeSpan.Parse(ClsUtil.converterNumero(txtDataHora.Text));
                 agendamento.assunto = txtAssunto.Text;
-                agendamento.faseId = 2;
+
+                FormProjeto projetoDao = new FormProjeto();
+                int codigoFase = projetoDao.buscaCodigoFase(int.Parse(cboProjeto.SelectedValue.ToString()));
+
+                agendamento.faseId = codigoFase;
                 agendamento.ativo = true;
 
                 if (tipoAcao == (int)Acao.incluir)
@@ -166,10 +170,15 @@ namespace LayoutGestaoOPE.Forms
 
         private void apresentarAgendamento()
         {
-            dgvAgendamento.Rows.Clear();
-
             FormAgendamento agendamentoDao = new FormAgendamento();
             ICollection<Agendamento> agendamentos = agendamentoDao.listarAgendamento();
+
+            carregaGrid(agendamentos);
+        }
+
+        private void carregaGrid(ICollection<Agendamento> agendamentos)
+        {
+            dgvAgendamento.Rows.Clear();
 
             foreach (Agendamento agendamento in agendamentos)
             {
@@ -221,6 +230,13 @@ namespace LayoutGestaoOPE.Forms
             cboProjeto.ValueMember = "projetoId";
             cboProjeto.DisplayMember = "titulo";
         }
-        
+
+        private void btnUsuario_Click(object sender, EventArgs e)
+        {
+            FormAgendamento agendamentoDao = new FormAgendamento();
+            ICollection<Agendamento> agendamentos = agendamentoDao.buscaAssuntoAgendameto(txtPesquisaNome.Text);
+
+            carregaGrid(agendamentos);
+        }
     }
 }

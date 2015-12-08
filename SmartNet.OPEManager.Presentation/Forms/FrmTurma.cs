@@ -157,16 +157,20 @@ namespace LayoutGestaoOPE.Forms
 
         private void apresentarTurma()
         {
-            dgvTurmas.Rows.Clear();
-
             FormTurma turmaDao = new FormTurma();
             ICollection<Turma> turmas = turmaDao.listarTurmas();
+
+            carregarTurma(turmas);
+        }
+
+        private void carregarTurma(ICollection<Turma> turmas)
+        {
+            dgvTurmas.Rows.Clear();
 
             foreach (Turma turma in turmas)
             {
                 dgvTurmas.Rows.Add(turma.turmaId, turma.nome);
             }
-
         }
 
         private void dgvTurma_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -204,7 +208,9 @@ namespace LayoutGestaoOPE.Forms
         private void btnUsuario_Click(object sender, EventArgs e)
         {
             FormTurma turmaDao = new FormTurma();
-            
+            ICollection<Turma> turmas = turmaDao.buscaNomeTurma(txtPesquisaNome.Text);
+
+            carregarTurma(turmas);
         }
     }
 }

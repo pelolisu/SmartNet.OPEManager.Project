@@ -154,16 +154,20 @@ namespace LayoutGestaoOPE.Forms
 
         private void apresentarSemestre()
         {
-            dgvSemestre.Rows.Clear();
-
             FormSemestre semestreDao = new FormSemestre();
             ICollection<Semestre> semestres = semestreDao.listarSemestre();
 
-            foreach(Semestre semestre in semestres)
+            carregaGrid(semestres);
+        }
+
+        private void carregaGrid(ICollection<Semestre> semestres)
+        {
+            dgvSemestre.Rows.Clear();
+
+            foreach (Semestre semestre in semestres)
             {
                 dgvSemestre.Rows.Add(semestre.semestreId, semestre.nome);
             }
-
         }
 
         private void dgvSemestre_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -199,5 +203,12 @@ namespace LayoutGestaoOPE.Forms
             }
         }
 
+        private void btnUsuario_Click(object sender, EventArgs e)
+        {
+            FormSemestre semestreDao = new FormSemestre();
+            ICollection<Semestre> semestres = semestreDao.buscaNomeSemestre(txtPesquisaNome.Text);
+
+            carregaGrid(semestres);
+        }
     }
 }

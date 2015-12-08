@@ -198,15 +198,20 @@ namespace LayoutGestaoOPE.Forms
 
         private void apresentarProjetos()
         {
-            dgvProjeto.Rows.Clear();
-
             FormProjeto projetoDao = new FormProjeto();
             ICollection<Projeto> projetos = projetoDao.listarProjetos();
 
-            foreach(Projeto projeto in projetos)
+            carregarGrid(projetos);
+        }
+
+        private void carregarGrid(ICollection<Projeto> projetos)
+        {
+            dgvProjeto.Rows.Clear();
+
+            foreach (Projeto projeto in projetos)
             {
                 dgvProjeto.Rows.Add(projeto.projetoId, projeto.titulo);
-            }   
+            }
         }
 
         private void dgvProjeto_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -288,5 +293,24 @@ namespace LayoutGestaoOPE.Forms
             cboTurma.DisplayMember = "nome";
         }
 
+        private void btnUsuario_Click(object sender, EventArgs e)
+        {
+            if(txtPesquisaNome.Text.Trim() != "")
+            {
+                FormProjeto projetoDao = new FormProjeto();
+                ICollection<Projeto> projetos = projetoDao.buscaTituloProjeto(txtPesquisaNome.Text);
+
+                carregarGrid(projetos);
+            }
+
+            if(txtDescricaoPesquisa.Text.Trim() != "")
+            {
+                FormProjeto projetoDao = new FormProjeto();
+                ICollection<Projeto> projetos = projetoDao.buscaDescricaoProjeto(txtDescricaoPesquisa.Text);
+
+                carregarGrid(projetos);
+            }
+
+        }
     }
 }

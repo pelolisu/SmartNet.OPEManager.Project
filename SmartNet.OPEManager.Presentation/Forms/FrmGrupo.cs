@@ -155,11 +155,15 @@ namespace LayoutGestaoOPE.Forms
         }
 
         private void apresentarGrupos()
-        {
-            dgvGrupo.Rows.Clear();
-
+        { 
             FormGrupo grupoDao = new FormGrupo();
             ICollection<Grupo> grupos = grupoDao.listarGrupo();
+            carregaGrupo(grupos);
+        }
+
+        private void carregaGrupo(ICollection<Grupo> grupos)
+        {
+            dgvGrupo.Rows.Clear();
 
             foreach (Grupo grupo in grupos)
             {
@@ -202,6 +206,12 @@ namespace LayoutGestaoOPE.Forms
             }
         }
 
+        private void btnUsuario_Click(object sender, EventArgs e)
+        {
+            FormGrupo grupoDao = new FormGrupo();
+            ICollection<Grupo> grupos = grupoDao.buscaNomeGrupo(txtPesquisaNome.Text);
+            carregaGrupo(grupos);
+        }
     }
 
 }

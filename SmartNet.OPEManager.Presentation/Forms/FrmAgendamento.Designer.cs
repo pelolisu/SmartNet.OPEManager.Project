@@ -38,6 +38,8 @@
             this.lblPesquisaNome = new System.Windows.Forms.Label();
             this.dgvAgendamento = new System.Windows.Forms.DataGridView();
             this.gbxCadastro = new System.Windows.Forms.GroupBox();
+            this.lblProjeto = new System.Windows.Forms.Label();
+            this.cboProjeto = new System.Windows.Forms.ComboBox();
             this.txtDataHora = new System.Windows.Forms.DateTimePicker();
             this.lblDataHora = new System.Windows.Forms.Label();
             this.lblAssunto = new System.Windows.Forms.Label();
@@ -47,8 +49,6 @@
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnIncluir = new System.Windows.Forms.Button();
-            this.lblProjeto = new System.Windows.Forms.Label();
-            this.cboProjeto = new System.Windows.Forms.ComboBox();
             this.pnlCabecalho.SuspendLayout();
             this.gbxPesquisa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAgendamento)).BeginInit();
@@ -111,6 +111,7 @@
             this.btnUsuario.Size = new System.Drawing.Size(38, 33);
             this.btnUsuario.TabIndex = 2;
             this.btnUsuario.UseVisualStyleBackColor = false;
+            this.btnUsuario.Click += new System.EventHandler(this.btnUsuario_Click);
             // 
             // txtPesquisaNome
             // 
@@ -154,6 +155,25 @@
             this.gbxCadastro.TabIndex = 0;
             this.gbxCadastro.TabStop = false;
             this.gbxCadastro.Text = "Cadastro";
+            // 
+            // lblProjeto
+            // 
+            this.lblProjeto.AutoSize = true;
+            this.lblProjeto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProjeto.Location = new System.Drawing.Point(8, 203);
+            this.lblProjeto.Name = "lblProjeto";
+            this.lblProjeto.Size = new System.Drawing.Size(46, 15);
+            this.lblProjeto.TabIndex = 8;
+            this.lblProjeto.Text = "Projeto";
+            // 
+            // cboProjeto
+            // 
+            this.cboProjeto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboProjeto.FormattingEnabled = true;
+            this.cboProjeto.Location = new System.Drawing.Point(8, 221);
+            this.cboProjeto.Name = "cboProjeto";
+            this.cboProjeto.Size = new System.Drawing.Size(556, 23);
+            this.cboProjeto.TabIndex = 9;
             // 
             // txtDataHora
             // 
@@ -272,25 +292,6 @@
             this.btnIncluir.Text = "Incluir";
             this.btnIncluir.UseVisualStyleBackColor = false;
             this.btnIncluir.Click += new System.EventHandler(this.btnIncluir_Click);
-            // 
-            // lblProjeto
-            // 
-            this.lblProjeto.AutoSize = true;
-            this.lblProjeto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProjeto.Location = new System.Drawing.Point(8, 203);
-            this.lblProjeto.Name = "lblProjeto";
-            this.lblProjeto.Size = new System.Drawing.Size(46, 15);
-            this.lblProjeto.TabIndex = 8;
-            this.lblProjeto.Text = "Projeto";
-            // 
-            // cboProjeto
-            // 
-            this.cboProjeto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboProjeto.FormattingEnabled = true;
-            this.cboProjeto.Location = new System.Drawing.Point(8, 221);
-            this.cboProjeto.Name = "cboProjeto";
-            this.cboProjeto.Size = new System.Drawing.Size(556, 23);
-            this.cboProjeto.TabIndex = 9;
             // 
             // FrmAgendamento
             // 
