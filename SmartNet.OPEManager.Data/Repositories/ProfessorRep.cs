@@ -20,20 +20,11 @@ namespace SmartNet.OPEManager.Data.Repositories
             }
         }
 
-        public virtual ICollection<Projeto> BuscarPorTitulo(string texto)
+        public virtual ICollection<Professor> BuscarPorNome(string texto)
         {
             using (Db = new OPEModelContext())
             {
-                return Db.Projetos.Where(o => o.titulo.Contains(texto)).ToList();
-
-            }
-        }
-
-        public virtual ICollection<Projeto> BuscarPorDescricao(string texto)
-        {
-            using (Db = new OPEModelContext())
-            {
-                return Db.Projetos.Where(o => o.descricao.Contains(texto)).ToList();
+                return Db.Professores.Where(o => o.nome.Contains(texto)).ToList();
 
             }
 
